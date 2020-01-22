@@ -12,9 +12,9 @@ class OffLine_ViewController: UIViewController {
 
      @IBOutlet var tableView: UITableView!
             
-    var dataList: NSMutableArray!
+     var dataList: NSMutableArray!
 
-      @IBOutlet var headerImg: UIImageView!
+     @IBOutlet var headerImg: UIImageView!
 
      @IBOutlet var logoLeft: UIImageView!
       

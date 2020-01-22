@@ -273,6 +273,10 @@ class PC_Upload_ViewController: UIViewController, UITextFieldDelegate, UITextVie
         save.isEnabled = textField.text?.count != 0 && textView.text?.count != 0
         save.alpha = textField.text?.count != 0 && textView.text?.count != 0 ? 1 : 0.5
     }
+    
+    @IBAction func didPressOffline() {
+        self.navigationController?.pushViewController(OffLine_ViewController.init(), animated: true)
+    }
 }
 
 extension PC_Upload_ViewController: UITableViewDataSource, UITableViewDelegate {

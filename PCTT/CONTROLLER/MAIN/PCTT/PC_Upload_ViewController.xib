@@ -135,6 +135,17 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kR-mm-WMa">
+                            <rect key="frame" x="368" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="CIw-X3-qAj"/>
+                                <constraint firstAttribute="height" constant="44" id="E49-oa-BSt"/>
+                            </constraints>
+                            <state key="normal" image="floppy"/>
+                            <connections>
+                                <action selector="didPressOffline" destination="-1" eventType="touchUpInside" id="XSL-UP-tmb"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.78039215689999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -143,6 +154,8 @@
                         <constraint firstItem="weB-Gr-oOt" firstAttribute="top" secondItem="3Wm-QZ-S2b" secondAttribute="top" constant="12" id="TAO-qA-17g"/>
                         <constraint firstAttribute="height" constant="44" id="TN7-Hs-BbQ"/>
                         <constraint firstItem="Kvb-f3-Amq" firstAttribute="top" secondItem="3Wm-QZ-S2b" secondAttribute="top" constant="4" id="Vsk-a6-ZpB"/>
+                        <constraint firstItem="4kR-mm-WMa" firstAttribute="trailing" secondItem="3Wm-QZ-S2b" secondAttribute="trailing" constant="-2" id="X1R-QQ-pQg"/>
+                        <constraint firstItem="4kR-mm-WMa" firstAttribute="top" secondItem="ln5-0K-cnQ" secondAttribute="top" id="XOy-JP-dWQ"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="3Wm-QZ-S2b"/>
                 </view>
@@ -336,6 +349,7 @@
     </objects>
     <resources>
         <image name="bg_text_header" width="201" height="16.5"/>
+        <image name="floppy" width="125" height="125"/>
         <image name="ic_attach" width="36.5" height="42.5"/>
         <image name="icon_back" width="33" height="33"/>
         <image name="logo" width="76" height="76"/>

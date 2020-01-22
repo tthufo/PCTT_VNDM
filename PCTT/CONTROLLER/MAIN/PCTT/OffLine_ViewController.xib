@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OffLine_ViewController" customModule="MNDD" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OffLine_ViewController" customModule="PCTT" customModuleProvider="target">
             <connections>
                 <outlet property="headerImg" destination="Iyo-d6-HIC" id="fns-5a-MoF"/>
                 <outlet property="logoLeft" destination="ow4-KC-4Xd" id="kKl-mD-ksI"/>
@@ -80,8 +80,8 @@
                                 <action selector="didPressBack" destination="-1" eventType="touchUpInside" id="ZgU-Zc-GcR"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phản hồi đã lưu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdE-p8-X7f">
-                            <rect key="frame" x="138.5" y="11" width="137.5" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hình ảnh thiên tai đã lưu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdE-p8-X7f">
+                            <rect key="frame" x="99" y="11" width="216" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="Dx3-Nv-Sfm"/>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="87.5" id="edM-3g-dD6"/>
@@ -90,7 +90,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXt-8a-JQ2">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXt-8a-JQ2">
                             <rect key="frame" x="77" y="0.0" width="260" height="1"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
@@ -99,7 +99,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.78039215689999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="mdE-p8-X7f" firstAttribute="centerX" secondItem="1Bd-Fi-yTu" secondAttribute="centerX" id="4ux-f0-ajh"/>
                         <constraint firstItem="h9E-mh-gC8" firstAttribute="top" secondItem="i5b-ZA-5n8" secondAttribute="top" constant="4" id="D5P-Wi-pj7"/>
@@ -156,6 +156,6 @@
         <image name="bg_default" width="239.5" height="426.5"/>
         <image name="bg_text_header" width="201" height="16.5"/>
         <image name="icon_back" width="33" height="33"/>
-        <image name="logo" width="47.5" height="47.5"/>
+        <image name="logo" width="76" height="76"/>
     </resources>
 </document>

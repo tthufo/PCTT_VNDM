@@ -109,13 +109,13 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJy-SD-MSO">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJy-SD-MSO">
                             <rect key="frame" x="368" y="0.0" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="44" id="CnJ-6R-u2V"/>
                                 <constraint firstAttribute="height" constant="44" id="P3P-je-YMH"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" image="floppy"/>
                             <connections>
                                 <action selector="didPressOffline" destination="-1" eventType="touchUpInside" id="qo4-rl-XUA"/>
                             </connections>
@@ -172,6 +172,7 @@
         <image name="bg_default" width="239.5" height="426.5"/>
         <image name="bg_text_header" width="201" height="16.5"/>
         <image name="floating" width="59.5" height="59.5"/>
+        <image name="floppy" width="125" height="125"/>
         <image name="icon_back" width="33" height="33"/>
         <image name="logo" width="76" height="76"/>
     </resources>
