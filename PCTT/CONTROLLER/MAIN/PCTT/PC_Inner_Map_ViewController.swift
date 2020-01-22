@@ -18,6 +18,8 @@ class PC_Inner_Map_ViewController: UIViewController, WKUIDelegate, WKNavigationD
     
     @IBOutlet var headerImg: UIImageView!
     
+    var directUrl: NSString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +39,7 @@ class PC_Inner_Map_ViewController: UIViewController, WKUIDelegate, WKNavigationD
         
         let url = category != "vnmap" ? "http://vndms.gisgo.vn/?cmd=category&values=%@&lat=%@&lng=%@&isAuth=1".format(parameters: category, lat, lng ) : "http://vndms.gisgo.vn/?cmd=%@&values=%@&lat=%@&lng=%@&isAuth=1".format(parameters: "setmap", category, lat, lng )
                         
-        let link = URL(string: url)!
+        let link = URL(string: directUrl != "" ? directUrl as String : url)!
         let request = URLRequest(url: link)
         webView.load(request)
         

@@ -52,7 +52,11 @@ class PC_Update_ViewController: UIViewController, UITextViewDelegate {
                 return
             }
             
-            print(response)
+            self.dataList.removeAllObjects()
+            
+            self.dataList.addObjects(from: result["data"] as! [Any])
+            
+            self.tableView.reloadData()
         })
     }
     
@@ -75,8 +79,30 @@ extension PC_Update_ViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier:"PC_Info_Cell", for: indexPath)
               
-//        let data = dataList![indexPath.row] as! NSDictionary
+        let data = dataList![indexPath.row] as! NSDictionary
+        
+        let image = self.withView(cell, tag: 11) as! UIImageView
+        
+        image.imageUrl(url: data.getValueFromKey("icon_url"))
+        
+        let title = self.withView(cell, tag: 1) as! UILabel
+        
+        title.text = data.getValueFromKey("layer_name")
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        let data = dataList![indexPath.row] as! NSDictionary
+
+        let map = PC_Inner_Map_ViewController.init()
+        
+        map.category = ""
+
+        map.directUrl = data.getValueFromKey("view_url")! as NSString
+
+        self.navigationController?.pushViewController(map, animated: true)
     }
 }
