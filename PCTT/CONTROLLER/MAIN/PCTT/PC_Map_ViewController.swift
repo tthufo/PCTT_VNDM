@@ -27,14 +27,15 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
                                     ["title": "Cập nhật dữ liệu", "img": "update"]
     ]
     
-     @IBOutlet var logoLeft: UIImageView!
+    @IBOutlet var logoLeft: UIImageView!
        
-       override func viewDidLoad() {
+    override func viewDidLoad() {
        super.viewDidLoad()
        
        if Information.check != "0" {
            logoLeft.image = UIImage(named: "logo_tc")
        }
+        
         collectionView.withCell("TG_Map_Cell")
         
         Permission.shareInstance()?.initLocation(false, andCompletion: { (permissionType) in
@@ -42,6 +43,8 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
         })
         if Information.check == "0" {
             headerImg.image = UIImage(named: "bg_text_dms")
+            
+            dataList.removeLastObject()
         }
     }
     
