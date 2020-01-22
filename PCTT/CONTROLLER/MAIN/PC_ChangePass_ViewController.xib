@@ -16,6 +16,7 @@
                 <outlet property="cell3" destination="EZg-eY-sOX" id="DGa-vV-VD6"/>
                 <outlet property="cover" destination="nZp-0e-eZQ" id="QDP-W6-iua"/>
                 <outlet property="headerImg" destination="qrR-mV-aBp" id="b1J-cs-9ha"/>
+                <outlet property="logoLeft" destination="Lqg-PD-RUK" id="IoQ-Mw-6Km"/>
                 <outlet property="newPass" destination="q0a-5x-zEk" id="JMu-3W-mQU"/>
                 <outlet property="newPassErr" destination="hDV-Pc-iIO" id="M4q-9L-NwR"/>
                 <outlet property="oldPass" destination="oeM-XT-BsP" id="nbz-Io-oh8"/>
@@ -433,7 +434,7 @@
         <image name="bg_text_header" width="201" height="16.5"/>
         <image name="design_ic_visibility" width="29" height="29"/>
         <image name="icon_back" width="33" height="33"/>
-        <image name="logo" width="277.5" height="274"/>
+        <image name="logo" width="76" height="76"/>
         <image name="new_pass" width="26.5" height="26.5"/>
         <image name="old_pass" width="26.5" height="26.5"/>
     </resources>

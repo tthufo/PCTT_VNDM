@@ -24,6 +24,8 @@ class PC_Register_ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var logoCell: UITableViewCell!
     
+    @IBOutlet var logo: UIImageView!
+    
     @IBOutlet var nameCell: UITableViewCell!
 
     @IBOutlet var emailCell: UITableViewCell!
@@ -83,6 +85,9 @@ class PC_Register_ViewController: UIViewController, UITextFieldDelegate {
         rePass.addTarget(self, action: #selector(textRePassIsChanging), for: .editingChanged)
         email.addTarget(self, action: #selector(textEmailIsChanging), for: .editingChanged)
         
+        if Information.check == "1" {
+            self.logo.image = UIImage(named: "logo_tc")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

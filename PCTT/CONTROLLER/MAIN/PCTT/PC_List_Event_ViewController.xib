@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PC_List_Event_ViewController" customModule="PCTT" customModuleProvider="target">
             <connections>
                 <outlet property="headerImg" destination="Sjf-72-uOY" id="TCV-Zd-N1d"/>
+                <outlet property="logoLeft" destination="uCN-ab-pw7" id="cza-oc-LDw"/>
                 <outlet property="tableView" destination="vkk-WY-aMu" id="APh-2j-hwB"/>
                 <outlet property="view" destination="nGt-7O-aht" id="F71-cD-WW0"/>
             </connections>
@@ -159,6 +160,6 @@
         <image name="bg_text_header" width="201" height="16.5"/>
         <image name="floating" width="59.5" height="59.5"/>
         <image name="icon_back" width="33" height="33"/>
-        <image name="logo" width="277.5" height="274"/>
+        <image name="logo" width="76" height="76"/>
     </resources>
 </document>

@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="bar" destination="Lv0-xQ-xjp" id="NmI-48-DLE"/>
                 <outlet property="headerImg" destination="LdQ-6g-Rkg" id="ibq-fg-fMi"/>
+                <outlet property="logoLeft" destination="O2c-3t-sQQ" id="c4D-RA-K3W"/>
                 <outlet property="mapView" destination="tSa-wM-tew" id="WKa-ph-axW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -341,7 +342,7 @@
         <image name="icon_off_overlay" width="170.5" height="170.5"/>
         <image name="icon_strees" width="170.5" height="170.5"/>
         <image name="location" width="153.5" height="154.5"/>
-        <image name="logo" width="277.5" height="274"/>
+        <image name="logo" width="76" height="76"/>
         <image name="mag" width="170.5" height="170.5"/>
     </resources>
 </document>

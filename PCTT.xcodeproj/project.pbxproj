@@ -173,7 +173,7 @@
 		FC31018D23195B7F009DBF95 /* EM_Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EM_Menu.xib; sourceTree = "<group>"; };
 		FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Register_ViewController.swift; sourceTree = "<group>"; };
 		FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Register_ViewController.xib; sourceTree = "<group>"; };
-		FC5D982022F54134006FA3F1 /* Giám sát thiên tai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Giám sát thiên tai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5D982022F54134006FA3F1 /* PCTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5D982322F54134006FA3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC5D982522F54134006FA3F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC5D982822F54134006FA3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 		FC5D982122F54134006FA3F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC5D982022F54134006FA3F1 /* Giám sát thiên tai.app */,
+				FC5D982022F54134006FA3F1 /* PCTT.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -427,7 +427,7 @@
 			);
 			name = PCTT;
 			productName = PCTT;
-			productReference = FC5D982022F54134006FA3F1 /* Giám sát thiên tai.app */;
+			productReference = FC5D982022F54134006FA3F1 /* PCTT.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -792,7 +792,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
-				PRODUCT_NAME = "Giám sát thiên tai";
+				PRODUCT_NAME = PCTT;
 				PROVISIONING_PROFILE_SPECIFIER = monitoring_dev;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PCTT/PCTT-Bridging-Header.h";
@@ -827,7 +827,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
-				PRODUCT_NAME = "Giám sát thiên tai";
+				PRODUCT_NAME = PCTT;
 				PROVISIONING_PROFILE_SPECIFIER = Monitoring_dis;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PCTT/PCTT-Bridging-Header.h";

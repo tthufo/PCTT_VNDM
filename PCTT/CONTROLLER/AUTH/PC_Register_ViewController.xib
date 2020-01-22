@@ -15,6 +15,7 @@
                 <outlet property="emailBG" destination="YCu-r9-EWL" id="DyX-6A-nTl"/>
                 <outlet property="emailCell" destination="ygZ-2R-xiM" id="OnE-pu-E4L"/>
                 <outlet property="emailError" destination="tuv-Vg-xT7" id="TTH-6h-LfX"/>
+                <outlet property="logo" destination="HqM-xd-UTE" id="4o4-D4-rpD"/>
                 <outlet property="logoCell" destination="nn8-Sq-Y9e" id="CaG-yB-eCV"/>
                 <outlet property="nameCell" destination="k6S-ad-B29" id="qXY-Hm-p0m"/>
                 <outlet property="pass" destination="5r5-Eu-i5E" id="B2i-Fe-jwJ"/>

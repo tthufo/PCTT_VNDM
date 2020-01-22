@@ -13,6 +13,7 @@
                 <outlet property="cell" destination="WA2-pe-B1f" id="Oio-AM-jEa"/>
                 <outlet property="header" destination="Mlw-k4-IbK" id="Ydk-1V-ebH"/>
                 <outlet property="headerImg" destination="f8q-Yz-WJL" id="WsG-mz-WbX"/>
+                <outlet property="logoLeft" destination="vZB-hl-l93" id="VvS-eX-VlF"/>
                 <outlet property="submit" destination="SOE-iF-CCf" id="RIb-gq-ubQ"/>
                 <outlet property="tableView" destination="Sn7-HR-gHo" id="pfZ-Bz-rzN"/>
                 <outlet property="tableViewFiles" destination="2Dn-qU-mD9" id="SFN-gb-mH8"/>
@@ -314,6 +315,6 @@
         <image name="bg_text_header" width="201" height="16.5"/>
         <image name="ic_attach" width="36.5" height="42.5"/>
         <image name="icon_back" width="33" height="33"/>
-        <image name="logo" width="277.5" height="274"/>
+        <image name="logo" width="76" height="76"/>
     </resources>
 </document>

@@ -16,6 +16,7 @@
                 <outlet property="emailBG" destination="rS3-U7-S5i" id="Z1p-JI-vEF"/>
                 <outlet property="emailError" destination="KOL-GT-sok" id="j4Z-g5-He2"/>
                 <outlet property="headerImg" destination="56J-Uc-Cyk" id="ctj-Li-Z1g"/>
+                <outlet property="logoLeft" destination="5Vu-M8-vWR" id="g4R-NI-UFy"/>
                 <outlet property="phone" destination="hR7-Lh-mpF" id="N4Y-9S-h4T"/>
                 <outlet property="rePassBG" destination="WYz-fk-pBs" id="U3G-no-Y9z"/>
                 <outlet property="rePassError" destination="yB7-07-Qzp" id="wQ5-ro-qgE"/>
@@ -337,7 +338,7 @@
         <image name="ic_avatar" width="116.5" height="116.5"/>
         <image name="ic_edit_avatar" width="50.5" height="50.5"/>
         <image name="icon_back" width="33" height="33"/>
-        <image name="logo" width="277.5" height="274"/>
+        <image name="logo" width="76" height="76"/>
         <image name="mail_y" width="33" height="33"/>
         <image name="phone_g" width="33" height="33"/>
     </resources>

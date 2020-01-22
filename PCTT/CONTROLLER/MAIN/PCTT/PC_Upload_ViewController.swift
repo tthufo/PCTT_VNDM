@@ -38,8 +38,14 @@ class PC_Upload_ViewController: UIViewController, UITextFieldDelegate, UITextVie
 
       @IBOutlet var headerImg: UIImageView!
 
-      override func viewDidLoad() {
-          super.viewDidLoad()
+       @IBOutlet var logoLeft: UIImageView!
+         
+         override func viewDidLoad() {
+             super.viewDidLoad()
+             
+             if Information.check != "0" {
+                 logoLeft.image = UIImage(named: "logo_tc")
+             }
           
           if Information.check == "0" {
               headerImg.image = UIImage(named: "bg_text_dms")
@@ -144,56 +150,56 @@ class PC_Upload_ViewController: UIViewController, UITextFieldDelegate, UITextVie
     
     @IBAction func didPressAttach() {
          let pickerController = DKImagePickerController()
- 
-         pickerController.maxSelectableCount = 4
- 
-         pickerController.didSelectAssets = { (assets: [DKAsset]) in
-            
-            self.dataList.removeAllObjects()
-            
-            for asset in assets {
-                if asset.type == .video {
-                    let resourse = PHAssetResource.assetResources(for: asset.originalAsset!)
+          
+      pickerController.maxSelectableCount = 4
 
-                    let url = resourse.first?.originalFilename
-                                        
-                    var sizeOnDisk: Int64? = 0
+      pickerController.didSelectAssets = { (assets: [DKAsset]) in
+         
+         self.dataList.removeAllObjects()
+         
+         for asset in assets {
+             if asset.type == .video {
+                 let resourse = PHAssetResource.assetResources(for: asset.originalAsset!)
 
-                    if let resource = resourse.first {
-                      let unsignedInt64 = resource.value(forKey: "fileSize") as? CLong
-                      sizeOnDisk = Int64(bitPattern: UInt64(unsignedInt64!))
-                    }
-                    
-                    if Float(sizeOnDisk!) / (1024 * 1024) <= 30 {
-                        PHImageManager.default().requestAVAsset(forVideo: asset.originalAsset!, options: nil, resultHandler: { (asset, mix, nil) in
-                            let myAsset = asset as? AVURLAsset
-                            do {
-                                let videoData = try Data(contentsOf: (myAsset?.url)!)
-                                self.dataList.add(["fileName": url, "file": String(decoding: videoData, as: UTF8.self)])
-                            } catch  {
-                                print("exception catch at block - while uploading video")
-                            }
-                            DispatchQueue.main.async {
-                                self.tableViewFiles.reloadData()
-                            }
+                 let name = resourse.first?.originalFilename
+                                     
+                 var sizeOnDisk: Int64? = 0
+
+                 if let resource = resourse.first {
+                   let unsignedInt64 = resource.value(forKey: "fileSize") as? CLong
+                   sizeOnDisk = Int64(bitPattern: UInt64(unsignedInt64!))
+                 }
+                 
+                 if Float(sizeOnDisk!) / (1024 * 1024) <= 30 {
+                     PHImageManager.default().requestAVAsset(forVideo: asset.originalAsset!, options: nil, resultHandler: { (ass, mix, nil) in
+                         let myAsset = ass as? AVURLAsset
+                         asset.originalAsset?.getURL(completionHandler: { (url) in
+                            self.dataList.add(["fileName": name!, "file": url!.absoluteString  ])
+                              DispatchQueue.main.async {
+                                 self.tableViewFiles.reloadData()
+                             }
                         })
-                    } else {
-                        self.showToast(url! + " dung lượng lớn hơn 30MB", andPos: 0)
-                    }
-                } else {
-                    let resourse = PHAssetResource.assetResources(for: asset.originalAsset!)
+                     })
+                 } else {
+                     self.showToast(name! + " dung lượng lớn hơn 30MB", andPos: 0)
+                 }
+             } else {
+                 let resourse = PHAssetResource.assetResources(for: asset.originalAsset!)
 
-                    let url = resourse.first?.originalFilename
-                                                            
-                    self.dataList.add(["fileName": url, "file": self.getUIImage(asset: asset.originalAsset!)])
-              }
-            }
-            self.tableViewFiles.reloadData()
+                 let name = resourse.first?.originalFilename
+                                                                             
+                 asset.originalAsset?.getURL(completionHandler: { (url) in
+                     self.dataList.add(["fileName": name!, "file": url!.absoluteString  ])
+                     self.tableViewFiles.reloadData()
+                 })
+           }
          }
- 
-         self.present(pickerController, animated: true) {
- 
-         }
+         self.tableViewFiles.reloadData()
+      }
+
+      self.present(pickerController, animated: true) {
+
+      }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -244,6 +250,32 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     }
     
     return cell
+    }
+
 }
 
+extension PHAsset {
+
+    func getURL(completionHandler : @escaping ((_ responseURL : URL?) -> Void)){
+        if self.mediaType == .image {
+            let options: PHContentEditingInputRequestOptions = PHContentEditingInputRequestOptions()
+            options.canHandleAdjustmentData = {(adjustmeta: PHAdjustmentData) -> Bool in
+                return true
+            }
+            self.requestContentEditingInput(with: options, completionHandler: {(contentEditingInput: PHContentEditingInput?, info: [AnyHashable : Any]) -> Void in
+                completionHandler(contentEditingInput!.fullSizeImageURL as URL?)
+            })
+        } else if self.mediaType == .video {
+            let options: PHVideoRequestOptions = PHVideoRequestOptions()
+            options.version = .original
+            PHImageManager.default().requestAVAsset(forVideo: self, options: options, resultHandler: {(asset: AVAsset?, audioMix: AVAudioMix?, info: [AnyHashable : Any]?) -> Void in
+                if let urlAsset = asset as? AVURLAsset {
+                    let localVideoUrl: URL = urlAsset.url as URL
+                    completionHandler(localVideoUrl)
+                } else {
+                    completionHandler(nil)
+                }
+            })
+        }
+    }
 }

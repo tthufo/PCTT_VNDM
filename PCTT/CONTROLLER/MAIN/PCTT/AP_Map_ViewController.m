@@ -20,13 +20,17 @@
 
 #import "WMSTileLayer.h"
 
-#import "Giám_sát_thiên_tai-Swift.h"
+//#import "Giám_sát_thiên_tai-Swift.h"
+
+#import "PCTT-Swift.h"
 
 @interface AP_Map_ViewController ()<GMSMapViewDelegate>
 {
     IBOutlet UIImageView * hand;
     
     IBOutlet UIImageView * headerImg;
+    
+    IBOutlet UIImageView * logoLeft;
     
     IBOutlet UIView * top, * bar;
     
@@ -72,6 +76,10 @@
 
     if ([Information.check isEqualToString:@"0"]) {
         headerImg.image = [UIImage imageNamed:@"bg_text_dms"];
+    }
+    
+    if ([Information.check isEqualToString:@"1"]) {
+        logoLeft.image = [UIImage imageNamed:@"logo_tc"];
     }
     
     isStreet = YES;

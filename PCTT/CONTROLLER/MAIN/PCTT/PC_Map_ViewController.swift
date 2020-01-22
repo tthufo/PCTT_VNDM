@@ -26,8 +26,14 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
                                     ["title": "Đ.điểm Y.thích", "img": "yeu_thich"]
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+     @IBOutlet var logoLeft: UIImageView!
+       
+       override func viewDidLoad() {
+       super.viewDidLoad()
+       
+       if Information.check != "0" {
+           logoLeft.image = UIImage(named: "logo_tc")
+       }
         collectionView.withCell("TG_Map_Cell")
         
         Permission.shareInstance()?.initLocation(false, andCompletion: { (permissionType) in
