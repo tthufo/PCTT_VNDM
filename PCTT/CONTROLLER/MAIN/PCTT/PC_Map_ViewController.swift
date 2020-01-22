@@ -23,7 +23,8 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
                                     ["title": "Hình ảnh T.Tai", "img": "ic_hathientai"],
                                     ["title": "Bản đồ nền", "img": "ic_bandonen", "category": "vnmap"],
                                     ["title": "Hỏi & đáp", "img": "ic_hoidap"],
-                                    ["title": "Đ.điểm Y.thích", "img": "yeu_thich"]
+                                    ["title": "Đ.điểm Y.thích", "img": "yeu_thich"],
+                                    ["title": "Cập nhật dữ liệu", "img": "yeu_thich"]
     ]
     
      @IBOutlet var logoLeft: UIImageView!
@@ -132,6 +133,8 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
         } else if indexPath.item == 9 {
             let map = AP_Map_ViewController.init()
             self.navigationController?.pushViewController(map, animated: true)
+        } else if indexPath.item == 10 {
+            self.navigationController?.pushViewController(PC_Update_ViewController.init(), animated: true)
         } else {
             let map = PC_Inner_Map_ViewController.init()
             map.category = data.getValueFromKey("category") as NSString?

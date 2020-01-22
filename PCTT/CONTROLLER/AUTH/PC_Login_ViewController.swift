@@ -185,11 +185,11 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                         
 //                        self.loginCover.alpha = (dict! as NSDictionary).getValueFromKey("show") == "1" ? 1 : 0
                                                 
-                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhIiwibmJmIjoxNTc4MDM5MjY0LCJleHAiOjE1Nzg2NDQwNjQsImlhdCI6MTU3ODAzOTI2NH0.KMhyd0sLTArmOeXiqXkUaF8XpCAQlwTjsMdP85Ozljo"] as [String : Any]
+                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InR0aGh1dSIsIm5iZiI6MTU3OTY4NjMzNywiZXhwIjoxNTgwMjkxMTM3LCJpYXQiOjE1Nzk2ODYzMzd9.IXyrNI_3YA8pdamqY_PepTjN9OrSQj0plCGPTIuxGDE"] as [String : Any]
                         
                         if (dict! as NSDictionary).getValueFromKey("show") == "0" {
                             
-                            self.add(["name":"sa" as Any, "pass":"123456" as Any], andKey: "log")
+                            self.add(["name":"tthhuu" as Any, "pass":"123456" as Any], andKey: "log")
 
                             self.add((information as! NSDictionary).reFormat() as? [AnyHashable : Any], andKey: "info")
 

@@ -1,0 +1,82 @@
+//
+//  PC_FeedBack_ViewController.swift
+//  PCTT
+//
+//  Created by Thanh Hai Tran on 11/18/19.
+//  Copyright © 2019 Thanh Hai Tran. All rights reserved.
+//
+
+import UIKit
+
+class PC_Update_ViewController: UIViewController, UITextViewDelegate {
+
+    @IBOutlet var tableView: UITableView!
+        
+    @IBOutlet var headerImg: UIImageView!
+
+    @IBOutlet var logoLeft: UIImageView!
+     
+    var dataList: NSMutableArray!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+         
+        tableView.withCell("PC_Info_Cell")
+        
+        dataList = NSMutableArray()
+        
+        if Information.check != "0" {
+            logoLeft.image = UIImage(named: "logo_tc")
+        }
+          
+        if Information.check == "0" {
+            headerImg.image = UIImage(named: "bg_text_dms")
+        }
+        
+        self.didRequestLayer()
+    }
+    
+    func didRequestLayer() {
+        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "/manual/layer/"),
+                                                    "header":["Authorization":Information.token == nil ? "" : Information.token!],
+                                                    "method":"GET",
+                                                    "overrideAlert":"1",
+                                                    "overrideLoading":"1",
+                                                    "host":self], withCache: { (cacheString) in
+        }, andCompletion: { (response, errorCode, error, isValid, object) in
+            
+            let result = response?.dictionize() ?? [:]
+
+            if result.getValueFromKey("status") != "OK" {
+                self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
+                return
+            }
+            
+            print(response)
+        })
+    }
+    
+    @IBAction func didPressBack() {
+           self.navigationController?.popViewController(animated: true)
+       }
+}
+
+extension PC_Update_ViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataList.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier:"PC_Info_Cell", for: indexPath)
+              
+//        let data = dataList![indexPath.row] as! NSDictionary
+        
+        return cell
+    }
+}

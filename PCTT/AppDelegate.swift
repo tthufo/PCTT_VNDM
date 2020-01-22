@@ -37,8 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.customTab()
 
-//        UITabBar.appearance().tintColor = UIColor(red: 232/255.0, green: 125/255.0, blue: 0/255.0, alpha: 1.0)
-
         UITabBar.appearance().barTintColor = UIColor(red: 0/255.0, green: 100/255.0, blue: 225/255.0, alpha: 1.0)
 
         let login = PC_Login_ViewController.init()

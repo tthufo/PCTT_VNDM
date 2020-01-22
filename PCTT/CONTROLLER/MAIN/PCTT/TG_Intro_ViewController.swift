@@ -78,15 +78,16 @@ class TG_Intro_ViewController: UIViewController {
                                                     "overrideLoading":"1",
                                                     "host":self], withCache: { (cacheString) in
         }, andCompletion: { (response, errorCode, error, isValid, object) in
+            
             let result = response?.dictionize() ?? [:]
-                                             
+
             if result.getValueFromKey("status") != "OK" {
                 self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
                 return
             }
-                    
+
             self.dataList.addObjects(from: response?.dictionize()["data"] as! [Any])
-                        
+
             self.tableView.reloadData()
         })
     }

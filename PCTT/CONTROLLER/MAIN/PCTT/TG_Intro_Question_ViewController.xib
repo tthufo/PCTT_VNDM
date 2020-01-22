@@ -75,7 +75,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hỏi &amp; đáp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TO-1C-vAs">
                             <rect key="frame" x="163.5" y="12" width="87.5" height="21"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="87.5" id="P4B-X1-Ey8"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="87.5" id="P4B-X1-Ey8"/>
                                 <constraint firstAttribute="height" constant="21" id="dEN-Zt-uKD"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>

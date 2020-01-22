@@ -65,6 +65,8 @@
 		FC31018F23195B7F009DBF95 /* EM_Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC31018D23195B7F009DBF95 /* EM_Menu.xib */; };
 		FC59DA49237004FA00F8FA35 /* PC_Register_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */; };
 		FC59DA4A237004FA00F8FA35 /* PC_Register_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */; };
+		FC5A3A0A23D852D700F8F108 /* PC_Update_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */; };
+		FC5A3A0B23D852D700F8F108 /* PC_Update_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5A3A0923D852D700F8F108 /* PC_Update_ViewController.xib */; };
 		FC5D982422F54134006FA3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D982322F54134006FA3F1 /* AppDelegate.swift */; };
 		FC5D982622F54134006FA3F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D982522F54134006FA3F1 /* ViewController.swift */; };
 		FC5D982922F54134006FA3F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5D982722F54134006FA3F1 /* Main.storyboard */; };
@@ -173,6 +175,8 @@
 		FC31018D23195B7F009DBF95 /* EM_Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EM_Menu.xib; sourceTree = "<group>"; };
 		FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Register_ViewController.swift; sourceTree = "<group>"; };
 		FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Register_ViewController.xib; sourceTree = "<group>"; };
+		FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Update_ViewController.swift; sourceTree = "<group>"; };
+		FC5A3A0923D852D700F8F108 /* PC_Update_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Update_ViewController.xib; sourceTree = "<group>"; };
 		FC5D982022F54134006FA3F1 /* PCTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5D982322F54134006FA3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC5D982522F54134006FA3F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +272,8 @@
 				FC6197B1238EDF2900155EF1 /* AP_Map_ViewController.xib */,
 				FC30E0E42394C23B009174E4 /* WMSTileLayer.h */,
 				FC30E0E32394C239009174E4 /* WMSTileLayer.m */,
+				FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */,
+				FC5A3A0923D852D700F8F108 /* PC_Update_ViewController.xib */,
 			);
 			path = PCTT;
 			sourceTree = "<group>";
@@ -514,6 +520,7 @@
 				2DB6B1AB2330B4FB0036A26A /* PC_Station_Cell5.xib in Resources */,
 				FC1A516622FE8EE200298B28 /* PC_ForeCast_Cell.xib in Resources */,
 				FC59DA4A237004FA00F8FA35 /* PC_Register_ViewController.xib in Resources */,
+				FC5A3A0B23D852D700F8F108 /* PC_Update_ViewController.xib in Resources */,
 				FC5D982922F54134006FA3F1 /* Main.storyboard in Resources */,
 				FC193A9F22FCB5EF00CDF719 /* PC_ForCast_ViewController.xib in Resources */,
 				FC235ADF2383167B0093A108 /* PC_Event_Cell.xib in Resources */,
@@ -623,6 +630,7 @@
 				FC250D04230103F4008AB980 /* PC_Global_ViewController.swift in Sources */,
 				FC1B306922F6AF13002E873F /* PC_Forgot_ViewController.swift in Sources */,
 				FC8F4AEF230FE9420082F3B2 /* PC_FeedBack_ViewController.swift in Sources */,
+				FC5A3A0A23D852D700F8F108 /* PC_Update_ViewController.swift in Sources */,
 				FC1B307022F6EEF6002E873F /* PC_Main_ViewController.swift in Sources */,
 				FC1B307A22F73F3D002E873F /* PC_ChangePass_ViewController.swift in Sources */,
 				FC1AC74123708CC100B11288 /* TG_Intro_ViewController.swift in Sources */,
