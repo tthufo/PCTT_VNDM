@@ -29,6 +29,8 @@ class PC_Upload_ViewController: UIViewController, UITextFieldDelegate, UITextVie
     @IBOutlet var textView: UITextView!
 
     @IBOutlet var submit: UIButton!
+    
+    @IBOutlet var save: UIButton!
 
     @IBOutlet var back: UIButton!
     
@@ -80,9 +82,59 @@ class PC_Upload_ViewController: UIViewController, UITextFieldDelegate, UITextVie
            self.view.endEditing(true)
        }
     
+    @IBAction func didPressSave() {
+          self.view.endEditing(true)
+                  
+           if dataList.count == 0 {
+               self.showToast("Hãy chọn tệp đính kèm", andPos: 0)
+               
+               return
+           }
+        
+          let array = NSMutableArray.init()
+          
+          for dict in dataList {
+              let d = dict as! NSDictionary
+              array.add(["file": d["file"] , "fileName": d["fileName"], "key":"ds"])
+          }
+          
+           var lat = "0"
+           
+           var lng = "0"
+
+           if (Permission.shareInstance()?.isLocationEnable())! {
+               let location = Permission.shareInstance()?.currentLocation()! as! NSDictionary
+               
+               lat = location.getValueFromKey("lat")
+               
+               lng = location.getValueFromKey("lng")
+           }
+           
+           let autoId = self.getValue("autoId")
+                   
+           Information.addOffline(request: ["id": autoId, "field": array, "data":[
+               "event_name": textField.text as Any,
+               "event_description": textView.text as Any,
+               "lat": lat,
+               "lon": lng]])
+           
+           let auto:Int? = Int(autoId ?? "0")
+
+           self.addValue(String(auto! + 1), andKey: "autoId")
+                   
+           self.navigationController?.popViewController(animated: true)
+       }
+
+    
     @IBAction func didPressSubmit() {
         self.view.endEditing(true)
         
+        if dataList.count == 0 {
+           self.showToast("Hãy chọn tệp đính kèm", andPos: 0)
+           
+           return
+        }
+               
         let array = NSMutableArray.init()
         
         for dict in dataList {
@@ -209,11 +261,17 @@ class PC_Upload_ViewController: UIViewController, UITextFieldDelegate, UITextVie
     @objc func textIsChanging(_ textField:UITextField) {
         submit.isEnabled = textField.text?.count != 0 && textView.text?.count != 0
         submit.alpha = textField.text?.count != 0 && textView.text?.count != 0 ? 1 : 0.5
+        
+        save.isEnabled = textField.text?.count != 0 && textView.text?.count != 0
+        save.alpha = textField.text?.count != 0 && textView.text?.count != 0 ? 1 : 0.5
     }
     
     func textViewDidChange(_ textView: UITextView) {
          submit.isEnabled = textField.text?.count != 0 && textView.text?.count != 0
          submit.alpha = textField.text?.count != 0 && textView.text?.count != 0 ? 1 : 0.5
+        
+        save.isEnabled = textField.text?.count != 0 && textView.text?.count != 0
+        save.alpha = textField.text?.count != 0 && textView.text?.count != 0 ? 1 : 0.5
     }
 }
 

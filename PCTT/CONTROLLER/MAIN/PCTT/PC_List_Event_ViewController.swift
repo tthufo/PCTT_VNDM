@@ -49,9 +49,7 @@ class PC_List_Event_ViewController: UIViewController {
                                                   "host":self], withCache: { (cacheString) in
       }, andCompletion: { (response, errorCode, error, isValid, object) in
           let result = response?.dictionize() ?? [:]
-                                 
-          print("-->", result)
-        
+                                         
           if result.getValueFromKey("status") != "OK" {
               self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
               return
@@ -94,6 +92,10 @@ class PC_List_Event_ViewController: UIViewController {
     
     @IBAction func didPressBack() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func didPressOffline() {
+        self.navigationController?.pushViewController(OffLine_ViewController.init(), animated: true)
     }
 }
 

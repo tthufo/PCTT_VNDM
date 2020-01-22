@@ -74,6 +74,8 @@
 		FC5D982E22F54137006FA3F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5D982C22F54137006FA3F1 /* LaunchScreen.storyboard */; };
 		FC5D983822F55513006FA3F1 /* PC_Login_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D983622F55513006FA3F1 /* PC_Login_ViewController.swift */; };
 		FC5D983922F55513006FA3F1 /* PC_Login_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5D983722F55513006FA3F1 /* PC_Login_ViewController.xib */; };
+		FC5DAA2E23D8A2E800163031 /* OffLine_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5DAA2C23D8A2E800163031 /* OffLine_ViewController.xib */; };
+		FC5DAA2F23D8A2E800163031 /* OffLine_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5DAA2D23D8A2E800163031 /* OffLine_ViewController.swift */; };
 		FC6197B2238EDF2900155EF1 /* AP_Map_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6197B0238EDF2700155EF1 /* AP_Map_ViewController.m */; };
 		FC6197B3238EDF2900155EF1 /* AP_Map_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6197B1238EDF2900155EF1 /* AP_Map_ViewController.xib */; };
 		FC6197B5238EE83800155EF1 /* Annotation.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6197B4238EE83700155EF1 /* Annotation.xib */; };
@@ -186,6 +188,8 @@
 		FC5D982F22F54137006FA3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC5D983622F55513006FA3F1 /* PC_Login_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Login_ViewController.swift; sourceTree = "<group>"; };
 		FC5D983722F55513006FA3F1 /* PC_Login_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Login_ViewController.xib; sourceTree = "<group>"; };
+		FC5DAA2C23D8A2E800163031 /* OffLine_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffLine_ViewController.xib; sourceTree = "<group>"; };
+		FC5DAA2D23D8A2E800163031 /* OffLine_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffLine_ViewController.swift; sourceTree = "<group>"; };
 		FC6197AF238EDF2600155EF1 /* AP_Map_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP_Map_ViewController.h; sourceTree = "<group>"; };
 		FC6197B0238EDF2700155EF1 /* AP_Map_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP_Map_ViewController.m; sourceTree = "<group>"; };
 		FC6197B1238EDF2900155EF1 /* AP_Map_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AP_Map_ViewController.xib; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 				FC30E0E32394C239009174E4 /* WMSTileLayer.m */,
 				FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */,
 				FC5A3A0923D852D700F8F108 /* PC_Update_ViewController.xib */,
+				FC5DAA2D23D8A2E800163031 /* OffLine_ViewController.swift */,
+				FC5DAA2C23D8A2E800163031 /* OffLine_ViewController.xib */,
 			);
 			path = PCTT;
 			sourceTree = "<group>";
@@ -480,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5DAA2E23D8A2E800163031 /* OffLine_ViewController.xib in Resources */,
 				2DB6B1AE2330B4FB0036A26A /* PC_Station_Cell1.xib in Resources */,
 				FC69937622FB4A8200C62D42 /* PC_Station_ViewController.xib in Resources */,
 				FC2EA11C237E4C44004B01AE /* PC_Inner_Info_ViewController.xib in Resources */,
@@ -604,6 +611,7 @@
 				FC1AC74523708DF800B11288 /* NSObject+TabbarExtension.m in Sources */,
 				FC247D23238246480025D417 /* PC_FeedBack_New_ViewController.swift in Sources */,
 				FCFCD732233AD94200804047 /* XMLReader.m in Sources */,
+				FC5DAA2F23D8A2E800163031 /* OffLine_ViewController.swift in Sources */,
 				FC18571E22FFED6000DB818C /* PC_ForeCast_7_Cell.swift in Sources */,
 				FC269A1C2378600400EEA392 /* NavViewController.swift in Sources */,
 				FCE792922375D4880034684F /* TG_Intro_Question_ViewController.swift in Sources */,

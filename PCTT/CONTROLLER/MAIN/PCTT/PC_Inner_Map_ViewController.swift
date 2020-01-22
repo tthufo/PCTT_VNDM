@@ -42,7 +42,7 @@ class PC_Inner_Map_ViewController: UIViewController, WKUIDelegate, WKNavigationD
         let link = URL(string: directUrl != "" ? directUrl as String : url)!
         let request = URLRequest(url: link)
         webView.load(request)
-        
+                
 //        let backButton = UIButton.init(type: .custom)
 //            backButton.setImage(UIImage.init(named: "icon_back"), for: .normal)
 //            backButton.frame = CGRect.init(x: 10, y: 10, width: 44, height: 44)
@@ -60,7 +60,9 @@ class PC_Inner_Map_ViewController: UIViewController, WKUIDelegate, WKNavigationD
         let backButton = UIButton.init(type: .custom)
         backButton.setImage(UIImage.init(named: "icon_back"), for: .normal)
         backButton.frame = CGRect.init(x: 10, y: 10, width: 44, height: 44)
-        webView.addSubview(backButton)
+        if directUrl == "" {
+            webView.addSubview(backButton)
+        }
         backButton.action(forTouch: [:]) { (objc) in
             self.navigationController?.popViewController(animated: true)
         }

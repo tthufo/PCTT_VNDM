@@ -109,14 +109,27 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJy-SD-MSO">
+                            <rect key="frame" x="368" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="CnJ-6R-u2V"/>
+                                <constraint firstAttribute="height" constant="44" id="P3P-je-YMH"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="didPressOffline" destination="-1" eventType="touchUpInside" id="qo4-rl-XUA"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.78039215689999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="BJy-SD-MSO" firstAttribute="top" secondItem="Unl-Vk-ezr" secondAttribute="top" id="AQ1-Gx-EVZ"/>
                         <constraint firstItem="4OF-3c-sg4" firstAttribute="leading" secondItem="Unl-Vk-ezr" secondAttribute="leading" constant="8" id="AbX-pc-5nK"/>
                         <constraint firstItem="7CR-zL-QIP" firstAttribute="top" secondItem="Unl-Vk-ezr" secondAttribute="top" constant="11" id="Dkz-rY-LJP"/>
                         <constraint firstAttribute="height" constant="44" id="EF2-sF-Pf7"/>
                         <constraint firstItem="7CR-zL-QIP" firstAttribute="centerX" secondItem="FF3-bY-6PQ" secondAttribute="centerX" id="IbF-uk-H3Z"/>
                         <constraint firstItem="4OF-3c-sg4" firstAttribute="top" secondItem="Unl-Vk-ezr" secondAttribute="top" constant="4" id="iL7-cX-KgA"/>
+                        <constraint firstItem="Unl-Vk-ezr" firstAttribute="trailing" secondItem="BJy-SD-MSO" secondAttribute="trailing" constant="2" id="uok-kB-JUz"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="Unl-Vk-ezr"/>
                 </view>

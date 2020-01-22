@@ -24,7 +24,7 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
                                     ["title": "Bản đồ nền", "img": "ic_bandonen", "category": "vnmap"],
                                     ["title": "Hỏi & đáp", "img": "ic_hoidap"],
                                     ["title": "Đ.điểm Y.thích", "img": "yeu_thich"],
-                                    ["title": "Cập nhật dữ liệu", "img": "yeu_thich"]
+                                    ["title": "Cập nhật dữ liệu", "img": "update"]
     ]
     
      @IBOutlet var logoLeft: UIImageView!

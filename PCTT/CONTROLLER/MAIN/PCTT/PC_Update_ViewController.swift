@@ -37,7 +37,7 @@ class PC_Update_ViewController: UIViewController, UITextViewDelegate {
     }
     
     func didRequestLayer() {
-        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "/manual/layer/"),
+        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "manual/layer/"),
                                                     "header":["Authorization":Information.token == nil ? "" : Information.token!],
                                                     "method":"GET",
                                                     "overrideAlert":"1",
@@ -83,6 +83,8 @@ extension PC_Update_ViewController: UITableViewDataSource, UITableViewDelegate {
         
         let image = self.withView(cell, tag: 11) as! UIImageView
         
+        image.contentMode = .scaleAspectFit
+        
         image.imageUrl(url: data.getValueFromKey("icon_url"))
         
         let title = self.withView(cell, tag: 1) as! UILabel
@@ -96,13 +98,25 @@ extension PC_Update_ViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         let data = dataList![indexPath.row] as! NSDictionary
+        
+        var lat = "0"
+               
+        var lng = "0"
 
+        if (Permission.shareInstance()?.isLocationEnable())! {
+           let location = Permission.shareInstance()?.currentLocation()! as! NSDictionary
+           
+           lat = location.getValueFromKey("lat")
+           
+           lng = location.getValueFromKey("lng")
+        }
+        
         let map = PC_Inner_Map_ViewController.init()
         
         map.category = ""
 
-        map.directUrl = data.getValueFromKey("view_url")! as NSString
-
+        map.directUrl = (data.getValueFromKey("view_url") + (data.getValueFromKey("has_lnglat") == "0" ? "" : "?lon=" + lng + "&lat=" + lat)) as NSString
+        
         self.navigationController?.pushViewController(map, animated: true)
     }
 }

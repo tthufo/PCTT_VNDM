@@ -27,11 +27,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            FirePush.shareInstance()?.didUnregisterNotification()
         }
         
+        if self.getObject("offline") == nil {
+            self.add(["data": NSMutableArray()], andKey: "offline")
+        }
+                
+        if self.getValue("autoId") == nil {
+            self.addValue("1", andKey: "autoId")
+        }
+        
         Information.saveToken()
         
         Information.saveInfo()
         
         Information.saveBG()
+        
+        Information.saveOffline()
         
         LTRequest.sharedInstance().initRequest()
 
