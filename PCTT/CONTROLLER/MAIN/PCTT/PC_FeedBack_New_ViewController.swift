@@ -24,27 +24,31 @@ class PC_FeedBack_New_ViewController: UIViewController, UITextViewDelegate {
     
     var inner: Bool = true
 
-      @IBOutlet var headerImg: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
 
-       @IBOutlet var logoLeft: UIImageView!
+    @IBOutlet var headerImg: UIImageView!
+
+    @IBOutlet var logoLeft: UIImageView!
          
-         override func viewDidLoad() {
-             super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
              
-             if Information.check != "0" {
-                 logoLeft.image = UIImage(named: "logo_tc")
-             }
-          
-          if Information.check == "0" {
-              headerImg.image = UIImage(named: "bg_text_dms")
-          }
+        if Information.check != "0" {
+             logoLeft.image = UIImage(named: "logo_tc")
+        }
+              
+        if Information.check == "0" {
+            headerImg.image = UIImage(named: "bg_text_dms")
+        }
 
         textView.inputAccessoryView = self.toolBar()
 
         self.view.action(forTouch: [:]) { (objc) in
             self.view.endEditing(true)
         }
-              
+             
+        titleLabel.text = !inner ? "Nhập câu hỏi" : "Nhập góp ý"
+        
         gap.constant = inner ? 0 : 44
         
         back.isHidden = inner
@@ -68,13 +72,23 @@ class PC_FeedBack_New_ViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func didPressSubmit() {
         self.view.endEditing(true)
-        LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"feedback",
-                                                    "header":["Authorization":Information.token == nil ? "" : Information.token!],
-                                                    "content":textView.text as Any,
-                                                    "overrideAlert":"1",
-                                                    "overrideLoading":"1",
-                                                    "postFix":"feedback",
-                                                    "host":self], withCache: { (cacheString) in
+        
+        let params = !inner ? ["CMD_CODE":"faq",
+        "header":["Authorization":Information.token == nil ? "" : Information.token!],
+        "question":textView.text as Any,
+        "overrideAlert":"1",
+        "overrideLoading":"1",
+        "postFix":"faq",
+        "host":self] :
+            ["CMD_CODE":"feedback",
+            "header":["Authorization":Information.token == nil ? "" : Information.token!],
+            "content":textView.text as Any,
+            "overrideAlert":"1",
+            "overrideLoading":"1",
+            "postFix":"feedback",
+            "host":self]
+        
+        LTRequest.sharedInstance()?.didRequestInfo(params, withCache: { (cacheString) in
         }, andCompletion: { (response, errorCode, error, isValid, object) in
             
             let result = response?.dictionize() ?? [:]
@@ -83,12 +97,13 @@ class PC_FeedBack_New_ViewController: UIViewController, UITextViewDelegate {
                 self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
                 return
             }
-            
-            self.showToast("Gửi đóng góp ý kiến thành công", andPos: 0)
+                        
+            self.showToast(!self.inner ? "Gửi câu hỏi thành công" : "Gửi đóng góp ý kiến thành công", andPos: 0)
             
             self.textView.text = ""
             
             self.submit.isEnabled = self.textView.text?.count != 0
+            
             self.submit.alpha = self.textView.text?.count != 0 ? 1 : 0.5
         })
     }
