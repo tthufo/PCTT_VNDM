@@ -20,9 +20,9 @@
 
 #import "WMSTileLayer.h"
 
-//#import "Giám_sát_thiên_tai-Swift.h"
+#import "Giám_sát_thiên_tai-Swift.h"
 
-#import "PCTT-Swift.h"
+//#import "PCTT-Swift.h"
 
 @interface AP_Map_ViewController ()<GMSMapViewDelegate>
 {

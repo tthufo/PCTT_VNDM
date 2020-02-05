@@ -83,49 +83,48 @@ class PC_Upload_ViewController: UIViewController, UITextFieldDelegate, UITextVie
        }
     
     @IBAction func didPressSave() {
-          self.view.endEditing(true)
-                  
-           if dataList.count == 0 {
-               self.showToast("Hãy chọn tệp đính kèm", andPos: 0)
-               
-               return
-           }
-        
-          let array = NSMutableArray.init()
-          
-          for dict in dataList {
-              let d = dict as! NSDictionary
-              array.add(["file": d["file"] , "fileName": d["fileName"], "key":"ds"])
-          }
-          
-           var lat = "0"
+      self.view.endEditing(true)
+              
+       if dataList.count == 0 {
+           self.showToast("Hãy chọn tệp đính kèm", andPos: 0)
            
-           var lng = "0"
-
-           if (Permission.shareInstance()?.isLocationEnable())! {
-               let location = Permission.shareInstance()?.currentLocation()! as! NSDictionary
-               
-               lat = location.getValueFromKey("lat")
-               
-               lng = location.getValueFromKey("lng")
-           }
-           
-           let autoId = self.getValue("autoId")
-                   
-           Information.addOffline(request: ["id": autoId, "field": array, "data":[
-               "event_name": textField.text as Any,
-               "event_description": textView.text as Any,
-               "lat": lat,
-               "lon": lng]])
-           
-           let auto:Int? = Int(autoId ?? "0")
-
-           self.addValue(String(auto! + 1), andKey: "autoId")
-                   
-           self.navigationController?.popViewController(animated: true)
+           return
        }
-
     
+      let array = NSMutableArray.init()
+      
+      for dict in dataList {
+          let d = dict as! NSDictionary
+          array.add(["file": d["file"] , "fileName": d["fileName"], "key":"ds"])
+      }
+      
+       var lat = "0"
+       
+       var lng = "0"
+
+       if (Permission.shareInstance()?.isLocationEnable())! {
+           let location = Permission.shareInstance()?.currentLocation()! as! NSDictionary
+           
+           lat = location.getValueFromKey("lat")
+           
+           lng = location.getValueFromKey("lng")
+       }
+       
+       let autoId = self.getValue("autoId")
+               
+       Information.addOffline(request: ["id": autoId, "field": array, "data":[
+           "event_name": textField.text as Any,
+           "event_description": textView.text as Any,
+           "lat": lat,
+           "lon": lng]])
+       
+       let auto:Int? = Int(autoId ?? "0")
+
+       self.addValue(String(auto! + 1), andKey: "autoId")
+               
+       self.navigationController?.popViewController(animated: true)
+   }
+
     @IBAction func didPressSubmit() {
         self.view.endEditing(true)
         

@@ -179,7 +179,7 @@
 		FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Register_ViewController.xib; sourceTree = "<group>"; };
 		FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Update_ViewController.swift; sourceTree = "<group>"; };
 		FC5A3A0923D852D700F8F108 /* PC_Update_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Update_ViewController.xib; sourceTree = "<group>"; };
-		FC5D982022F54134006FA3F1 /* PCTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5D982022F54134006FA3F1 /* Giám sát thiên tai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Giám sát thiên tai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5D982322F54134006FA3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC5D982522F54134006FA3F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC5D982822F54134006FA3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -350,7 +350,7 @@
 		FC5D982122F54134006FA3F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC5D982022F54134006FA3F1 /* PCTT.app */,
+				FC5D982022F54134006FA3F1 /* Giám sát thiên tai.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -439,7 +439,7 @@
 			);
 			name = PCTT;
 			productName = PCTT;
-			productReference = FC5D982022F54134006FA3F1 /* PCTT.app */;
+			productReference = FC5D982022F54134006FA3F1 /* Giám sát thiên tai.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -792,11 +792,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Huy Nguyen (S6X8K9KLV3)";
+				CODE_SIGN_IDENTITY = "Apple Development: Dinh Nguyen (9NC2Q4ER8P)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 16;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 3L2APQ2D3U;
+				DEVELOPMENT_TEAM = GAJPP6PZBM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PCTT",
@@ -807,9 +807,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
-				PRODUCT_NAME = PCTT;
-				PROVISIONING_PROFILE_SPECIFIER = monitoring_dev;
+				PRODUCT_NAME = "Giám sát thiên tai";
+				PROVISIONING_PROFILE_SPECIFIER = monitering_dev;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PCTT/PCTT-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -827,11 +828,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: 3D ART DESIGN CONSULTANCY AND TECHNOLOGY SOLUTION JOINT STOCK COMPANY (3L2APQ2D3U)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: VIETGIS - GIS SOLUTION AND TECHNOLOGY COMPANY LIMITED (GAJPP6PZBM)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 16;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 3L2APQ2D3U;
+				DEVELOPMENT_TEAM = GAJPP6PZBM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PCTT",
@@ -842,9 +843,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
-				PRODUCT_NAME = PCTT;
-				PROVISIONING_PROFILE_SPECIFIER = Monitoring_dis;
+				PRODUCT_NAME = "Giám sát thiên tai";
+				PROVISIONING_PROFILE_SPECIFIER = monitering_dis;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PCTT/PCTT-Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;

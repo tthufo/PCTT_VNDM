@@ -55,6 +55,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
         self.view.action(forTouch: [:]) { (obj) in
             self.view.endEditing(true)
         }
+        
         uName.addTarget(self, action: #selector(textIsChanging), for: .editingChanged)
         pass.addTarget(self, action: #selector(textIsChanging), for: .editingChanged)
         
@@ -147,7 +148,8 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
 //                        }
 //                        self.setUpLogin()
 //                    }
-            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/zwcq92ogkzijsbw/PCTT_WebView_PCTT.plist", "overrideAlert":"1"], withCache: { (cache) in
+           
+                    LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/acdglvft3xqmlep/PCTT_WebView_PCTT_VER_2.plist", "overrideAlert":"1"], withCache: { (cache) in
                         
                     }, andCompletion: { (response, errorCode, error, isValid, object) in
                         
@@ -185,11 +187,11 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                         
 //                        self.loginCover.alpha = (dict! as NSDictionary).getValueFromKey("show") == "1" ? 1 : 0
                                                 
-                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InR0aGh1dSIsIm5iZiI6MTU3OTY4NjMzNywiZXhwIjoxNTgwMjkxMTM3LCJpYXQiOjE1Nzk2ODYzMzd9.IXyrNI_3YA8pdamqY_PepTjN9OrSQj0plCGPTIuxGDE"] as [String : Any]
+                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhIiwibmJmIjoxNTgwODMwMDMzLCJleHAiOjE1ODE0MzQ4MzMsImlhdCI6MTU4MDgzMDAzM30.osqpYZ1jZ12Y96kpE_3_CkxkHoOCT4hRs2rSfbg9aRQ"] as [String : Any]
                         
                         if (dict! as NSDictionary).getValueFromKey("show") == "0" {
                             
-                            self.add(["name":"tthhuu" as Any, "pass":"123456" as Any], andKey: "log")
+                            self.add(["name":"sa" as Any, "pass":"123456" as Any], andKey: "log")
 
                             self.add((information as! NSDictionary).reFormat() as? [AnyHashable : Any], andKey: "info")
 

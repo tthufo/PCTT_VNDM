@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let APIMAP: String = "AIzaSyBXBWoCCozdvmjRABdP_VfDiPAsSU1WS2Q" //"AIzaSyBpY_YNBDcSSQn_RN9aaR1uzHRT3BHl_Q0"//
     
+    //AIzaSyBLE2YXWpdW8tzrCDta8u0Q2KfunkVrIps
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         GMSServices.provideAPIKey(APIMAP)
