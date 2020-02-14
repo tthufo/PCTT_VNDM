@@ -62,7 +62,6 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
     }
 
     func swipeToPop() {
-
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
     }
@@ -80,7 +79,7 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Int((self.screenWidth() / 3) - 15), height: Int((self.screenWidth() / 3) + 20))
+        return CGSize(width: Int((self.screenWidth() / 3) - 15), height: 145)//Int((320 / 3) + 20))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
