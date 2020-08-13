@@ -63,6 +63,17 @@
 		FC30E0E52394C23B009174E4 /* WMSTileLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC30E0E32394C239009174E4 /* WMSTileLayer.m */; };
 		FC31018E23195B7F009DBF95 /* EM_MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31018B23195B7F009DBF95 /* EM_MenuView.m */; };
 		FC31018F23195B7F009DBF95 /* EM_Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC31018D23195B7F009DBF95 /* EM_Menu.xib */; };
+		FC49139424E2744000F1967A /* PC_Disaster_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC49139224E2744000F1967A /* PC_Disaster_ViewController.swift */; };
+		FC49139524E2744000F1967A /* PC_Disaster_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC49139324E2744000F1967A /* PC_Disaster_ViewController.xib */; };
+		FC49139A24E276DA00F1967A /* PC_Disaster_Tab_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC49139924E276DA00F1967A /* PC_Disaster_Tab_ViewController.swift */; };
+		FC49139D24E27D4D00F1967A /* PC_Disaster_Map_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC49139B24E27D4D00F1967A /* PC_Disaster_Map_ViewController.swift */; };
+		FC49139E24E27D4D00F1967A /* PC_Disaster_Map_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC49139C24E27D4D00F1967A /* PC_Disaster_Map_ViewController.xib */; };
+		FC4913A024E2854700F1967A /* format.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC49139F24E2854700F1967A /* format.plist */; };
+		FC4913A224E285FC00F1967A /* Cells.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4913A124E285FC00F1967A /* Cells.xib */; };
+		FC4913A424E469A800F1967A /* Disaster_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4913A324E469A800F1967A /* Disaster_Cell.xib */; };
+		FC4913A724E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4913A524E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift */; };
+		FC4913AC24E5A98300F1967A /* PC_Doc_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4913AA24E5A98300F1967A /* PC_Doc_ViewController.swift */; };
+		FC4913AD24E5A98300F1967A /* PC_Doc_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4913AB24E5A98300F1967A /* PC_Doc_ViewController.xib */; };
 		FC59DA49237004FA00F8FA35 /* PC_Register_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */; };
 		FC59DA4A237004FA00F8FA35 /* PC_Register_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */; };
 		FC5A3A0A23D852D700F8F108 /* PC_Update_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */; };
@@ -86,9 +97,12 @@
 		FC8F4AF0230FE9420082F3B2 /* PC_FeedBack_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC8F4AEE230FE9420082F3B2 /* PC_FeedBack_ViewController.xib */; };
 		FC8F4AF2230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC8F4AF1230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib */; };
 		FCA5F32B2371DAB700274600 /* PC_Info_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA5F32A2371DAB700274600 /* PC_Info_Cell.xib */; };
+		FCA929B2240E55B30098BC45 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA929B1240E55B30098BC45 /* WebKit.framework */; };
 		FCB19455231598DA007120AF /* ChatAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB19451231598DA007120AF /* ChatAccessory.swift */; };
 		FCB19456231598DA007120AF /* ChatAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB19452231598DA007120AF /* ChatAccessory.xib */; };
 		FCB19457231598DA007120AF /* ChatTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB19453231598DA007120AF /* ChatTable.swift */; };
+		FCC247A524E1548F0099605D /* PC_Contact_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC247A324E1548F0099605D /* PC_Contact_ViewController.swift */; };
+		FCC247A624E1548F0099605D /* PC_Contact_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC247A424E1548F0099605D /* PC_Contact_ViewController.xib */; };
 		FCE792922375D4880034684F /* TG_Intro_Question_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE792902375D4880034684F /* TG_Intro_Question_ViewController.swift */; };
 		FCE792932375D4880034684F /* TG_Intro_Question_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE792912375D4880034684F /* TG_Intro_Question_ViewController.xib */; };
 		FCEDD7E022F9E19500DC4613 /* PC_Notification_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDD7DE22F9E19500DC4613 /* PC_Notification_ViewController.swift */; };
@@ -175,11 +189,22 @@
 		FC31018B23195B7F009DBF95 /* EM_MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EM_MenuView.m; sourceTree = "<group>"; };
 		FC31018C23195B7F009DBF95 /* EM_MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EM_MenuView.h; sourceTree = "<group>"; };
 		FC31018D23195B7F009DBF95 /* EM_Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EM_Menu.xib; sourceTree = "<group>"; };
+		FC49139224E2744000F1967A /* PC_Disaster_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Disaster_ViewController.swift; sourceTree = "<group>"; };
+		FC49139324E2744000F1967A /* PC_Disaster_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Disaster_ViewController.xib; sourceTree = "<group>"; };
+		FC49139924E276DA00F1967A /* PC_Disaster_Tab_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Disaster_Tab_ViewController.swift; sourceTree = "<group>"; };
+		FC49139B24E27D4D00F1967A /* PC_Disaster_Map_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Disaster_Map_ViewController.swift; sourceTree = "<group>"; };
+		FC49139C24E27D4D00F1967A /* PC_Disaster_Map_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Disaster_Map_ViewController.xib; sourceTree = "<group>"; };
+		FC49139F24E2854700F1967A /* format.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = format.plist; sourceTree = "<group>"; };
+		FC4913A124E285FC00F1967A /* Cells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cells.xib; sourceTree = "<group>"; };
+		FC4913A324E469A800F1967A /* Disaster_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Disaster_Cell.xib; sourceTree = "<group>"; };
+		FC4913A524E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Disaster_Detail_Tab_ViewController.swift; sourceTree = "<group>"; };
+		FC4913AA24E5A98300F1967A /* PC_Doc_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Doc_ViewController.swift; sourceTree = "<group>"; };
+		FC4913AB24E5A98300F1967A /* PC_Doc_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Doc_ViewController.xib; sourceTree = "<group>"; };
 		FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Register_ViewController.swift; sourceTree = "<group>"; };
 		FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Register_ViewController.xib; sourceTree = "<group>"; };
 		FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Update_ViewController.swift; sourceTree = "<group>"; };
 		FC5A3A0923D852D700F8F108 /* PC_Update_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Update_ViewController.xib; sourceTree = "<group>"; };
-		FC5D982022F54134006FA3F1 /* Giám sát thiên tai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Giám sát thiên tai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5D982022F54134006FA3F1 /* VNDMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VNDMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5D982322F54134006FA3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC5D982522F54134006FA3F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC5D982822F54134006FA3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,9 +226,12 @@
 		FC8F4AEE230FE9420082F3B2 /* PC_FeedBack_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_FeedBack_ViewController.xib; sourceTree = "<group>"; };
 		FC8F4AF1230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_FeedBack_Cell.xib; sourceTree = "<group>"; };
 		FCA5F32A2371DAB700274600 /* PC_Info_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Info_Cell.xib; sourceTree = "<group>"; };
+		FCA929B1240E55B30098BC45 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FCB19451231598DA007120AF /* ChatAccessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatAccessory.swift; sourceTree = "<group>"; };
 		FCB19452231598DA007120AF /* ChatAccessory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatAccessory.xib; sourceTree = "<group>"; };
 		FCB19453231598DA007120AF /* ChatTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTable.swift; sourceTree = "<group>"; };
+		FCC247A324E1548F0099605D /* PC_Contact_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Contact_ViewController.swift; sourceTree = "<group>"; };
+		FCC247A424E1548F0099605D /* PC_Contact_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Contact_ViewController.xib; sourceTree = "<group>"; };
 		FCC4251023890EB500D90839 /* NotificationService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationService.entitlements; sourceTree = "<group>"; };
 		FCC73DBE2305B59F004E87CA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		FCC73DC02305B59F004E87CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -222,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA929B2240E55B30098BC45 /* WebKit.framework in Frameworks */,
 				0CD26F75E4DE0792341DCD57 /* Pods_PCTT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +270,7 @@
 		E78C415BAAF8D208F5B2D7EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCA929B1240E55B30098BC45 /* WebKit.framework */,
 				9A03BA6C8FBF6A0859CCBEE7 /* Pods_PCTT.framework */,
 			);
 			name = Frameworks;
@@ -280,6 +310,16 @@
 				FC5A3A0923D852D700F8F108 /* PC_Update_ViewController.xib */,
 				FC5DAA2D23D8A2E800163031 /* OffLine_ViewController.swift */,
 				FC5DAA2C23D8A2E800163031 /* OffLine_ViewController.xib */,
+				FCC247A324E1548F0099605D /* PC_Contact_ViewController.swift */,
+				FCC247A424E1548F0099605D /* PC_Contact_ViewController.xib */,
+				FC49139224E2744000F1967A /* PC_Disaster_ViewController.swift */,
+				FC49139324E2744000F1967A /* PC_Disaster_ViewController.xib */,
+				FC49139B24E27D4D00F1967A /* PC_Disaster_Map_ViewController.swift */,
+				FC49139C24E27D4D00F1967A /* PC_Disaster_Map_ViewController.xib */,
+				FC49139924E276DA00F1967A /* PC_Disaster_Tab_ViewController.swift */,
+				FC4913A124E285FC00F1967A /* Cells.xib */,
+				FC4913A324E469A800F1967A /* Disaster_Cell.xib */,
+				FC4913A924E5A93D00F1967A /* Disaster_Detail */,
 			);
 			path = PCTT;
 			sourceTree = "<group>";
@@ -336,6 +376,16 @@
 			path = MAIN;
 			sourceTree = "<group>";
 		};
+		FC4913A924E5A93D00F1967A /* Disaster_Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FC4913A524E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift */,
+				FC4913AA24E5A98300F1967A /* PC_Doc_ViewController.swift */,
+				FC4913AB24E5A98300F1967A /* PC_Doc_ViewController.xib */,
+			);
+			name = Disaster_Detail;
+			sourceTree = "<group>";
+		};
 		FC5D981722F54134006FA3F1 = {
 			isa = PBXGroup;
 			children = (
@@ -350,7 +400,7 @@
 		FC5D982122F54134006FA3F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC5D982022F54134006FA3F1 /* Giám sát thiên tai.app */,
+				FC5D982022F54134006FA3F1 /* VNDMS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,6 +411,7 @@
 				FC1B9B3722FBCA3100E65F58 /* PCTT.entitlements */,
 				FC1FEA762394F2D700E65443 /* style_json.json */,
 				FC1B9B3822FBCBBC00E65F58 /* GoogleService-Info.plist */,
+				FC49139F24E2854700F1967A /* format.plist */,
 				FC5D983522F554EB006FA3F1 /* CONTROLLER */,
 				FC5D982322F54134006FA3F1 /* AppDelegate.swift */,
 				FC269A1B2378600400EEA392 /* NavViewController.swift */,
@@ -439,7 +490,7 @@
 			);
 			name = PCTT;
 			productName = PCTT;
-			productReference = FC5D982022F54134006FA3F1 /* Giám sát thiên tai.app */;
+			productReference = FC5D982022F54134006FA3F1 /* VNDMS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -496,6 +547,7 @@
 				FC235AD72382CABD0093A108 /* PC_List_Event_ViewController.xib in Resources */,
 				FCFF18D02328ACF1001DF8A2 /* TG_Empty_Cell.xib in Resources */,
 				FC1B307122F6EEF6002E873F /* PC_Main_ViewController.xib in Resources */,
+				FCC247A624E1548F0099605D /* PC_Contact_ViewController.xib in Resources */,
 				FC1B9B3922FBCBBC00E65F58 /* GoogleService-Info.plist in Resources */,
 				FC250D05230103F4008AB980 /* PC_Global_ViewController.xib in Resources */,
 				2DB6B1AD2330B4FB0036A26A /* PC_Station_Cell6.xib in Resources */,
@@ -509,6 +561,8 @@
 				FCA5F32B2371DAB700274600 /* PC_Info_Cell.xib in Resources */,
 				FC269A1E23786EEC00EEA392 /* TG_Map_Cell.xib in Resources */,
 				FCEDD7E122F9E19500DC4613 /* PC_Notification_ViewController.xib in Resources */,
+				FC4913A424E469A800F1967A /* Disaster_Cell.xib in Resources */,
+				FC49139524E2744000F1967A /* PC_Disaster_ViewController.xib in Resources */,
 				FC6197B3238EDF2900155EF1 /* AP_Map_ViewController.xib in Resources */,
 				FC69937822FB503F00C62D42 /* PC_Station_Cell0.xib in Resources */,
 				FC1AC73E23708CA900B11288 /* PC_Map_ViewController.xib in Resources */,
@@ -521,8 +575,10 @@
 				FC5D983922F55513006FA3F1 /* PC_Login_ViewController.xib in Resources */,
 				FC1DD77F23787A0200C457C9 /* PC_Inner_Map_ViewController.xib in Resources */,
 				FC1AA23B22F879E300C09E02 /* PC_Main_Cell.xib in Resources */,
+				FC4913A224E285FC00F1967A /* Cells.xib in Resources */,
 				FC5D982B22F54137006FA3F1 /* Assets.xcassets in Resources */,
 				FC6197B5238EE83800155EF1 /* Annotation.xib in Resources */,
+				FC49139E24E27D4D00F1967A /* PC_Disaster_Map_ViewController.xib in Resources */,
 				2DB6B1B02330B4FB0036A26A /* PC_Station_Cell3.xib in Resources */,
 				2DB6B1AB2330B4FB0036A26A /* PC_Station_Cell5.xib in Resources */,
 				FC1A516622FE8EE200298B28 /* PC_ForeCast_Cell.xib in Resources */,
@@ -537,7 +593,9 @@
 				FC1B307522F71C24002E873F /* PC_Setting_ViewController.xib in Resources */,
 				FC230EE722FD1A410082B989 /* custom_info_bubble.9.png in Resources */,
 				FC31018F23195B7F009DBF95 /* EM_Menu.xib in Resources */,
+				FC4913AD24E5A98300F1967A /* PC_Doc_ViewController.xib in Resources */,
 				FC18572122FFEF1700DB818C /* PC_Weather_Cell.xib in Resources */,
+				FC4913A024E2854700F1967A /* format.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +672,7 @@
 				FC5DAA2F23D8A2E800163031 /* OffLine_ViewController.swift in Sources */,
 				FC18571E22FFED6000DB818C /* PC_ForeCast_7_Cell.swift in Sources */,
 				FC269A1C2378600400EEA392 /* NavViewController.swift in Sources */,
+				FCC247A524E1548F0099605D /* PC_Contact_ViewController.swift in Sources */,
 				FCE792922375D4880034684F /* TG_Intro_Question_ViewController.swift in Sources */,
 				FCB19457231598DA007120AF /* ChatTable.swift in Sources */,
 				FC1AC73D23708CA900B11288 /* PC_Map_ViewController.swift in Sources */,
@@ -625,21 +684,26 @@
 				FC235ADA2382CE7F0093A108 /* PC_Upload_ViewController.swift in Sources */,
 				FC5D982622F54134006FA3F1 /* ViewController.swift in Sources */,
 				FC31018E23195B7F009DBF95 /* EM_MenuView.m in Sources */,
+				FC4913A724E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift in Sources */,
 				FC1AC73923708C6100B11288 /* TG_Root_ViewController.swift in Sources */,
 				FC193A9E22FCB5EF00CDF719 /* PC_ForCast_ViewController.swift in Sources */,
+				FC4913AC24E5A98300F1967A /* PC_Doc_ViewController.swift in Sources */,
 				FCB19455231598DA007120AF /* ChatAccessory.swift in Sources */,
 				FC235AD62382CABD0093A108 /* PC_List_Event_ViewController.swift in Sources */,
 				FC5D982422F54134006FA3F1 /* AppDelegate.swift in Sources */,
 				FC6197B2238EDF2900155EF1 /* AP_Map_ViewController.m in Sources */,
 				FC30E0E52394C23B009174E4 /* WMSTileLayer.m in Sources */,
 				FC207BDF22F5D1330084DC88 /* Marcro.swift in Sources */,
+				FC49139D24E27D4D00F1967A /* PC_Disaster_Map_ViewController.swift in Sources */,
 				FC2EA11B237E4C44004B01AE /* PC_Inner_Info_ViewController.swift in Sources */,
+				FC49139A24E276DA00F1967A /* PC_Disaster_Tab_ViewController.swift in Sources */,
 				FC69937522FB4A8200C62D42 /* PC_Station_ViewController.swift in Sources */,
 				FC250D04230103F4008AB980 /* PC_Global_ViewController.swift in Sources */,
 				FC1B306922F6AF13002E873F /* PC_Forgot_ViewController.swift in Sources */,
 				FC8F4AEF230FE9420082F3B2 /* PC_FeedBack_ViewController.swift in Sources */,
 				FC5A3A0A23D852D700F8F108 /* PC_Update_ViewController.swift in Sources */,
 				FC1B307022F6EEF6002E873F /* PC_Main_ViewController.swift in Sources */,
+				FC49139424E2744000F1967A /* PC_Disaster_ViewController.swift in Sources */,
 				FC1B307A22F73F3D002E873F /* PC_ChangePass_ViewController.swift in Sources */,
 				FC1AC74123708CC100B11288 /* TG_Intro_ViewController.swift in Sources */,
 				FC1AC74823709C9C00B11288 /* PC_Info_ViewController.swift in Sources */,
@@ -794,7 +858,7 @@
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development: Dinh Nguyen (9NC2Q4ER8P)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 12;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GAJPP6PZBM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -807,9 +871,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
-				PRODUCT_NAME = "Giám sát thiên tai";
+				PRODUCT_NAME = VNDMS;
 				PROVISIONING_PROFILE_SPECIFIER = monitering_dev;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PCTT/PCTT-Bridging-Header.h";
@@ -830,7 +894,7 @@
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: VIETGIS - GIS SOLUTION AND TECHNOLOGY COMPANY LIMITED (GAJPP6PZBM)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 12;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GAJPP6PZBM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -843,9 +907,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
-				PRODUCT_NAME = "Giám sát thiên tai";
+				PRODUCT_NAME = VNDMS;
 				PROVISIONING_PROFILE_SPECIFIER = monitering_dis;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PCTT/PCTT-Bridging-Header.h";

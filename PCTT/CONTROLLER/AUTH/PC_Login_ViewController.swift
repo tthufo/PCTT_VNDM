@@ -149,9 +149,9 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
 //                        self.setUpLogin()
 //                    }
            
-            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/syxn52llcvmrux7/PCTT_WebView_PCTT_VER_3.plist", "overrideAlert":"1"], withCache: { (cache) in
+            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/1khomigge0ugdbd/PCTT_WebView_PCTT_VER_4.plist", "overrideAlert":"1"], withCache: { (cache) in
                                             
-                    }, andCompletion: { (response, errorCode, error, isValid, object) in
+                }, andCompletion: { (response, errorCode, error, isValid, object) in
                         
                         if error != nil {
                             Information.check = "1"
@@ -187,7 +187,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                         
 //                        self.loginCover.alpha = (dict! as NSDictionary).getValueFromKey("show") == "1" ? 1 : 0
                                                 
-                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhIiwibmJmIjoxNTgwODMwMDMzLCJleHAiOjE1ODE0MzQ4MzMsImlhdCI6MTU4MDgzMDAzM30.osqpYZ1jZ12Y96kpE_3_CkxkHoOCT4hRs2rSfbg9aRQ"] as [String : Any]
+                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhIiwibmJmIjoxNTgzMjk0NDgyLCJleHAiOjE1ODM4OTkyODIsImlhdCI6MTU4MzI5NDQ4Mn0.mXjsEcy4dcdcPaZsII8qSnN_GJXB5u-Oo29_pKKYLpg"] as [String : Any]
                         
                         if (dict! as NSDictionary).getValueFromKey("show") == "0" {
                             
@@ -324,6 +324,8 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
             Information.saveToken()
             
             self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: true)
+            
+            print(result)
             
 //            if Information.userInfo?.getValueFromKey("count_province") == "1" {
 //                self.navigationController?.pushViewController(PC_Station_ViewController.init(), animated: true)

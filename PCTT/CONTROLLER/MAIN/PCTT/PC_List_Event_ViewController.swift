@@ -67,12 +67,17 @@ class PC_List_Event_ViewController: UIViewController {
                                                   "overrideLoading":"1",
                                                   "host":self], withCache: { (cacheString) in
       }, andCompletion: { (response, errorCode, error, isValid, object) in
+        
+        
+        print("==>", response)
+
           let result = response?.dictionize() ?? [:]
                                          
           if result.getValueFromKey("status") != "OK" {
               self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
               return
           }
+        
           
           self.dataList.removeAllObjects()
         

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -53,6 +53,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" tag="15" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="4BW-Ks-jV5">
+                        <rect key="frame" x="296" y="20.5" width="19" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="DOa-GK-HiJ"/>
+                            <constraint firstAttribute="width" constant="19" id="hbE-cy-Ifz"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
@@ -62,9 +69,11 @@
                     <constraint firstItem="Bbk-6d-H2i" firstAttribute="top" secondItem="4Pv-S3-kxq" secondAttribute="bottom" constant="6" id="8kH-2x-nA9"/>
                     <constraint firstAttribute="trailing" secondItem="4Pv-S3-kxq" secondAttribute="trailing" constant="16" id="9et-P9-bBb"/>
                     <constraint firstItem="rC2-pM-eRm" firstAttribute="top" secondItem="Bbk-6d-H2i" secondAttribute="bottom" constant="10.5" id="DoI-Ti-6f4"/>
+                    <constraint firstAttribute="trailing" secondItem="4BW-Ks-jV5" secondAttribute="trailing" constant="5" id="GVo-i8-YuQ"/>
                     <constraint firstAttribute="bottom" secondItem="rC2-pM-eRm" secondAttribute="bottom" id="UFq-9U-Hwq"/>
                     <constraint firstItem="rC2-pM-eRm" firstAttribute="leading" secondItem="ohD-2w-gRU" secondAttribute="leading" constant="5" id="WLn-Cu-zv5"/>
                     <constraint firstItem="4Pv-S3-kxq" firstAttribute="top" secondItem="ohD-2w-gRU" secondAttribute="top" constant="9" id="X25-PK-GRz"/>
+                    <constraint firstItem="4BW-Ks-jV5" firstAttribute="centerY" secondItem="ohD-2w-gRU" secondAttribute="centerY" id="afz-E1-bfO"/>
                     <constraint firstItem="4Pv-S3-kxq" firstAttribute="leading" secondItem="XBw-KW-zuW" secondAttribute="trailing" constant="15" id="eAy-18-Ted"/>
                     <constraint firstAttribute="trailing" secondItem="Bbk-6d-H2i" secondAttribute="trailing" constant="16" id="vhH-YZ-1sc"/>
                     <constraint firstItem="XBw-KW-zuW" firstAttribute="top" secondItem="ohD-2w-gRU" secondAttribute="top" constant="15" id="wDw-ta-ZhL"/>
@@ -74,4 +83,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="-156.02678571428569"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="drop_arrow_right" width="33" height="33"/>
+    </resources>
 </document>

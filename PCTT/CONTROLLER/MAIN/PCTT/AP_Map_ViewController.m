@@ -20,7 +20,7 @@
 
 #import "WMSTileLayer.h"
 
-#import "Giám_sát_thiên_tai-Swift.h"
+#import "VNDMS-Swift.h"
 
 //#import "PCTT-Swift.h"
 

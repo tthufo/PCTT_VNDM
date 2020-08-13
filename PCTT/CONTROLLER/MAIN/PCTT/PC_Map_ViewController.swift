@@ -24,7 +24,9 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
                                     ["title": "Bản đồ nền", "img": "ic_bandonen", "category": "vnmap"],
                                     ["title": "Hỏi & đáp", "img": "ic_hoidap"],
                                     ["title": "Đ.điểm Y.thích", "img": "yeu_thich"],
-                                    ["title": "Cập nhật dữ liệu", "img": "update"]
+                                    ["title": "Cập nhật dữ liệu", "img": "update"],
+                                    ["title": "Sự kiện T.Tai", "img": "ic_sukienthientai"],
+                                    ["title": "Danh bạ", "img": "ic_danhba"]
     ]
     
     @IBOutlet var logoLeft: UIImageView!
@@ -108,21 +110,7 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-//        switch indexPath.item {
-//        case 0:
-//
-//            break
-//        case 6:
-//
-//        break
-//        case 8:
-//
-//            break
-//        default:
-//            break
-//        }
-        
+
         let data = dataList[indexPath.item] as! NSDictionary
         
         if indexPath.item == 8 {
@@ -137,6 +125,12 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
             self.navigationController?.pushViewController(map, animated: true)
         } else if indexPath.item == 10 {
             self.navigationController?.pushViewController(PC_Update_ViewController.init(), animated: true)
+        } else if indexPath.item == 11 {
+            let tab = PC_Disaster_Tab_ViewController.init()
+            self.navigationController?.pushViewController(tab, animated: true)
+        } else if indexPath.item == 12 {
+            let contact = PC_Contact_ViewController.init()
+            self.navigationController?.pushViewController(contact, animated: true)
         } else {
             let map = PC_Inner_Map_ViewController.init()
             map.category = data.getValueFromKey("category") as NSString?
