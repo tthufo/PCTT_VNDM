@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PC_Doc_ViewController" customModule="VNDMS" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="Qz0-H9-3mB" id="Tkv-Oe-67o"/>
                 <outlet property="view" destination="NA2-3Y-Anr" id="Aha-8K-BUB"/>
             </connections>
         </placeholder>
@@ -84,6 +85,10 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qz0-H9-3mB">
                     <rect key="frame" x="0.0" y="152" width="414" height="710"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="fAg-KV-7kd"/>
+                        <outlet property="delegate" destination="-1" id="c86-Zb-v3M"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

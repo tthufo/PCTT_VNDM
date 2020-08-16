@@ -28,6 +28,8 @@ class PC_Disaster_Map_ViewController: UIViewController, WKUIDelegate, WKNavigati
     
     var layerId: String = ""
     
+    var subLayerId: String = ""
+
     override func viewDidLoad() {
        super.viewDidLoad()
        
@@ -62,9 +64,9 @@ class PC_Disaster_Map_ViewController: UIViewController, WKUIDelegate, WKNavigati
         
         let type = year != "" || listtypeid != "" || keyword != "" ? "list" : "current"
         
-        let param = "http://vndms.gisgo.vn/?cmd=disaster&type=%@&year=%@&listtypeid=%@&id=%@&layerids=%@&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNTk3MDY3NTIzLCJleHAiOjE1OTc2NzIzMjMsImlhdCI6MTU5NzA2NzUyM30.Gj-prrOXEinRrAm8hCsMvK8N2CKi5T3IGsVJmLaLl8I&keyword=%@".format(parameters: type, year, listtypeid, eventId, layerId, keyword)
-
-        print("--->", param)
+        let param = "http://vndms.gisgo.vn/?cmd=disaster&type=%@&year=%@&listtypeid=%@&subLayerId=%@&id=%@&layerids=%@&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNTk3MDY3NTIzLCJleHAiOjE1OTc2NzIzMjMsImlhdCI6MTU5NzA2NzUyM30.Gj-prrOXEinRrAm8hCsMvK8N2CKi5T3IGsVJmLaLl8I&keyword=%@".format(parameters: type, year, listtypeid, subLayerId, eventId, layerId, keyword)
+        
+//        print(param)
         
         let link = URL(string: (param as NSString).encodeUrl())!
         let request = URLRequest(url: link)
@@ -76,17 +78,25 @@ class PC_Disaster_Map_ViewController: UIViewController, WKUIDelegate, WKNavigati
         self.navigationController?.popViewController(animated: true)
     }
     
-    
-//    func webView(_ webView: WKWebView, didFinish  navigation: WKNavigation!) {
-//        let url = webView.url?.absoluteString
-//    }
-    
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        print("===>", navigationAction.request)
-        if (navigationAction.request.url?.absoluteString.contains(find: "windy://"))! {
-            let disTab = PC_Disaster_Detail_Tab_ViewController.init()
-            self.navigationController?.pushViewController(disTab, animated: true)
+        if navigationAction.navigationType == WKNavigationType.linkActivated {
+
+            let link = navigationAction.request.url?.absoluteString
+            
+              if (link!.contains(find: "windy://")) {
+                  let tabId = link?.components(separatedBy: "=").last!
+                  DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    let disTab = PC_Disaster_Detail_Tab_ViewController.init()
+                    disTab.pointId = tabId!
+                    disTab.requestPointDetail()
+                    self.navigationController?.pushViewController(disTab, animated: true)
+                 }
+              }
+            
+            decisionHandler(.cancel)
+            return
         }
+//        print("no link")
         decisionHandler(.allow)
     }
 }

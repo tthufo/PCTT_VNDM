@@ -27,8 +27,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_sktt" translatesAutoresizingMaskIntoConstraints="NO" id="BkO-al-gcy">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BkO-al-gcy">
                     <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                    <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaD-if-4PO">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
@@ -68,7 +69,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4YK-gq-aNm">
-                    <rect key="frame" x="0.0" y="108" width="414" height="553"/>
+                    <rect key="frame" x="0.0" y="178" width="414" height="483"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Kav-fE-Jst"/>
@@ -123,11 +124,11 @@
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="0cS-zN-dzN"/>
                 </view>
-                <view alpha="0.64000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8h-30-dhO">
-                    <rect key="frame" x="0.0" y="108" width="414" height="0.0"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8h-30-dhO">
+                    <rect key="frame" x="0.0" y="108" width="414" height="70"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" id="3wA-st-QN8"/>
+                        <constraint firstAttribute="height" constant="70" id="3wA-st-QN8"/>
                     </constraints>
                 </view>
                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wda-Mi-7dq">
@@ -137,25 +138,25 @@
                         <constraint firstAttribute="height" constant="75" id="zWM-O2-I6t"/>
                     </constraints>
                 </view>
-                <view clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKB-16-oP0">
-                    <rect key="frame" x="37" y="122" width="340" height="43"/>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKB-16-oP0">
+                    <rect key="frame" x="25" y="122" width="364" height="43"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập tên tỉnh cần tìm ..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IQ1-cM-G6g">
-                            <rect key="frame" x="51" y="7" width="282" height="30"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm kiếm ..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IQ1-cM-G6g">
+                            <rect key="frame" x="51" y="7" width="306" height="30"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="fDO-Qa-B1K"/>
                             </connections>
                         </textField>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_search" translatesAutoresizingMaskIntoConstraints="NO" id="Cyz-sW-vc0">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mag_black" translatesAutoresizingMaskIntoConstraints="NO" id="Cyz-sW-vc0">
                             <rect key="frame" x="8" y="6" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="XTa-gU-2tM"/>
@@ -163,7 +164,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.63921568630000003" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Cyz-sW-vc0" firstAttribute="top" secondItem="SKB-16-oP0" secondAttribute="top" constant="6" id="8yH-7Q-erJ"/>
                         <constraint firstItem="IQ1-cM-G6g" firstAttribute="leading" secondItem="Cyz-sW-vc0" secondAttribute="trailing" constant="11" id="EMu-Q0-Llr"/>
@@ -175,7 +176,13 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
@@ -241,7 +248,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="LW7-sd-1eB" secondAttribute="bottom" constant="15" id="Cpf-s8-oYb"/>
                         <constraint firstItem="LW7-sd-1eB" firstAttribute="leading" secondItem="lie-ii-A7I" secondAttribute="leading" id="EM8-TR-Hup"/>
@@ -268,7 +275,7 @@
                 <constraint firstItem="l8h-30-dhO" firstAttribute="leading" secondItem="qka-2g-tcy" secondAttribute="leading" id="1zd-on-xcJ"/>
                 <constraint firstItem="uaD-if-4PO" firstAttribute="leading" secondItem="qka-2g-tcy" secondAttribute="leading" id="4Zr-9e-jyb"/>
                 <constraint firstItem="4YK-gq-aNm" firstAttribute="top" secondItem="l8h-30-dhO" secondAttribute="bottom" id="5Id-ep-G1u"/>
-                <constraint firstItem="qka-2g-tcy" firstAttribute="trailing" secondItem="SKB-16-oP0" secondAttribute="trailing" constant="37" id="5js-VY-gAv"/>
+                <constraint firstItem="qka-2g-tcy" firstAttribute="trailing" secondItem="SKB-16-oP0" secondAttribute="trailing" constant="25" id="5js-VY-gAv"/>
                 <constraint firstItem="uaD-if-4PO" firstAttribute="trailing" secondItem="qka-2g-tcy" secondAttribute="trailing" id="6gF-W1-vHg"/>
                 <constraint firstItem="4YK-gq-aNm" firstAttribute="leading" secondItem="qka-2g-tcy" secondAttribute="leading" id="7iC-LF-y9e"/>
                 <constraint firstItem="wda-Mi-7dq" firstAttribute="leading" secondItem="qka-2g-tcy" secondAttribute="leading" id="AkT-fN-98l"/>
@@ -282,7 +289,7 @@
                 <constraint firstItem="BkO-al-gcy" firstAttribute="leading" secondItem="qka-2g-tcy" secondAttribute="leading" id="aQy-1r-7u2"/>
                 <constraint firstItem="wda-Mi-7dq" firstAttribute="trailing" secondItem="qka-2g-tcy" secondAttribute="trailing" id="ahv-tl-4Ml"/>
                 <constraint firstItem="Tev-5b-zIL" firstAttribute="trailing" secondItem="qka-2g-tcy" secondAttribute="trailing" id="dzW-aC-Dn8"/>
-                <constraint firstItem="SKB-16-oP0" firstAttribute="leading" secondItem="qka-2g-tcy" secondAttribute="leading" constant="37" id="ew6-aK-fj6"/>
+                <constraint firstItem="SKB-16-oP0" firstAttribute="leading" secondItem="qka-2g-tcy" secondAttribute="leading" constant="25" id="ew6-aK-fj6"/>
                 <constraint firstItem="l8h-30-dhO" firstAttribute="trailing" secondItem="qka-2g-tcy" secondAttribute="trailing" id="gtx-g5-icD"/>
                 <constraint firstItem="lie-ii-A7I" firstAttribute="top" secondItem="4YK-gq-aNm" secondAttribute="bottom" id="ieU-qr-pBZ"/>
                 <constraint firstItem="yZV-D2-pVg" firstAttribute="leading" secondItem="qka-2g-tcy" secondAttribute="leading" constant="10" id="lNf-IT-3ac"/>
@@ -298,11 +305,10 @@
         </view>
     </objects>
     <resources>
-        <image name="bg_sktt" width="240" height="349"/>
         <image name="bg_text_header" width="201.33332824707031" height="16.666666030883789"/>
+        <image name="ic_mag_black" width="77" height="77"/>
         <image name="ic_nav_search" width="50" height="50"/>
         <image name="icon_back" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="icon_search" width="33.333332061767578" height="33.333332061767578"/>
         <image name="logo" width="76" height="76"/>
     </resources>
 </document>

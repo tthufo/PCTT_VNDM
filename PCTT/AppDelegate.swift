@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let login = PC_Login_ViewController.init()
         
-        let nav = UINavigationController.init(rootViewController: login)
+        let nav = NavViewController.init(rootViewController: login)
 
         nav.isNavigationBarHidden =  
         

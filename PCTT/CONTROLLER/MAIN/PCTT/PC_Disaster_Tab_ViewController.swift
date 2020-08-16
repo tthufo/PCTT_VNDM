@@ -62,6 +62,11 @@ class PC_Disaster_Tab_ViewController: UITabBarController {
         self.selectedIndex = 1
     }
     
+    func setMap(subLayerId: String, layerId: String) {
+        (self.viewControllers?.last as! PC_Disaster_Map_ViewController).layerId = layerId
+        (self.viewControllers?.last as! PC_Disaster_Map_ViewController).subLayerId = subLayerId
+    }
+    
     func rootSelect(index: Int) {
         self.selectedIndex = index
         

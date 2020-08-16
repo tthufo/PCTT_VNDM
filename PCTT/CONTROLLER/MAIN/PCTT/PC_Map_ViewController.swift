@@ -14,20 +14,40 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet var headerImg: UIImageView!
     
-    var dataList: NSMutableArray = [["title": "Quan trắc", "img": "ic_quantrac", "category": "1"],
+//    var dataList: NSMutableArray = [["title": "Quan trắc", "img": "ic_quantrac", "category": "1"],
+//                                    ["title": "Cảnh báo", "img": "ic_canhbao", "category": "2"],
+//                                    ["title": "GS Hồ chứa", "img": "ic_hochua", "category": "4"],
+//                                    ["title": "GS Đê điều", "img": "ic_dedieu", "category": "5"],
+//                                    ["title": "GS tầu thuyền", "img": "ic_tauthuyen", "category": "6"],
+//                                    ["title": "Đường đi bão", "img": "ic_duongdibao", "category": "3"],
+//                                    ["title": "Hình ảnh T.Tai", "img": "ic_hathientai"],
+//                                    ["title": "Bản đồ nền", "img": "ic_bandonen", "category": "vnmap"],
+//                                    ["title": "Hỏi & đáp", "img": "ic_hoidap"],
+//                                    ["title": "Đ.điểm Y.thích", "img": "yeu_thich"],
+//                                    ["title": "Cập nhật dữ liệu", "img": "update"],
+//                                    ["title": "Sự kiện T.Tai", "img": "ic_sukienthientai"],
+//                                    ["title": "Danh bạ", "img": "ic_danhba"]
+//    ]
+//
+    var dataList: NSMutableArray = [
+                                    ["title": "Sự kiện T.Tai", "img": "ic_sukienthientai"], // 0
                                     ["title": "Cảnh báo", "img": "ic_canhbao", "category": "2"],
-                                    ["title": "GS Hồ chứa", "img": "ic_hochua", "category": "4"],
-                                    ["title": "GS Đê điều", "img": "ic_dedieu", "category": "5"],
-                                    ["title": "GS tầu thuyền", "img": "ic_tauthuyen", "category": "6"],
-                                    ["title": "Đường đi bão", "img": "ic_duongdibao", "category": "3"],
-                                    ["title": "Hình ảnh T.Tai", "img": "ic_hathientai"],
-                                    ["title": "Bản đồ nền", "img": "ic_bandonen", "category": "vnmap"],
-                                    ["title": "Hỏi & đáp", "img": "ic_hoidap"],
-                                    ["title": "Đ.điểm Y.thích", "img": "yeu_thich"],
-                                    ["title": "Cập nhật dữ liệu", "img": "update"],
-                                    ["title": "Sự kiện T.Tai", "img": "ic_sukienthientai"],
-                                    ["title": "Danh bạ", "img": "ic_danhba"]
-    ]
+                                     ["title": "Quan trắc", "img": "ic_quantrac", "category": "1"],
+                                     
+                                      ["title": "GS Hồ chứa", "img": "ic_hochua", "category": "4"],
+                                      ["title": "GS Đê điều", "img": "ic_dedieu", "category": "5"],
+                                      ["title": "GS tầu thuyền", "img": "ic_tauthuyen", "category": "6"],
+                                      
+//                                      ["title": "Đường đi bão", "img": "ic_duongdibao", "category": "3"],
+                                      ["title": "Cập nhật dữ liệu", "img": "update"],
+                                      ["title": "Hình ảnh T.Tai", "img": "ic_hathientai"],
+                                      ["title": "Đ.điểm Y.thích", "img": "yeu_thich"],
+                                      
+                                      ["title": "Danh bạ", "img": "ic_danhba"],
+                                      ["title": "Bản đồ nền", "img": "ic_bandonen", "category": "vnmap"],
+                                      ["title": "Tài liệu tham khảo", "img": "ic_documents"],
+//                                      ["title": "Hỏi & đáp", "img": "ic_hoidap"],
+      ]
     
     @IBOutlet var logoLeft: UIImageView!
        
@@ -113,28 +133,47 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
 
         let data = dataList[indexPath.item] as! NSDictionary
         
-        if indexPath.item == 8 {
-            let question = TG_Intro_ViewController.init()
-            question.isIntro = false
-            self.navigationController?.pushViewController(question, animated: true)
-        } else if indexPath.item == 6 {
-            let event = PC_List_Event_ViewController.init()
-            self.navigationController?.pushViewController(event, animated: true)
-        } else if indexPath.item == 9 {
-            let map = AP_Map_ViewController.init()
-            self.navigationController?.pushViewController(map, animated: true)
-        } else if indexPath.item == 10 {
-            self.navigationController?.pushViewController(PC_Update_ViewController.init(), animated: true)
-        } else if indexPath.item == 11 {
+//        if indexPath.item == 8 {
+//            let question = TG_Intro_ViewController.init()
+//            question.isIntro = false
+//            self.navigationController?.pushViewController(question, animated: true)
+//        } else if indexPath.item == 6 {
+//            let event = PC_List_Event_ViewController.init()
+//            self.navigationController?.pushViewController(event, animated: true)
+//        } else if indexPath.item == 9 {
+//            let map = AP_Map_ViewController.init()
+//            self.navigationController?.pushViewController(map, animated: true)
+//        } else if indexPath.item == 10 {
+//            self.navigationController?.pushViewController(PC_Update_ViewController.init(), animated: true)
+//        } else if indexPath.item == 0 {
+//            let tab = PC_Disaster_Tab_ViewController.init()
+//            self.navigationController?.pushViewController(tab, animated: true)
+//        } else if indexPath.item == 12 {
+//            let contact = PC_Contact_ViewController.init()
+//            self.navigationController?.pushViewController(contact, animated: true)
+        
+        if indexPath.item == 0 {
             let tab = PC_Disaster_Tab_ViewController.init()
             self.navigationController?.pushViewController(tab, animated: true)
-        } else if indexPath.item == 12 {
-            let contact = PC_Contact_ViewController.init()
-            self.navigationController?.pushViewController(contact, animated: true)
+        } else if indexPath.item == 6 {
+            self.navigationController?.pushViewController(PC_Update_ViewController.init(), animated: true)
+        } else if indexPath.item == 7 {
+            let event = PC_List_Event_ViewController.init()
+            self.navigationController?.pushViewController(event, animated: true)
+        } else if indexPath.item == 8 {
+            let map = AP_Map_ViewController.init()
+            self.navigationController?.pushViewController(map, animated: true)
+        }  else if indexPath.item == 9 {
+            let map = PC_Contact_ViewController.init()
+            self.navigationController?.pushViewController(map, animated: true)
+        } else if indexPath.item == 11 {
+            self.showToast("Chức năng đang xây dựng", andPos: 0)
         } else {
             let map = PC_Inner_Map_ViewController.init()
             map.category = data.getValueFromKey("category") as NSString?
             self.navigationController?.pushViewController(map, animated: true)
         }
+        
+        //1,2,3,4,5
     }
 }

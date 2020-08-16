@@ -21,7 +21,6 @@ class PC_Register_ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
     @IBOutlet var logoCell: UITableViewCell!
     
     @IBOutlet var logo: UIImageView!

@@ -74,6 +74,19 @@
 		FC4913A724E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4913A524E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift */; };
 		FC4913AC24E5A98300F1967A /* PC_Doc_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4913AA24E5A98300F1967A /* PC_Doc_ViewController.swift */; };
 		FC4913AD24E5A98300F1967A /* PC_Doc_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4913AB24E5A98300F1967A /* PC_Doc_ViewController.xib */; };
+		FC4913B024E6249200F1967A /* PC_Project_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4913AE24E6249200F1967A /* PC_Project_ViewController.swift */; };
+		FC4913B124E6249200F1967A /* PC_Project_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4913AF24E6249200F1967A /* PC_Project_ViewController.xib */; };
+		FC4913B424E624B900F1967A /* PC_Layer_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4913B224E624B900F1967A /* PC_Layer_ViewController.swift */; };
+		FC4913B524E624B900F1967A /* PC_Layer_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4913B324E624B900F1967A /* PC_Layer_ViewController.xib */; };
+		FC4913B824E624DB00F1967A /* PC_Report_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4913B624E624DB00F1967A /* PC_Report_ViewController.swift */; };
+		FC4913B924E624DB00F1967A /* PC_Report_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4913B724E624DB00F1967A /* PC_Report_ViewController.xib */; };
+		FC4913BC24E624FD00F1967A /* PC_HD_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4913BA24E624FD00F1967A /* PC_HD_ViewController.swift */; };
+		FC4913BD24E624FD00F1967A /* PC_HD_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4913BB24E624FD00F1967A /* PC_HD_ViewController.xib */; };
+		FC4913BF24E64AAA00F1967A /* Layer_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4913BE24E64AA900F1967A /* Layer_Cell.xib */; };
+		FC4913C124E64D9E00F1967A /* Layer_Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4913C024E64D9E00F1967A /* Layer_Header.xib */; };
+		FC4C6A4124E8F24F00BD84D1 /* PC_New_Map_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C6A3F24E8F24F00BD84D1 /* PC_New_Map_ViewController.swift */; };
+		FC4C6A4224E8F24F00BD84D1 /* PC_New_Map_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4C6A4024E8F24F00BD84D1 /* PC_New_Map_ViewController.xib */; };
+		FC4C6A4424E93EE600BD84D1 /* Report_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4C6A4324E93EE600BD84D1 /* Report_Cell.xib */; };
 		FC59DA49237004FA00F8FA35 /* PC_Register_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */; };
 		FC59DA4A237004FA00F8FA35 /* PC_Register_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */; };
 		FC5A3A0A23D852D700F8F108 /* PC_Update_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */; };
@@ -200,6 +213,19 @@
 		FC4913A524E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Disaster_Detail_Tab_ViewController.swift; sourceTree = "<group>"; };
 		FC4913AA24E5A98300F1967A /* PC_Doc_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Doc_ViewController.swift; sourceTree = "<group>"; };
 		FC4913AB24E5A98300F1967A /* PC_Doc_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Doc_ViewController.xib; sourceTree = "<group>"; };
+		FC4913AE24E6249200F1967A /* PC_Project_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Project_ViewController.swift; sourceTree = "<group>"; };
+		FC4913AF24E6249200F1967A /* PC_Project_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Project_ViewController.xib; sourceTree = "<group>"; };
+		FC4913B224E624B900F1967A /* PC_Layer_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Layer_ViewController.swift; sourceTree = "<group>"; };
+		FC4913B324E624B900F1967A /* PC_Layer_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Layer_ViewController.xib; sourceTree = "<group>"; };
+		FC4913B624E624DB00F1967A /* PC_Report_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Report_ViewController.swift; sourceTree = "<group>"; };
+		FC4913B724E624DB00F1967A /* PC_Report_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Report_ViewController.xib; sourceTree = "<group>"; };
+		FC4913BA24E624FD00F1967A /* PC_HD_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_HD_ViewController.swift; sourceTree = "<group>"; };
+		FC4913BB24E624FD00F1967A /* PC_HD_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_HD_ViewController.xib; sourceTree = "<group>"; };
+		FC4913BE24E64AA900F1967A /* Layer_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Layer_Cell.xib; sourceTree = "<group>"; };
+		FC4913C024E64D9E00F1967A /* Layer_Header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Layer_Header.xib; sourceTree = "<group>"; };
+		FC4C6A3F24E8F24F00BD84D1 /* PC_New_Map_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_New_Map_ViewController.swift; sourceTree = "<group>"; };
+		FC4C6A4024E8F24F00BD84D1 /* PC_New_Map_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_New_Map_ViewController.xib; sourceTree = "<group>"; };
+		FC4C6A4324E93EE600BD84D1 /* Report_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Report_Cell.xib; sourceTree = "<group>"; };
 		FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Register_ViewController.swift; sourceTree = "<group>"; };
 		FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Register_ViewController.xib; sourceTree = "<group>"; };
 		FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Update_ViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +305,8 @@
 		FC1AC73A23708C8C00B11288 /* PCTT */ = {
 			isa = PBXGroup;
 			children = (
+				FC4C6A3F24E8F24F00BD84D1 /* PC_New_Map_ViewController.swift */,
+				FC4C6A4024E8F24F00BD84D1 /* PC_New_Map_ViewController.xib */,
 				FC1AC73B23708CA900B11288 /* PC_Map_ViewController.swift */,
 				FC1AC73C23708CA900B11288 /* PC_Map_ViewController.xib */,
 				FC269A1D23786EEC00EEA392 /* TG_Map_Cell.xib */,
@@ -382,6 +410,17 @@
 				FC4913A524E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift */,
 				FC4913AA24E5A98300F1967A /* PC_Doc_ViewController.swift */,
 				FC4913AB24E5A98300F1967A /* PC_Doc_ViewController.xib */,
+				FC4913AE24E6249200F1967A /* PC_Project_ViewController.swift */,
+				FC4913AF24E6249200F1967A /* PC_Project_ViewController.xib */,
+				FC4913B224E624B900F1967A /* PC_Layer_ViewController.swift */,
+				FC4913B324E624B900F1967A /* PC_Layer_ViewController.xib */,
+				FC4913B624E624DB00F1967A /* PC_Report_ViewController.swift */,
+				FC4913B724E624DB00F1967A /* PC_Report_ViewController.xib */,
+				FC4913BA24E624FD00F1967A /* PC_HD_ViewController.swift */,
+				FC4913BB24E624FD00F1967A /* PC_HD_ViewController.xib */,
+				FC4913BE24E64AA900F1967A /* Layer_Cell.xib */,
+				FC4913C024E64D9E00F1967A /* Layer_Header.xib */,
+				FC4C6A4324E93EE600BD84D1 /* Report_Cell.xib */,
 			);
 			name = Disaster_Detail;
 			sourceTree = "<group>";
@@ -552,8 +591,10 @@
 				FC250D05230103F4008AB980 /* PC_Global_ViewController.xib in Resources */,
 				2DB6B1AD2330B4FB0036A26A /* PC_Station_Cell6.xib in Resources */,
 				FC1B306A22F6AF13002E873F /* PC_Forgot_ViewController.xib in Resources */,
+				FC4C6A4224E8F24F00BD84D1 /* PC_New_Map_ViewController.xib in Resources */,
 				FC247D24238246480025D417 /* PC_FeedBack_New_ViewController.xib in Resources */,
 				FC18571F22FFED6000DB818C /* PC_ForeCast_7_Cell.xib in Resources */,
+				FC4913C124E64D9E00F1967A /* Layer_Header.xib in Resources */,
 				2DB6B1AF2330B4FB0036A26A /* PC_Station_Cell2.xib in Resources */,
 				FC5D982E22F54137006FA3F1 /* LaunchScreen.storyboard in Resources */,
 				FC1AC74223708CC100B11288 /* TG_Intro_ViewController.xib in Resources */,
@@ -564,6 +605,8 @@
 				FC4913A424E469A800F1967A /* Disaster_Cell.xib in Resources */,
 				FC49139524E2744000F1967A /* PC_Disaster_ViewController.xib in Resources */,
 				FC6197B3238EDF2900155EF1 /* AP_Map_ViewController.xib in Resources */,
+				FC4913BF24E64AAA00F1967A /* Layer_Cell.xib in Resources */,
+				FC4C6A4424E93EE600BD84D1 /* Report_Cell.xib in Resources */,
 				FC69937822FB503F00C62D42 /* PC_Station_Cell0.xib in Resources */,
 				FC1AC73E23708CA900B11288 /* PC_Map_ViewController.xib in Resources */,
 				FC1AC74923709C9C00B11288 /* PC_Info_ViewController.xib in Resources */,
@@ -584,8 +627,10 @@
 				FC1A516622FE8EE200298B28 /* PC_ForeCast_Cell.xib in Resources */,
 				FC59DA4A237004FA00F8FA35 /* PC_Register_ViewController.xib in Resources */,
 				FC5A3A0B23D852D700F8F108 /* PC_Update_ViewController.xib in Resources */,
+				FC4913B924E624DB00F1967A /* PC_Report_ViewController.xib in Resources */,
 				FC5D982922F54134006FA3F1 /* Main.storyboard in Resources */,
 				FC193A9F22FCB5EF00CDF719 /* PC_ForCast_ViewController.xib in Resources */,
+				FC4913B124E6249200F1967A /* PC_Project_ViewController.xib in Resources */,
 				FC235ADF2383167B0093A108 /* PC_Event_Cell.xib in Resources */,
 				FCEDD7E322F9F00400DC4613 /* PC_Notification_Cell.xib in Resources */,
 				FC1B307B22F73F3E002E873F /* PC_ChangePass_ViewController.xib in Resources */,
@@ -596,6 +641,8 @@
 				FC4913AD24E5A98300F1967A /* PC_Doc_ViewController.xib in Resources */,
 				FC18572122FFEF1700DB818C /* PC_Weather_Cell.xib in Resources */,
 				FC4913A024E2854700F1967A /* format.plist in Resources */,
+				FC4913BD24E624FD00F1967A /* PC_HD_ViewController.xib in Resources */,
+				FC4913B524E624B900F1967A /* PC_Layer_ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +725,7 @@
 				FC1AC73D23708CA900B11288 /* PC_Map_ViewController.swift in Sources */,
 				FC59DA49237004FA00F8FA35 /* PC_Register_ViewController.swift in Sources */,
 				FC1B307422F71C24002E873F /* PC_Setting_ViewController.swift in Sources */,
+				FC4913BC24E624FD00F1967A /* PC_HD_ViewController.swift in Sources */,
 				FC1B306C22F6E50D002E873F /* Information.swift in Sources */,
 				FC1DD77E23787A0200C457C9 /* PC_Inner_Map_ViewController.swift in Sources */,
 				FC5D983822F55513006FA3F1 /* PC_Login_ViewController.swift in Sources */,
@@ -686,6 +734,9 @@
 				FC31018E23195B7F009DBF95 /* EM_MenuView.m in Sources */,
 				FC4913A724E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift in Sources */,
 				FC1AC73923708C6100B11288 /* TG_Root_ViewController.swift in Sources */,
+				FC4913B424E624B900F1967A /* PC_Layer_ViewController.swift in Sources */,
+				FC4913B824E624DB00F1967A /* PC_Report_ViewController.swift in Sources */,
+				FC4C6A4124E8F24F00BD84D1 /* PC_New_Map_ViewController.swift in Sources */,
 				FC193A9E22FCB5EF00CDF719 /* PC_ForCast_ViewController.swift in Sources */,
 				FC4913AC24E5A98300F1967A /* PC_Doc_ViewController.swift in Sources */,
 				FCB19455231598DA007120AF /* ChatAccessory.swift in Sources */,
@@ -701,6 +752,7 @@
 				FC250D04230103F4008AB980 /* PC_Global_ViewController.swift in Sources */,
 				FC1B306922F6AF13002E873F /* PC_Forgot_ViewController.swift in Sources */,
 				FC8F4AEF230FE9420082F3B2 /* PC_FeedBack_ViewController.swift in Sources */,
+				FC4913B024E6249200F1967A /* PC_Project_ViewController.swift in Sources */,
 				FC5A3A0A23D852D700F8F108 /* PC_Update_ViewController.swift in Sources */,
 				FC1B307022F6EEF6002E873F /* PC_Main_ViewController.swift in Sources */,
 				FC49139424E2744000F1967A /* PC_Disaster_ViewController.swift in Sources */,

@@ -24,7 +24,7 @@ class PC_Contact_ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var searchText: UITextField!
 
-     var hideShow: Bool = true
+     var hideShow: Bool = false
 
      var dataList: NSMutableArray!
 
@@ -39,13 +39,13 @@ class PC_Contact_ViewController: UIViewController, UITextFieldDelegate {
              logoLeft.image = UIImage(named: "logo_tc")
          }
       
-      if Information.check == "0" {
-          headerImg.image = UIImage(named: "bg_text_dms")
-      }
-    
-      dataList = NSMutableArray.init()
-    
-      tableView.withCell("PC_Event_Cell")
+          if Information.check == "0" {
+              headerImg.image = UIImage(named: "bg_text_dms")
+          }
+        
+          dataList = NSMutableArray.init()
+        
+          tableView.withCell("PC_Event_Cell")
         
         firstNumber.action(forTouch: [:]) { (obj) in
             self.callNumber(phoneNumber: "0249096747")
@@ -64,37 +64,6 @@ class PC_Contact_ViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         
         requestEvent()
-    }
-    
-    func requestDeleteEvent(id: String) {
-//        var lat = "0"
-//
-//        var lng = "0"
-//
-//        if (Permission.shareInstance()?.isLocationEnable())! {
-//           let location = Permission.shareInstance()?.currentLocation()! as! NSDictionary
-//
-//           lat = location.getValueFromKey("lat")
-//
-//           lng = location.getValueFromKey("lng")
-//        }
-//
-//        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "contact?lat=" + lat + "&lon=" + lng + "&keyword=" + searchText.text),
-//                                                  "header":["Authorization":Information.token == nil ? "" : Information.token!],
-//                                                  "method":"GET",
-//                                                  "overrideAlert":"1",
-//                                                  "overrideLoading":"1",
-//                                                  "host":self], withCache: { (cacheString) in
-//      }, andCompletion: { (response, errorCode, error, isValid, object) in
-//          let result = response?.dictionize() ?? [:]
-//
-//          if result.getValueFromKey("status") != "OK" {
-//              self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
-//              return
-//          }
-//
-//          self.requestEvent()
-//      })
     }
     
     func requestEvent() {
@@ -175,6 +144,7 @@ extension PC_Contact_ViewController: UITableViewDataSource, UITableViewDelegate 
         
         let data = dataList![indexPath.row] as! NSDictionary
 
+        cell.contentView.backgroundColor = .white
         
         let image = self.withView(cell, tag: 11) as! UIImageView
 
@@ -188,13 +158,13 @@ extension PC_Contact_ViewController: UITableViewDataSource, UITableViewDelegate 
         
         title.font = UIFont.boldSystemFont(ofSize: 17)
         
-        title.textColor = .white
+        title.textColor = .black
         
         title.text = data["mo_ta"] as? String
         
         let des = self.withView(cell, tag: 2) as! UILabel
         
-        des.textColor = .white
+        des.textColor = .black
         
         des.text = "Điện thoại: " + ((data["sdt"] as? String)!)
         

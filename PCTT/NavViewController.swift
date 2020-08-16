@@ -73,11 +73,9 @@ extension NavViewController: UIGestureRecognizerDelegate {
         guard gestureRecognizer == interactivePopGestureRecognizer else {
             return true // default value
         }
-        
-        // Disable pop gesture in two situations:
-        // 1) when the pop animation is in progress
-        // 2) when user swipes quickly a couple of times and animations don't have time to be performed      
-        if (self.viewControllers.last?.isKind(of: TG_Root_ViewController.self))! {
+            
+        if (self.viewControllers.last?.isKind(of: PC_New_Map_ViewController.self))! {
+            print("sdfdsfsfdsfdsds")
            return false
         }
         

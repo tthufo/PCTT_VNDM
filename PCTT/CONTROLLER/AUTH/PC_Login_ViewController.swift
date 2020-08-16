@@ -212,7 +212,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                             print(Information.check)
                         
 //                            if Information.userInfo?.getValueFromKey("count_province") == "1" {
-                                self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: false)
+                                self.navigationController?.pushViewController(PC_New_Map_ViewController.init(), animated: true)
 //                            } else {
 //                                self.navigationController?.pushViewController(PC_Main_ViewController.init(), animated: false)
 //                            }
@@ -323,8 +323,10 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
             
             Information.saveToken()
             
-            self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: true)
+//            self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: true)
             
+            self.navigationController?.pushViewController(PC_New_Map_ViewController.init(), animated: true)
+
             print(result)
             
 //            if Information.userInfo?.getValueFromKey("count_province") == "1" {

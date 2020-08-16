@@ -27,7 +27,7 @@ class TG_Root_ViewController: UITabBarController {
         
         self.delegate = self as? UITabBarControllerDelegate
         
-        let tab1:UITabBarItem = UITabBarItem(title: "Bản đồ", image: UIImage(named: "tab1")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal).alpha(0.5), selectedImage: UIImage(named: "tab1"))
+        let tab1:UITabBarItem = UITabBarItem(title: "Chức năng", image: UIImage(named: "tab0")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal).alpha(0.5), selectedImage: UIImage(named: "tab0"))
         
         tab1.imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
         
@@ -117,6 +117,16 @@ class TG_Root_ViewController: UITabBarController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        swipeToPop()
+    }
+
+    func swipeToPop() {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil;
     }
 }
 

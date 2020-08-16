@@ -304,7 +304,7 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
                 self.oMap().listtypeid = self.typeId()
             }
             
-            butt.setImage(UIImage.init(named: data.getValueFromKey("check") == "0" ? "ic_tick_inactive" : "ic_tick_active"), for: .normal)
+            butt.setImage(UIImage.init(named: data.getValueFromKey("check") == "0" ? "ic_tick_inactive_white" : "ic_tick_active"), for: .normal)
             
             cell.contentView.backgroundColor = .clear
         }
@@ -335,6 +335,7 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
         } else {
             let data = dataList![indexPath.row] as! NSDictionary
             self.oMap().eventId = data.getValueFromKey("id")
+            self.oMap().layerId = ""
             (self.parent as! PC_Disaster_Tab_ViewController).changeMap()
         }
     }
