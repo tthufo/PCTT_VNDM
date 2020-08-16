@@ -427,6 +427,44 @@ extension UIViewController {
             }
         }
     }
+    
+    func existingFile(fileName: String, type: String) -> Bool {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        if let pathComponent = url.appendingPathComponent("video/\(fileName)/\(fileName).\(type)") {
+            let filePath = pathComponent.path
+            let fileManager = FileManager.default
+            if fileManager.fileExists(atPath: filePath) {
+            return true
+        } else {
+            return false
+        }
+        } else {
+            return false
+        }
+    }
+    
+    func pdfFile(fileName: String, type: String) -> String {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        if let pathComponent = url.appendingPathComponent("video/\(fileName)/\(fileName).\(type)") {
+            let filePath = pathComponent.path
+            return filePath
+        }
+        return ""
+    }
+    
+    func deleteFile(fileName: String) {
+        guard let fileUrl = URL(string: "\(fileName)") else { return }
+
+        do {
+            try FileManager.default.removeItem(at: fileUrl)
+            print("Remove successfully")
+        }
+        catch let error as NSError {
+            print("An error took place: \(error)")
+        }
+    }
 }
 
 extension UITableView {

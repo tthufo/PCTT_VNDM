@@ -30,7 +30,7 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
 //    ]
 //
     var dataList: NSMutableArray = [
-                                    ["title": "Sự kiện T.Tai", "img": "ic_sukienthientai"], // 0
+        ["title": "Sự kiện T.Tai", "img": "ic_sukienthientai", "badge": "0"], // 0
                                     ["title": "Cảnh báo", "img": "ic_canhbao", "category": "2"],
                                      ["title": "Quan trắc", "img": "ic_quantrac", "category": "1"],
                                      
@@ -73,7 +73,38 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         swipeToPop()
+        current()
     }
+    
+    func current() {
+           LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "EventDisaster"),
+                                                            "header":["Authorization":Information.token == nil ? "" : Information.token!],
+                                                            "method":"GET",
+                                                            "overrideAlert":"1",
+//                                                            "overrideLoading":"1",
+                                                            "host":self], withCache: { (cacheString) in
+                }, andCompletion: { (response, errorCode, error, isValid, object) in
+                  
+                    let result = response?.dictionize() ?? [:]
+                                                                 
+                    if result.getValueFromKey("status") != "OK" {
+                        self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
+                        return
+                    }
+         
+                    let current = response?.dictionize()["data"] as! [Any]
+                   
+                    let tempA = NSMutableArray.init(array: self.dataList.withMutable())
+                    
+                    (tempA[0] as! NSMutableDictionary)["badge"] = "%i".format(parameters: current.count)
+                    
+                    self.dataList.removeAllObjects()
+                    
+                    self.dataList.addObjects(from: tempA as! [Any])
+                    
+                    self.collectionView.reloadData()
+                })
+       }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -117,6 +148,18 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TG_Map_Cell", for: indexPath as IndexPath)
         
         let data = dataList[indexPath.item] as! NSDictionary
+        
+        if indexPath.row == 0 {
+            let badge = self.withView(cell, tag: 1111) as! UILabel
+
+            badge.text = data.getValueFromKey("badge")
+            
+            if data.getValueFromKey("badge") == "0" || data.getValueFromKey("badge") == "" {
+                badge.isHidden = true
+            } else {
+                badge.isHidden = false
+            }
+        }
         
         let title = self.withView(cell, tag: 12) as! UILabel
 

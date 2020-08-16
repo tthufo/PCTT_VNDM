@@ -145,48 +145,23 @@ extension PC_HD_ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        let data = ((dataList![indexPath.section] as! NSMutableDictionary)["layerDatas"] as! NSArray)[indexPath.row] as! NSMutableDictionary
-//
-//        data["check"] = data.getValueFromKey("check") == "1" ? "0" : "1"
-//
-//        self.lastView().setMap(subLayerId: self.getSubLay(obj: dataList), layerId: self.getLay(obj: dataList))
-//
-//        tableView.reloadData()
+        let data = dataList![indexPath.section] as! NSMutableDictionary
+
+        let lay = data["datas"] as? NSArray
+
+        let doc = lay![indexPath.row] as! NSDictionary
+                    
+        let reader = Reader_ViewController.init()
+           
+        let bookInfo = NSMutableDictionary.init(dictionary: doc)
+
+        let url = "http://vndms.dmc.gov.vn/DocumentDirection/downloadFile?id=" + doc.getValueFromKey("id")
+
+        bookInfo["file_url"] = url
+
+        reader.config = bookInfo
+
+        self.navigationController?.pushViewController(reader, animated: true)
     }
-    
-//    func getSubLay(obj: NSArray) -> String {
-//        let layer = NSMutableArray.init()
-//       for dict in obj.withMutable() {
-//           for k in ((dict as! NSMutableDictionary)["layerDatas"] as! NSArray).withMutable() {
-//            if (k as! NSMutableDictionary).getValueFromKey("check") == "1" {
-//                layer.add((k as! NSMutableDictionary).getValueFromKey("id") as Any)
-//            }
-//           }
-//       }
-//
-//        return layer.componentsJoined(by: ",")
-//    }
-//
-//    func getLay(obj: NSArray) -> String {
-//        let layer = NSMutableArray.init()
-//       for dict in obj.withMutable() {
-//           for k in ((dict as! NSMutableDictionary)["layerDatas"] as! NSArray).withMutable() {
-//            if (k as! NSMutableDictionary).getValueFromKey("check") == "1" {
-//                layer.add((dict as! NSMutableDictionary).getValueFromKey("id"))
-//                break
-//            }
-//           }
-//       }
-//
-//        return layer.componentsJoined(by: ",")
-//    }
-//
-//    func lastView() -> PC_Disaster_Tab_ViewController {
-//        if let navController = self.navigationController, navController.viewControllers.count >= 2 {
-//             let viewController = navController.viewControllers[navController.viewControllers.count - 2]
-//            return viewController as! PC_Disaster_Tab_ViewController
-//        }
-//        return PC_Disaster_Tab_ViewController.init()
-//    }
 }
 

@@ -87,6 +87,9 @@
 		FC4C6A4124E8F24F00BD84D1 /* PC_New_Map_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C6A3F24E8F24F00BD84D1 /* PC_New_Map_ViewController.swift */; };
 		FC4C6A4224E8F24F00BD84D1 /* PC_New_Map_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4C6A4024E8F24F00BD84D1 /* PC_New_Map_ViewController.xib */; };
 		FC4C6A4424E93EE600BD84D1 /* Report_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4C6A4324E93EE600BD84D1 /* Report_Cell.xib */; };
+		FC4C6A4724E9646100BD84D1 /* Reader_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C6A4524E9646100BD84D1 /* Reader_ViewController.swift */; };
+		FC4C6A4824E9646100BD84D1 /* Reader_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4C6A4624E9646100BD84D1 /* Reader_ViewController.xib */; };
+		FC4C6A4B24E964D900BD84D1 /* DownLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4C6A4A24E964D900BD84D1 /* DownLoad.m */; };
 		FC59DA49237004FA00F8FA35 /* PC_Register_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */; };
 		FC59DA4A237004FA00F8FA35 /* PC_Register_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */; };
 		FC5A3A0A23D852D700F8F108 /* PC_Update_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */; };
@@ -226,6 +229,10 @@
 		FC4C6A3F24E8F24F00BD84D1 /* PC_New_Map_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_New_Map_ViewController.swift; sourceTree = "<group>"; };
 		FC4C6A4024E8F24F00BD84D1 /* PC_New_Map_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_New_Map_ViewController.xib; sourceTree = "<group>"; };
 		FC4C6A4324E93EE600BD84D1 /* Report_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Report_Cell.xib; sourceTree = "<group>"; };
+		FC4C6A4524E9646100BD84D1 /* Reader_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reader_ViewController.swift; sourceTree = "<group>"; };
+		FC4C6A4624E9646100BD84D1 /* Reader_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Reader_ViewController.xib; sourceTree = "<group>"; };
+		FC4C6A4924E964D900BD84D1 /* DownLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoad.h; sourceTree = "<group>"; };
+		FC4C6A4A24E964D900BD84D1 /* DownLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoad.m; sourceTree = "<group>"; };
 		FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Register_ViewController.swift; sourceTree = "<group>"; };
 		FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Register_ViewController.xib; sourceTree = "<group>"; };
 		FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Update_ViewController.swift; sourceTree = "<group>"; };
@@ -421,6 +428,10 @@
 				FC4913BE24E64AA900F1967A /* Layer_Cell.xib */,
 				FC4913C024E64D9E00F1967A /* Layer_Header.xib */,
 				FC4C6A4324E93EE600BD84D1 /* Report_Cell.xib */,
+				FC4C6A4524E9646100BD84D1 /* Reader_ViewController.swift */,
+				FC4C6A4624E9646100BD84D1 /* Reader_ViewController.xib */,
+				FC4C6A4924E964D900BD84D1 /* DownLoad.h */,
+				FC4C6A4A24E964D900BD84D1 /* DownLoad.m */,
 			);
 			name = Disaster_Detail;
 			sourceTree = "<group>";
@@ -599,6 +610,7 @@
 				FC5D982E22F54137006FA3F1 /* LaunchScreen.storyboard in Resources */,
 				FC1AC74223708CC100B11288 /* TG_Intro_ViewController.xib in Resources */,
 				FC8F4AF2230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib in Resources */,
+				FC4C6A4824E9646100BD84D1 /* Reader_ViewController.xib in Resources */,
 				FCA5F32B2371DAB700274600 /* PC_Info_Cell.xib in Resources */,
 				FC269A1E23786EEC00EEA392 /* TG_Map_Cell.xib in Resources */,
 				FCEDD7E122F9E19500DC4613 /* PC_Notification_ViewController.xib in Resources */,
@@ -719,6 +731,7 @@
 				FC5DAA2F23D8A2E800163031 /* OffLine_ViewController.swift in Sources */,
 				FC18571E22FFED6000DB818C /* PC_ForeCast_7_Cell.swift in Sources */,
 				FC269A1C2378600400EEA392 /* NavViewController.swift in Sources */,
+				FC4C6A4724E9646100BD84D1 /* Reader_ViewController.swift in Sources */,
 				FCC247A524E1548F0099605D /* PC_Contact_ViewController.swift in Sources */,
 				FCE792922375D4880034684F /* TG_Intro_Question_ViewController.swift in Sources */,
 				FCB19457231598DA007120AF /* ChatTable.swift in Sources */,
@@ -729,6 +742,7 @@
 				FC1B306C22F6E50D002E873F /* Information.swift in Sources */,
 				FC1DD77E23787A0200C457C9 /* PC_Inner_Map_ViewController.swift in Sources */,
 				FC5D983822F55513006FA3F1 /* PC_Login_ViewController.swift in Sources */,
+				FC4C6A4B24E964D900BD84D1 /* DownLoad.m in Sources */,
 				FC235ADA2382CE7F0093A108 /* PC_Upload_ViewController.swift in Sources */,
 				FC5D982622F54134006FA3F1 /* ViewController.swift in Sources */,
 				FC31018E23195B7F009DBF95 /* EM_MenuView.m in Sources */,

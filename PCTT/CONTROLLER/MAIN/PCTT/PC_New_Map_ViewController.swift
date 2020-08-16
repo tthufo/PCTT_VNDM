@@ -14,6 +14,8 @@ class PC_New_Map_ViewController: UIViewController {
 
     @IBOutlet var webView: WKWebView!
     
+    @IBOutlet var badge: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,30 +24,52 @@ class PC_New_Map_ViewController: UIViewController {
        let link = URL(string: param)!
        let request = URLRequest(url: link)
        webView.load(request)
-        // Do any additional setup after loading the view.
+    }
+        
+    func current() {
+        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "EventDisaster"),
+                                                         "header":["Authorization":Information.token == nil ? "" : Information.token!],
+                                                         "method":"GET",
+                                                         "overrideAlert":"1",
+                                                         "overrideLoading":"1",
+                                                         "host":self], withCache: { (cacheString) in
+             }, andCompletion: { (response, errorCode, error, isValid, object) in
+               
+                 let result = response?.dictionize() ?? [:]
+                                                              
+                 if result.getValueFromKey("status") != "OK" {
+                     self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
+                     return
+                 }
+      
+                let current = response?.dictionize()["data"] as! [Any]
+                
+                if current.count != 0 {
+                    self.badge.isHidden = false
+                    self.badge.text = "%i".format(parameters: current.count)
+                } else {
+                    self.badge.isHidden = true
+                }
+             })
     }
 
-    @objc @IBAction func didPressDisaster() {
+    @IBAction func didPressDisaster() {
            self.navigationController?.pushViewController(PC_Disaster_Tab_ViewController.init(), animated: true)
        }
     
-    @objc @IBAction func điPressWarning() {
+    @IBAction func điPressWarning() {
           let map = PC_Inner_Map_ViewController.init()
            map.category = "2"
            self.navigationController?.pushViewController(map, animated: true)
        }
     
-    @objc @IBAction func didPressRoot() {
+    @IBAction func didPressRoot() {
         self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: true)
        }
 
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
-//           swipeToPop()
+        
+           current()
        }
-
-//       func swipeToPop() {
-//           self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
-//           self.navigationController?.interactivePopGestureRecognizer?.delegate = nil;
-//       }
 }
