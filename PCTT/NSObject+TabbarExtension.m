@@ -72,3 +72,15 @@
 
 
 @end
+
+@implementation NSObject (obj)
+
+
+- (UIImage*)getImage:(NSString*)base64String {
+    NSURL *url = [NSURL URLWithString:base64String];
+    NSData *imageData = [NSData dataWithContentsOfURL:url];
+    UIImage *ret = [UIImage imageWithData:imageData];
+    return ret;
+}
+
+@end

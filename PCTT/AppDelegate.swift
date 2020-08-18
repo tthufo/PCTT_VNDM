@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey(APIMAP)
         
-//        FirePush.shareInstance().didRegister()
+        FirePush.shareInstance().didRegister()
 
         if self.getValue("push") == "0" {
 //            FirePush.shareInstance()?.didUnregisterNotification()
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let login = PC_Login_ViewController.init()
         
-        let nav = NavViewController.init(rootViewController: login)
+        let nav = Navigation_ViewController.init(rootViewController: login)
 
         nav.isNavigationBarHidden =  
         
@@ -65,12 +65,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-//        FirePush.shareInstance()?.didReiciveToken(deviceToken, withType: 0)
+        FirePush.shareInstance()?.didReiciveToken(deviceToken, withType: 0)
 //        self.addValue("1", andKey: "push")
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-//        FirePush.shareInstance()?.didFailedRegisterNotification(error)
+        FirePush.shareInstance()?.didFailedRegisterNotification(error)
 //        self.addValue("0", andKey: "push")
     }
     
@@ -105,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-//        FirePush.shareInstance()?.disconnectToFcm()
+        FirePush.shareInstance()?.disconnectToFcm()
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
@@ -116,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-//        FirePush.shareInstance()?.connectToFcm()
+        FirePush.shareInstance()?.connectToFcm()
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

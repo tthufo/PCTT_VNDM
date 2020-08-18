@@ -39,7 +39,6 @@
 		FC1B307722F724C0002E873F /* PC_Setting_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1B307622F724C0002E873F /* PC_Setting_Cell.xib */; };
 		FC1B307A22F73F3D002E873F /* PC_ChangePass_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1B307822F73F3D002E873F /* PC_ChangePass_ViewController.swift */; };
 		FC1B307B22F73F3E002E873F /* PC_ChangePass_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1B307922F73F3D002E873F /* PC_ChangePass_ViewController.xib */; };
-		FC1B9B3922FBCBBC00E65F58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC1B9B3822FBCBBC00E65F58 /* GoogleService-Info.plist */; };
 		FC1DD77E23787A0200C457C9 /* PC_Inner_Map_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1DD77C23787A0200C457C9 /* PC_Inner_Map_ViewController.swift */; };
 		FC1DD77F23787A0200C457C9 /* PC_Inner_Map_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1DD77D23787A0200C457C9 /* PC_Inner_Map_ViewController.xib */; };
 		FC1FEA772394F2D700E65443 /* style_json.json in Resources */ = {isa = PBXBuildFile; fileRef = FC1FEA762394F2D700E65443 /* style_json.json */; };
@@ -109,6 +108,8 @@
 		FC69937522FB4A8200C62D42 /* PC_Station_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69937322FB4A8200C62D42 /* PC_Station_ViewController.swift */; };
 		FC69937622FB4A8200C62D42 /* PC_Station_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC69937422FB4A8200C62D42 /* PC_Station_ViewController.xib */; };
 		FC69937822FB503F00C62D42 /* PC_Station_Cell0.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC69937722FB503F00C62D42 /* PC_Station_Cell0.xib */; };
+		FC7491BE24EB8817002730BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC7491BD24EB8817002730BE /* GoogleService-Info.plist */; };
+		FC7491C124EBE23A002730BE /* Navigation_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7491C024EBE23A002730BE /* Navigation_ViewController.m */; };
 		FC8F4AEF230FE9420082F3B2 /* PC_FeedBack_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8F4AED230FE9420082F3B2 /* PC_FeedBack_ViewController.swift */; };
 		FC8F4AF0230FE9420082F3B2 /* PC_FeedBack_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC8F4AEE230FE9420082F3B2 /* PC_FeedBack_ViewController.xib */; };
 		FC8F4AF2230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC8F4AF1230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib */; };
@@ -178,7 +179,6 @@
 		FC1B307822F73F3D002E873F /* PC_ChangePass_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_ChangePass_ViewController.swift; sourceTree = "<group>"; };
 		FC1B307922F73F3D002E873F /* PC_ChangePass_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_ChangePass_ViewController.xib; sourceTree = "<group>"; };
 		FC1B9B3722FBCA3100E65F58 /* PCTT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PCTT.entitlements; sourceTree = "<group>"; };
-		FC1B9B3822FBCBBC00E65F58 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC1DD77C23787A0200C457C9 /* PC_Inner_Map_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Inner_Map_ViewController.swift; sourceTree = "<group>"; };
 		FC1DD77D23787A0200C457C9 /* PC_Inner_Map_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Inner_Map_ViewController.xib; sourceTree = "<group>"; };
 		FC1FEA762394F2D700E65443 /* style_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style_json.json; sourceTree = "<group>"; };
@@ -255,6 +255,9 @@
 		FC69937322FB4A8200C62D42 /* PC_Station_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Station_ViewController.swift; sourceTree = "<group>"; };
 		FC69937422FB4A8200C62D42 /* PC_Station_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Station_ViewController.xib; sourceTree = "<group>"; };
 		FC69937722FB503F00C62D42 /* PC_Station_Cell0.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Station_Cell0.xib; sourceTree = "<group>"; };
+		FC7491BD24EB8817002730BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC7491BF24EBE239002730BE /* Navigation_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navigation_ViewController.h; sourceTree = "<group>"; };
+		FC7491C024EBE23A002730BE /* Navigation_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Navigation_ViewController.m; sourceTree = "<group>"; };
 		FC8F4AED230FE9420082F3B2 /* PC_FeedBack_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_FeedBack_ViewController.swift; sourceTree = "<group>"; };
 		FC8F4AEE230FE9420082F3B2 /* PC_FeedBack_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_FeedBack_ViewController.xib; sourceTree = "<group>"; };
 		FC8F4AF1230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_FeedBack_Cell.xib; sourceTree = "<group>"; };
@@ -368,6 +371,8 @@
 				FC1B306822F6AF13002E873F /* PC_Forgot_ViewController.xib */,
 				FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */,
 				FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */,
+				FC7491BF24EBE239002730BE /* Navigation_ViewController.h */,
+				FC7491C024EBE23A002730BE /* Navigation_ViewController.m */,
 			);
 			path = AUTH;
 			sourceTree = "<group>";
@@ -460,7 +465,7 @@
 			children = (
 				FC1B9B3722FBCA3100E65F58 /* PCTT.entitlements */,
 				FC1FEA762394F2D700E65443 /* style_json.json */,
-				FC1B9B3822FBCBBC00E65F58 /* GoogleService-Info.plist */,
+				FC7491BD24EB8817002730BE /* GoogleService-Info.plist */,
 				FC49139F24E2854700F1967A /* format.plist */,
 				FC5D983522F554EB006FA3F1 /* CONTROLLER */,
 				FC5D982322F54134006FA3F1 /* AppDelegate.swift */,
@@ -598,7 +603,6 @@
 				FCFF18D02328ACF1001DF8A2 /* TG_Empty_Cell.xib in Resources */,
 				FC1B307122F6EEF6002E873F /* PC_Main_ViewController.xib in Resources */,
 				FCC247A624E1548F0099605D /* PC_Contact_ViewController.xib in Resources */,
-				FC1B9B3922FBCBBC00E65F58 /* GoogleService-Info.plist in Resources */,
 				FC250D05230103F4008AB980 /* PC_Global_ViewController.xib in Resources */,
 				2DB6B1AD2330B4FB0036A26A /* PC_Station_Cell6.xib in Resources */,
 				FC1B306A22F6AF13002E873F /* PC_Forgot_ViewController.xib in Resources */,
@@ -617,6 +621,7 @@
 				FC4913A424E469A800F1967A /* Disaster_Cell.xib in Resources */,
 				FC49139524E2744000F1967A /* PC_Disaster_ViewController.xib in Resources */,
 				FC6197B3238EDF2900155EF1 /* AP_Map_ViewController.xib in Resources */,
+				FC7491BE24EB8817002730BE /* GoogleService-Info.plist in Resources */,
 				FC4913BF24E64AAA00F1967A /* Layer_Cell.xib in Resources */,
 				FC4C6A4424E93EE600BD84D1 /* Report_Cell.xib in Resources */,
 				FC69937822FB503F00C62D42 /* PC_Station_Cell0.xib in Resources */,
@@ -732,6 +737,7 @@
 				FC18571E22FFED6000DB818C /* PC_ForeCast_7_Cell.swift in Sources */,
 				FC269A1C2378600400EEA392 /* NavViewController.swift in Sources */,
 				FC4C6A4724E9646100BD84D1 /* Reader_ViewController.swift in Sources */,
+				FC7491C124EBE23A002730BE /* Navigation_ViewController.m in Sources */,
 				FCC247A524E1548F0099605D /* PC_Contact_ViewController.swift in Sources */,
 				FCE792922375D4880034684F /* TG_Intro_Question_ViewController.swift in Sources */,
 				FCB19457231598DA007120AF /* ChatTable.swift in Sources */,
@@ -922,9 +928,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Dinh Nguyen (9NC2Q4ER8P)";
+				CODE_SIGN_IDENTITY = "Apple Development: Thanh Hai Tran (ZWKS8AV396)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 15;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GAJPP6PZBM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -937,7 +943,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
 				PRODUCT_NAME = VNDMS;
 				PROVISIONING_PROFILE_SPECIFIER = monitering_dev;
@@ -958,9 +964,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution: VIETGIS - GIS SOLUTION AND TECHNOLOGY COMPANY LIMITED (GAJPP6PZBM)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: VIETGIS - GIS SOLUTION AND TECHNOLOGY COMPANY LIMITED (GAJPP6PZBM)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 15;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GAJPP6PZBM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -973,7 +979,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
 				PRODUCT_NAME = VNDMS;
 				PROVISIONING_PROFILE_SPECIFIER = monitering_dis;

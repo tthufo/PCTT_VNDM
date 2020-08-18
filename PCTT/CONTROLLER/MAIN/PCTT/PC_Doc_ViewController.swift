@@ -124,6 +124,11 @@ extension PC_Doc_ViewController: UITableViewDataSource, UITableViewDelegate {
         
         let lay = value[indexPath.row] as! NSDictionary
         
+        let icon = self.withView(cell, tag: 1111) as! UIImageView
+
+        icon.image = UIImage.init(named: "doc")
+        
+        icon.imageColor(color: .lightGray)
         
         let title = self.withView(cell, tag: 1) as! UILabel
 

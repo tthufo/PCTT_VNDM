@@ -10,7 +10,7 @@ import UIKit
 
 import WebKit
 
-class PC_Inner_Map_ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, UIWebViewDelegate, UIGestureRecognizerDelegate {
+class PC_Inner_Map_ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet var webView: WKWebView!
     
@@ -70,7 +70,7 @@ class PC_Inner_Map_ViewController: UIViewController, WKUIDelegate, WKNavigationD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        swipeToPop()
+//        swipeToPop()
     }
 
     func swipeToPop() {

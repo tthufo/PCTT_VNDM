@@ -42,8 +42,8 @@ class Reader_ViewController: UIViewController {
         
         cover.imageUrl(url: config.getValueFromKey("avatar"))
         
-        titleLabel.text = config.getValueFromKey("name")
-        
+        titleLabel.text = config.getValueFromKey("name_file_display")
+                
         let typing = config.getValueFromKey("name_file")?.components(separatedBy: ".").last
         
         downLoad.type = typing

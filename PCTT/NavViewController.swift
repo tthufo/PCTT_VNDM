@@ -70,16 +70,19 @@ extension NavViewController: UINavigationControllerDelegate {
 extension NavViewController: UIGestureRecognizerDelegate {
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        guard gestureRecognizer == interactivePopGestureRecognizer else {
-            return true // default value
-        }
-            
+//        guard gestureRecognizer == interactivePopGestureRecognizer else {
+//            return true // default value
+//        }
+//
+//        print(self.viewControllers.last)
+        
         if (self.viewControllers.last?.isKind(of: PC_New_Map_ViewController.self))! {
             print("sdfdsfsfdsfdsds")
            return false
         }
         
-        return viewControllers.count > 1 && duringPushAnimation == false
+        return true
+//        return viewControllers.count > 1 && duringPushAnimation == false
     }
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {

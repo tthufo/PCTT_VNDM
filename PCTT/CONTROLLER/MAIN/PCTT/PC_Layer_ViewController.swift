@@ -26,15 +26,14 @@ class PC_Layer_ViewController: UIViewController {
         let layers = (result["data"] as! NSDictionary)["LayerData"]
                    
         dataList.addObjects(from: self.modifying(obj: layers as! NSArray) as! [Any])
-                   
-        
+                
         tableView.withCell("Layer_Cell")
     }
 
     func modifying(obj: NSArray) -> NSMutableArray {
         let arr = NSMutableArray.init()
         for dict in obj.withMutable() {
-            (dict as! NSMutableDictionary)["check"] = "0"
+            (dict as! NSMutableDictionary)["check"] = "1"
             let layer = NSMutableArray.init()
             for k in ((dict as! NSMutableDictionary)["layerDatas"] as! NSArray).withMutable() {
                 (k as! NSMutableDictionary)["check"] = "0"
@@ -131,7 +130,7 @@ extension PC_Layer_ViewController: UITableViewDataSource, UITableViewDelegate {
 
         data["check"] = data.getValueFromKey("check") == "1" ? "0" : "1"
                 
-        self.lastView().setMap(subLayerId: self.getSubLay(obj: dataList), layerId: self.getLay(obj: dataList))
+        self.lastView().setMap(subLayerId: self.getSubLay(obj: dataList), layerId: ""/*self.getLay(obj: dataList)*/)
         
         tableView.reloadData()
     }

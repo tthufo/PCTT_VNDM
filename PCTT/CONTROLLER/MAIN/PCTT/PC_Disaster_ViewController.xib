@@ -177,7 +177,7 @@
                         <constraint firstAttribute="width" constant="131" id="d3h-FY-hsC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal">
+                    <state key="normal" title="Chọn năm">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -200,6 +200,13 @@
                         <constraint firstAttribute="height" constant="1" id="ZeU-OX-R5E"/>
                     </constraints>
                 </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_blue" translatesAutoresizingMaskIntoConstraints="NO" id="tUh-5u-axH">
+                    <rect key="frame" x="369" y="177" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="5td-H8-jWB"/>
+                        <constraint firstAttribute="width" constant="20" id="fc1-zF-Lu4"/>
+                    </constraints>
+                </imageView>
                 <view hidden="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9n-QQ-Q6p">
                     <rect key="frame" x="0.0" y="152" width="414" height="710"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -235,6 +242,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="WiW-11-KQc" firstAttribute="leading" secondItem="S3M-6G-7Pl" secondAttribute="leading" constant="15" id="1zQ-ib-ev4"/>
+                <constraint firstItem="tUh-5u-axH" firstAttribute="top" secondItem="jjx-mW-jyC" secondAttribute="bottom" constant="25" id="4ZU-2J-MRY"/>
                 <constraint firstItem="JQ1-2Y-vQ3" firstAttribute="top" secondItem="S3M-6G-7Pl" secondAttribute="top" id="6dZ-OE-Dtz"/>
                 <constraint firstItem="hGx-Cq-OpT" firstAttribute="leading" secondItem="S3M-6G-7Pl" secondAttribute="leading" id="6g4-zn-aYG"/>
                 <constraint firstItem="0fg-4b-BLO" firstAttribute="leading" secondItem="S3M-6G-7Pl" secondAttribute="leading" id="Aut-PS-VgF"/>
@@ -266,12 +274,14 @@
                 <constraint firstItem="hGx-Cq-OpT" firstAttribute="trailing" secondItem="S3M-6G-7Pl" secondAttribute="trailing" id="t3M-vs-aSk"/>
                 <constraint firstItem="v0U-vG-HyF" firstAttribute="leading" secondItem="Fmd-aM-0es" secondAttribute="leading" constant="8" id="ucT-zn-agH"/>
                 <constraint firstItem="hGx-Cq-OpT" firstAttribute="top" secondItem="S3M-6G-7Pl" secondAttribute="top" id="xsv-wC-KpO"/>
+                <constraint firstItem="S3M-6G-7Pl" firstAttribute="trailing" secondItem="tUh-5u-axH" secondAttribute="trailing" constant="25" id="z02-cb-ZCY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="S3M-6G-7Pl"/>
             <point key="canvasLocation" x="62.318840579710148" y="66.294642857142861"/>
         </view>
     </objects>
     <resources>
+        <image name="arrow_blue" width="33" height="33"/>
         <image name="bg_sktt" width="239.5" height="348.5"/>
         <image name="bg_text_header" width="201" height="16.5"/>
         <image name="ic_mag_black" width="76.5" height="76.5"/>

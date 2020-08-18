@@ -19,7 +19,7 @@ class PC_New_Map_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let param = "http://vndms.gisgo.vn/?cmd=home&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNTk3MDY3NTIzLCJleHAiOjE1OTc2NzIzMjMsImlhdCI6MTU5NzA2NzUyM30.Gj-prrOXEinRrAm8hCsMvK8N2CKi5T3IGsVJmLaLl8I"
+        let param = "http://vndms.gisgo.vn/?cmd=home&token=" + (FirePush.shareInstance()?.deviceToken())!
                                
        let link = URL(string: param)!
        let request = URLRequest(url: link)

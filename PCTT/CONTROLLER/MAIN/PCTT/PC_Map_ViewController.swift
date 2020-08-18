@@ -72,7 +72,7 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        swipeToPop()
+//        swipeToPop()
         current()
     }
     

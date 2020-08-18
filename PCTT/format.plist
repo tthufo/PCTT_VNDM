@@ -19,7 +19,7 @@
 	<key>identifier</key>
 	<string>Cells</string>
 	<key>height</key>
-	<string>260</string>
+	<string>240</string>
 	<key>separator</key>
 	<false/>
 </dict>

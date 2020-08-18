@@ -87,9 +87,11 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
     
     func yearNumb() -> NSArray {
         let arr = NSMutableArray.init()
-        for i in 2000...Int(getYear())! {
-            arr.add(["id": i, "title": String(i)])
-        }
+        var x = Int(getYear())!
+        repeat {
+            arr.add(["id": x, "title": String(x)])
+            x-=1
+        } while(x >= 2015)
         return arr
     }
     
@@ -233,9 +235,18 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
             
             title.text = (data["disaster"] as! NSDictionary).getValueFromKey("name_disaster")
 
+            let img = self.withView(cell, tag: 1111) as! UIImageView
+
+            let stringing = (data["disaster"] as! NSDictionary).getValueFromKey("image")
+            
+            if let decodedData = Data(base64Encoded: stringing!),
+               let decodedString = String(data: decodedData, encoding: .utf8) {
+               let dee = decodedString.data(using: .utf8)
+               let namSvgImgVar = SVGKImage.init(data: dee)
+               img.image = namSvgImgVar?.uiImage
+            }
             
             let lab1 = self.withView(cell, tag: 2) as! UILabel
-                        
             
             let attributsBold = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .bold)]
             let attributsNormal = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .regular)]
@@ -245,8 +256,7 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
            attributedString.append(boldStringPart)
         
            lab1.attributedText = attributedString
-            
-            
+                        
             
             
             let lab2 = self.withView(cell, tag: 3) as! UILabel
@@ -302,6 +312,17 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
                 self.disTableView.reloadData()
                 self.requestEvent()
                 self.oMap().listtypeid = self.typeId()
+            }
+            
+            let img = self.withView(cell, tag: 1111) as! UIImageView
+
+            let stringing = data.getValueFromKey("image")
+
+            if let decodedData = Data(base64Encoded: stringing!),
+               let decodedString = String(data: decodedData, encoding: .utf8) {
+               let dee = decodedString.data(using: .utf8)
+               let namSvgImgVar = SVGKImage.init(data: dee)
+               img.image = namSvgImgVar?.uiImage
             }
             
             butt.setImage(UIImage.init(named: data.getValueFromKey("check") == "0" ? "ic_tick_inactive_white" : "ic_tick_active"), for: .normal)

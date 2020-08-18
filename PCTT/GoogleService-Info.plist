@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>11199047545-5rvk49e8cd4tck3cduha312opb9398i9.apps.googleusercontent.com</string>
+	<string>387423726605-8f12o80qghdcc4v6nn2v8hp7t9gemk9l.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.11199047545-5rvk49e8cd4tck3cduha312opb9398i9</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>11199047545-m24picfhe84ndjk5obe43kc6admb2h1j.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.387423726605-8f12o80qghdcc4v6nn2v8hp7t9gemk9l</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAIfQUP1eyucWedwyzYBNWq92wmZsGdk9s</string>
+	<string>AIzaSyBK_TXUoppRRiH5aBZUq7YEKtdWS1zNC50</string>
 	<key>GCM_SENDER_ID</key>
-	<string>11199047545</string>
+	<string>387423726605</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.agri.weatherbook</string>
+	<string>com.giamsat.vn</string>
 	<key>PROJECT_ID</key>
-	<string>weatherbook-223dc</string>
+	<string>vndms-280802</string>
 	<key>STORAGE_BUCKET</key>
-	<string>weatherbook-223dc.appspot.com</string>
+	<string>vndms-280802.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:11199047545:ios:4f3574272ae29df2</string>
+	<string>1:387423726605:ios:c0e15f157898557624b944</string>
 	<key>DATABASE_URL</key>
-	<string>https://weatherbook-223dc.firebaseio.com</string>
+	<string>https://vndms-280802.firebaseio.com</string>
 </dict>
 </plist>

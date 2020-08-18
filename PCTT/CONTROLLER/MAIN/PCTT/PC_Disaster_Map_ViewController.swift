@@ -64,10 +64,8 @@ class PC_Disaster_Map_ViewController: UIViewController, WKUIDelegate, WKNavigati
         
         let type = year != "" || listtypeid != "" || keyword != "" ? "list" : "current"
         
-        let param = "http://vndms.gisgo.vn/?cmd=disaster&type=%@&year=%@&listtypeid=%@&subLayerId=%@&id=%@&layerids=%@&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNTk3MDY3NTIzLCJleHAiOjE1OTc2NzIzMjMsImlhdCI6MTU5NzA2NzUyM30.Gj-prrOXEinRrAm8hCsMvK8N2CKi5T3IGsVJmLaLl8I&keyword=%@".format(parameters: type, year, listtypeid, subLayerId, eventId, layerId, keyword)
-        
-//        print(param)
-        
+        let param = "http://vndms.gisgo.vn/?cmd=disaster&type=%@&year=%@&listtypeid=%@&subLayerId=%@&id=%@&layerids=%@&token=%@&keyword=%@".format(parameters: type, year, listtypeid, subLayerId, eventId, layerId, FirePush.shareInstance()?.deviceToken()! as! CVarArg, keyword)
+                
         let link = URL(string: (param as NSString).encodeUrl())!
         let request = URLRequest(url: link)
         webView.load(request)
@@ -75,7 +73,7 @@ class PC_Disaster_Map_ViewController: UIViewController, WKUIDelegate, WKNavigati
     
     @IBAction func didPressBack() {
         self.view.endEditing(true)
-        self.navigationController?.popViewController(animated: true)
+         (self.parent as! PC_Disaster_Tab_ViewController).navigationController?.popViewController(animated: true)
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {

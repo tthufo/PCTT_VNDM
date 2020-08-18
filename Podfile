@@ -9,9 +9,7 @@ target 'PCTT' do
   
   pod 'GoogleMaps', '~> 3.3'
 
-#  pod 'Fabric', '~> 1.10'
-
-#  pod 'FireBasePod'
+  pod 'FireBasePod'
 
   pod 'MarqueeLabel/Swift'
   
@@ -26,4 +24,7 @@ target 'PCTT' do
   pod 'GrowingTextView'
 
   pod 'DKImagePickerController'
+  
+  pod 'SVGKit'
+
 end

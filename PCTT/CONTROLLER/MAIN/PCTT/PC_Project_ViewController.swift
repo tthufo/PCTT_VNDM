@@ -137,7 +137,12 @@ extension PC_Project_ViewController: UITableViewDataSource, UITableViewDelegate 
         
         let lay = value[indexPath.row] as! NSDictionary
         
+        let icon = self.withView(cell, tag: 1111) as! UIImageView
+
+        icon.image = UIImage.init(named: "project")
         
+        icon.imageColor(color: .lightGray)
+
         let title = self.withView(cell, tag: 1) as! UILabel
 
         title.text = lay["name_file_display"] as? String

@@ -57,6 +57,13 @@
                             <constraint firstAttribute="height" id="Dgz-dt-6e6"/>
                         </constraints>
                     </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1111" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fYY-3a-WoL">
+                        <rect key="frame" x="5" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="Gpk-Wy-o7I"/>
+                            <constraint firstAttribute="height" constant="40" id="wN0-g8-K8k"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
@@ -68,17 +75,19 @@
                     <constraint firstAttribute="trailing" secondItem="n12-92-NQy" secondAttribute="trailing" constant="10" id="LGr-uG-hO1"/>
                     <constraint firstItem="VTM-cR-1Lc" firstAttribute="top" secondItem="rji-PQ-NWv" secondAttribute="bottom" constant="7" id="LWO-ND-FOV"/>
                     <constraint firstItem="wd0-Rh-h5c" firstAttribute="leading" secondItem="BX4-l6-A2f" secondAttribute="leading" constant="50" id="ZD1-cb-C9s"/>
+                    <constraint firstItem="fYY-3a-WoL" firstAttribute="leading" secondItem="BX4-l6-A2f" secondAttribute="leading" constant="5" id="Zgn-FN-bRi"/>
                     <constraint firstItem="wd0-Rh-h5c" firstAttribute="top" secondItem="sKK-jS-Gu1" secondAttribute="bottom" constant="8" id="adx-Bp-nND"/>
                     <constraint firstItem="sKK-jS-Gu1" firstAttribute="leading" secondItem="BX4-l6-A2f" secondAttribute="leading" constant="50" id="cbB-12-igb"/>
                     <constraint firstAttribute="trailing" secondItem="sKK-jS-Gu1" secondAttribute="trailing" constant="29" id="d5R-kk-jYD"/>
                     <constraint firstItem="sKK-jS-Gu1" firstAttribute="top" secondItem="BX4-l6-A2f" secondAttribute="top" constant="12" id="kpi-NJ-YVq"/>
+                    <constraint firstItem="fYY-3a-WoL" firstAttribute="top" secondItem="BX4-l6-A2f" secondAttribute="top" constant="10" id="tgU-J7-PdP"/>
                     <constraint firstItem="n12-92-NQy" firstAttribute="centerY" secondItem="BX4-l6-A2f" secondAttribute="centerY" id="umL-cI-4W1"/>
                     <constraint firstAttribute="trailing" secondItem="wd0-Rh-h5c" secondAttribute="trailing" constant="45" id="vIq-vN-y7V"/>
                     <constraint firstAttribute="trailing" secondItem="VTM-cR-1Lc" secondAttribute="trailing" constant="10" id="wYP-6v-xcF"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="-271.01449275362319" y="11.71875"/>
+            <point key="canvasLocation" x="-271" y="20"/>
         </tableViewCell>
     </objects>
     <resources>
