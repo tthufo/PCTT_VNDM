@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PC_New_Map_ViewController" customModule="VNDMS" customModuleProvider="target">
             <connections>
                 <outlet property="badge" destination="Dha-co-t7P" id="oN2-Ew-5wU"/>
+                <outlet property="headerImg" destination="H7e-RJ-Pha" id="qFY-7V-ZFg"/>
+                <outlet property="logoLeft" destination="ICy-5U-UZr" id="Kj5-qi-JhI"/>
                 <outlet property="view" destination="Znp-J1-NYE" id="AfE-vG-HaW"/>
                 <outlet property="webView" destination="blX-qE-nWV" id="T2H-cy-f4b"/>
             </connections>

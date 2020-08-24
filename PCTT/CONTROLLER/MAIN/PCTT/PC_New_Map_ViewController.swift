@@ -16,9 +16,21 @@ class PC_New_Map_ViewController: UIViewController {
     
     @IBOutlet var badge: UILabel!
 
+    @IBOutlet var logoLeft: UIImageView!
+          
+    @IBOutlet var headerImg: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if Information.check != "0" {
+              logoLeft.image = UIImage(named: "logo_tc")
+          }
+           
+       if Information.check == "0" {
+           headerImg.image = UIImage(named: "bg_text_dms")
+       }
+        
         let param = "http://vndms.gisgo.vn/?cmd=home&token=" + (FirePush.shareInstance()?.deviceToken())!
                                
        let link = URL(string: param)!

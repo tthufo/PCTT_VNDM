@@ -233,7 +233,31 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
             
             let title = self.withView(cell, tag: 1) as! UILabel
             
-            title.text = (data["disaster"] as! NSDictionary).getValueFromKey("name_disaster")
+            let vnName = data.getValueFromKey("name_vn")
+            
+            let enName = data.getValueFromKey("name_en")
+
+            var finalName = ""
+            
+            if vnName != "" && enName != "" {
+                finalName = vnName! + "/" + enName!
+            }
+            
+            if vnName == "" && enName != "" {
+                finalName = enName!
+            }
+            
+            if vnName != "" && enName == "" {
+                finalName = vnName!
+            }
+            
+            if vnName == "" && enName == "" {
+                finalName = (data["disaster"] as! NSDictionary).getValueFromKey("name_disaster")
+            }
+            
+            title.text = finalName
+            
+            
 
             let img = self.withView(cell, tag: 1111) as! UIImageView
 
@@ -264,7 +288,7 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
 //            lab2.text = "Vị trí: " + data.getValueFromKey("lat") + " - " + data.getValueFromKey("lon")
 
             let attributedString2 = NSMutableAttributedString(string: "Vị trí: ", attributes:attributsBold)
-            let boldStringPart2 = NSMutableAttributedString(string: data.getValueFromKey("lat") + " - " + data.getValueFromKey("lon"), attributes:attributsNormal)
+            let boldStringPart2 = NSMutableAttributedString(string: data.getValueFromKey("lon") + " - " + data.getValueFromKey("lat"), attributes:attributsNormal)
             attributedString2.append(boldStringPart2)
         
             lab2.attributedText = attributedString2
@@ -288,7 +312,7 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
 //            lab4.text = "Cấp độ rủi ro thiên tai: " + data.getValueFromKey("level")
 
             let attributedString4 = NSMutableAttributedString(string: "Cấp độ rủi ro thiên tai: ", attributes:attributsBold)
-               let boldStringPart4 = NSMutableAttributedString(string: data.getValueFromKey("level"), attributes:attributsNormal)
+               let boldStringPart4 = NSMutableAttributedString(string: data.getValueFromKey("disaster_level"), attributes:attributsNormal)
                attributedString4.append(boldStringPart4)
            
                lab4.attributedText = attributedString4

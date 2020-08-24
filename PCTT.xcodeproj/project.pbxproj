@@ -930,7 +930,7 @@
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development: Thanh Hai Tran (ZWKS8AV396)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GAJPP6PZBM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -943,7 +943,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
 				PRODUCT_NAME = VNDMS;
 				PROVISIONING_PROFILE_SPECIFIER = monitering_dev;
@@ -966,7 +966,7 @@
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: VIETGIS - GIS SOLUTION AND TECHNOLOGY COMPANY LIMITED (GAJPP6PZBM)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GAJPP6PZBM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -979,7 +979,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
 				PRODUCT_NAME = VNDMS;
 				PROVISIONING_PROFILE_SPECIFIER = monitering_dis;

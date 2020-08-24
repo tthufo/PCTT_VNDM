@@ -35,7 +35,8 @@
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if ([[self.viewControllers lastObject] isKindOfClass:[PC_New_Map_ViewController class]]) {
+    BOOL isCheck = [Information.check isEqualToString:@"0"];
+    if ([[self.viewControllers lastObject] isKindOfClass: isCheck ? [TG_Root_ViewController class] : [PC_New_Map_ViewController class]]) {
         return NO;
     }
     return YES;

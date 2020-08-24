@@ -70,10 +70,20 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
         bottom.action(forTouch: [:]) { (obj) in
 //            self.callNumber(phoneNumber: Information.phone)
         }
+        
+        if #available(iOS 12, *) {
+             pass.textContentType = .oneTimeCode
+            uName.textContentType = .oneTimeCode
+        } else {
+             pass.textContentType = .init(rawValue: "")
+            uName.textContentType = .init(rawValue: "")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        self.view.endEditing(true)
         
         uName.text = ""
         
@@ -89,7 +99,8 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         
         kb.keyboard { (height, isOn) in
-            UIView.animate(withDuration: 1, animations: {
+                        
+            UIView.animate(withDuration: 0, animations: {
                 var frame = self.login.frame
                 
                 frame.origin.y -= isOn ? (height - CGFloat(self.bottomGap)) : (-height + CGFloat(self.bottomGap))
@@ -148,9 +159,9 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
 //                        }
 //                        self.setUpLogin()
 //                    }
-           
-            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/1khomigge0ugdbd/PCTT_WebView_PCTT_VER_4.plist", "overrideAlert":"1"], withCache: { (cache) in
-                                            
+                               
+            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/n48kxnpz9t27dn8/PCTT_WebView_PCTT_VER_6.plist", "overrideAlert":"1"], withCache: { (cache) in
+                                                        
                 }, andCompletion: { (response, errorCode, error, isValid, object) in
                         
                         if error != nil {
@@ -187,11 +198,11 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                         
 //                        self.loginCover.alpha = (dict! as NSDictionary).getValueFromKey("show") == "1" ? 1 : 0
                                                 
-                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhIiwibmJmIjoxNTgzMjk0NDgyLCJleHAiOjE1ODM4OTkyODIsImlhdCI6MTU4MzI5NDQ4Mn0.mXjsEcy4dcdcPaZsII8qSnN_GJXB5u-Oo29_pKKYLpg"] as [String : Any]
+                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwibmJmIjoxNTk3ODg5OTQ4LCJleHAiOjE1OTg0OTQ3NDgsImlhdCI6MTU5Nzg4OTk0OH0.JwTz8v-64UHq3uc295brzy0qDeivqEZZWA4nzW8qSiE"] as [String : Any]
                         
                         if (dict! as NSDictionary).getValueFromKey("show") == "0" {
                             
-                            self.add(["name":"sa" as Any, "pass":"123456" as Any], andKey: "log")
+                            self.add(["name":"Admin" as Any, "pass":"Abc@123" as Any], andKey: "log")
 
                             self.add((information as! NSDictionary).reFormat() as? [AnyHashable : Any], andKey: "info")
 
@@ -212,9 +223,15 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                             print(Information.check)
                         
 //                            if Information.userInfo?.getValueFromKey("count_province") == "1" {
+                            
+                             if Information.check != "1" {
+                                self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: true)
+                             } else {
                                 self.navigationController?.pushViewController(PC_New_Map_ViewController.init(), animated: true)
+                             }
+
+                            
 //                            } else {
-//                                self.navigationController?.pushViewController(PC_Main_ViewController.init(), animated: false)
 //                            }
                             
                         } else {
@@ -295,12 +312,11 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func didPressSubmit() {
         self.view.endEditing(true)
         
-        
         LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"login",
                                                     "username":uName.text as Any,
                                                     "password":pass.text as Any,
-//                                                    "device_id":FirePush.shareInstance()?.deviceToken() ?? "",
-//                                                    "platform":"IOS",
+                                                    "mobiletoken":FirePush.shareInstance()?.deviceToken() ?? "",
+                                                    "tokentype":2,
                                                     "overrideAlert":"1",
                                                     "overrideLoading":"1",
                                                     "postFix":"auth/login",
@@ -323,10 +339,11 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
             
             Information.saveToken()
             
-//            self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: true)
-            
-            self.navigationController?.pushViewController(PC_New_Map_ViewController.init(), animated: true)
-
+            if Information.check == "1" {
+                self.navigationController?.pushViewController(PC_New_Map_ViewController.init(), animated: true)
+            } else {
+                self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: true)
+            }
             print(result)
             
 //            if Information.userInfo?.getValueFromKey("count_province") == "1" {

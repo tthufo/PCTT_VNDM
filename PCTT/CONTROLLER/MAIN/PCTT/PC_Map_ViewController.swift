@@ -149,8 +149,9 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let data = dataList[indexPath.item] as! NSDictionary
         
+        let badge = self.withView(cell, tag: 1111) as! UILabel
+
         if indexPath.row == 0 {
-            let badge = self.withView(cell, tag: 1111) as! UILabel
 
             badge.text = data.getValueFromKey("badge")
             
@@ -159,6 +160,8 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
             } else {
                 badge.isHidden = false
             }
+        } else {
+            badge.isHidden = true
         }
         
         let title = self.withView(cell, tag: 12) as! UILabel

@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PC_Doc_ViewController" customModule="VNDMS" customModuleProvider="target">
             <connections>
+                <outlet property="headerImg" destination="bsJ-zl-2TZ" id="PP4-FQ-k7g"/>
+                <outlet property="logoLeft" destination="RV9-jp-ZWV" id="bdQ-Jd-xPv"/>
                 <outlet property="tableView" destination="Qz0-H9-3mB" id="Tkv-Oe-67o"/>
                 <outlet property="view" destination="NA2-3Y-Anr" id="Aha-8K-BUB"/>
             </connections>
