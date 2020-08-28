@@ -428,6 +428,22 @@ extension UIViewController {
         }
     }
     
+    func existingFileImage(fileName: String) -> Bool {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        if let pathComponent = url.appendingPathComponent("\(fileName)") {
+            let filePath = pathComponent.path
+            let fileManager = FileManager.default
+            if fileManager.fileExists(atPath: filePath) {
+            return true
+        } else {
+            return false
+        }
+        } else {
+            return false
+        }
+    }
+    
     func existingFile(fileName: String, type: String) -> Bool {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let url = NSURL(fileURLWithPath: path)
@@ -484,5 +500,13 @@ extension UIImage {
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage!
+    }
+}
+
+extension String {
+    func withoutSpecialCharacters() -> String {
+        let bar = self.folding(options: .diacriticInsensitive, locale: .current)
+
+        return bar
     }
 }

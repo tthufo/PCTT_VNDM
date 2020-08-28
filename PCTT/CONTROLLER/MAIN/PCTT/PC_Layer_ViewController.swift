@@ -18,7 +18,7 @@ class PC_Layer_ViewController: UIViewController {
     
     var result: NSDictionary!
     
-        @IBOutlet var headerImg: UIImageView!
+    @IBOutlet var headerImg: UIImageView!
 
      @IBOutlet var logoLeft: UIImageView!
     
@@ -35,10 +35,12 @@ class PC_Layer_ViewController: UIViewController {
 
         dataList = NSMutableArray.init()
         
-        let layers = (result["data"] as! NSDictionary)["LayerData"]
-                   
-        dataList.addObjects(from: self.modifying(obj: layers as! NSArray) as! [Any])
-                
+        if result != nil {
+            let layers = (result["data"] as! NSDictionary)["LayerData"]
+                       
+            dataList.addObjects(from: self.modifying(obj: layers as! NSArray) as! [Any])
+        }
+        
         tableView.withCell("Layer_Cell")
     }
 

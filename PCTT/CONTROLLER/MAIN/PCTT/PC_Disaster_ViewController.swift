@@ -23,7 +23,7 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var searchText: UITextField!
     
     @IBOutlet var yearButton: DropButton!
-    
+        
     let refreshControl = UIRefreshControl()
 
     var year: String = ""
@@ -146,6 +146,11 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
             self.showToast("Không có dữ liệu. Mời bạn thử lại sau", andPos: 0)
         }
       })
+    
+    print("===>", self.fileURLInDocumentDirectory("Lũ".withoutSpecialCharacters()))
+    if let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.path {
+        print("Documents Directory: \(documentsPath)")
+    }
     }
     
     func disList() -> NSArray {
@@ -157,7 +162,6 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func requestDisaster() {
-
            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "CategoryDisasterList"),
                                                      "header":["Authorization":Information.token == nil ? "" : Information.token!],
                                                      "method":"GET",
@@ -212,6 +216,27 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
     func oMap() -> PC_Disaster_Map_ViewController {
         return (self.parent as! PC_Disaster_Tab_ViewController).viewControllers?.last as! PC_Disaster_Map_ViewController
     }
+    
+    func storeImageToDocumentDirectory(image: UIImage, fileName: String) -> URL? {
+        guard let data = image.pngData() else {
+            return nil
+        }
+        let fileURL = self.fileURLInDocumentDirectory(fileName)
+        do {
+            try data.write(to: fileURL)
+            return fileURL
+        } catch {
+            return nil
+        }
+    }
+    
+    var documentsDirectoryURL: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+    
+    func fileURLInDocumentDirectory(_ fileName: String) -> URL {
+        return self.documentsDirectoryURL.appendingPathComponent(fileName)
+    }
 }
 
 extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -263,11 +288,20 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
 
             let stringing = (data["disaster"] as! NSDictionary).getValueFromKey("image")
             
-            if let decodedData = Data(base64Encoded: stringing!),
-               let decodedString = String(data: decodedData, encoding: .utf8) {
-               let dee = decodedString.data(using: .utf8)
-               let namSvgImgVar = SVGKImage.init(data: dee)
-               img.image = namSvgImgVar?.uiImage
+            let imageName = ((data["disaster"] as! NSDictionary).getValueFromKey("name_disaster")!).withoutSpecialCharacters()
+            
+            if self.existingFileImage(fileName: imageName) {
+                img.image = UIImage.init(contentsOfFile: self.fileURLInDocumentDirectory(imageName).path)
+            } else {
+                if let decodedData = Data(base64Encoded: stringing!),
+                   let decodedString = String(data: decodedData, encoding: .utf8) {
+                   let dee = decodedString.data(using: .utf8)
+                   let namSvgImgVar = SVGKImage.init(data: dee)
+                    
+                   self.storeImageToDocumentDirectory(image: (namSvgImgVar?.uiImage)!, fileName: imageName)
+                    
+                   img.image = namSvgImgVar?.uiImage
+                }
             }
             
             let lab1 = self.withView(cell, tag: 2) as! UILabel

@@ -78,7 +78,7 @@ class PC_Contact_ViewController: UIViewController, UITextFieldDelegate {
           
            lng = location.getValueFromKey("lng")
         }
-        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "contact?lat=%@&lon=%@keyword=%@".format(parameters: lat, lng, searchText.text as! CVarArg)),
+        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "contact?lat=%@&lon=%@&keyword=%@".format(parameters: lat, lng, (searchText.text! as NSString).encodeUrl())),
                                                   "header":["Authorization":Information.token == nil ? "" : Information.token!],
                                                   "method":"GET",
                                                   "overrideAlert":"1",
@@ -99,7 +99,7 @@ class PC_Contact_ViewController: UIViewController, UITextFieldDelegate {
           
           self.tableView.reloadData()
         
-        if self.dataList.count == 0 {
+         if self.dataList.count == 0 {
             self.showToast("Không có dữ liệu. Mời bạn thử lại sau", andPos: 0)
         }
       })
@@ -131,7 +131,7 @@ class PC_Contact_ViewController: UIViewController, UITextFieldDelegate {
 extension PC_Contact_ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 74
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -160,7 +160,7 @@ extension PC_Contact_ViewController: UITableViewDataSource, UITableViewDelegate 
         
         title.textColor = .black
         
-        title.text = data["mo_ta"] as? String
+        title.text = (data["mo_ta"] as? String)?.replacingOccurrences(of: "\n", with: "")
         
         let des = self.withView(cell, tag: 2) as! UILabel
         

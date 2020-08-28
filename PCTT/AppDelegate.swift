@@ -118,6 +118,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         FirePush.shareInstance()?.connectToFcm()
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if let last = (self.window?.rootViewController as! Navigation_ViewController).viewControllers.last as? PC_New_Map_ViewController {
+            last.reloading()
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

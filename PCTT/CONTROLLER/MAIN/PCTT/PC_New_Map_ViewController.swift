@@ -31,13 +31,16 @@ class PC_New_Map_ViewController: UIViewController {
            headerImg.image = UIImage(named: "bg_text_dms")
        }
         
-        let param = "http://vndms.gisgo.vn/?cmd=home&token=" + (FirePush.shareInstance()?.deviceToken())!
-                               
-       let link = URL(string: param)!
-       let request = URLRequest(url: link)
-       webView.load(request)
+//        let refreshControl = UIRefreshControl()
+//        refreshControl.addTarget(self, action: #selector(reloadWebView(_:)), for: .valueChanged)
+//        webView.scrollView.addSubview(refreshControl)
     }
-        
+    
+//    @objc func reloadWebView(_ sender: UIRefreshControl) {
+//        webView.reload()
+//        sender.endRefreshing()
+//    }
+    
     func current() {
         LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "EventDisaster"),
                                                          "header":["Authorization":Information.token == nil ? "" : Information.token!],
@@ -80,8 +83,19 @@ class PC_New_Map_ViewController: UIViewController {
        }
 
     override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-        
-           current()
-       }
+        super.viewWillAppear(animated)
+        reloading()
+    }
+    
+    func reloading() {
+      let param = "http://vndms.gisgo.vn/?cmd=home&token=" + (FirePush.shareInstance()?.deviceToken())!
+                                          
+      let link = URL(string: param)!
+     
+      let request = URLRequest(url: link)
+     
+      webView.load(request)
+ 
+      current()
+    }
 }

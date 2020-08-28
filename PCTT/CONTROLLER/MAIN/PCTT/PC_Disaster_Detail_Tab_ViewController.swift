@@ -80,6 +80,8 @@ class PC_Disaster_Detail_Tab_ViewController: UITabBarController {
     }
     
     func requestPointDetail() {
+        print("==>", self.pointId)
+
         if self.pointId == "" {
             return
         }
@@ -92,12 +94,12 @@ class PC_Disaster_Detail_Tab_ViewController: UITabBarController {
          }, andCompletion: { (response, errorCode, error, isValid, object) in
            
              let result = response?.dictionize() ?? [:]
-                                            
-             if result.getValueFromKey("status") != "OK" {
+            
+             if response == nil || result.getValueFromKey("status") != "OK" {
                  self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
                  return
              }
-                        
+                                    
             (self.viewControllers![2] as! PC_Layer_ViewController).result = result
 
             (self.viewControllers![0] as! PC_Doc_ViewController).result = result
