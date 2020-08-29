@@ -160,8 +160,8 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
 //                        self.setUpLogin()
 //                    }
                                
-            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/n48kxnpz9t27dn8/PCTT_WebView_PCTT_VER_6.plist", "overrideAlert":"1"], withCache: { (cache) in
-                                                        
+            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/55advm6ooqh64y0/PCTT_WebView_PCTT_VER_7.plist", "overrideAlert":"1"], withCache: { (cache) in
+                                                                        
                 }, andCompletion: { (response, errorCode, error, isValid, object) in
                         
                         if error != nil {
@@ -198,11 +198,11 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                         
 //                        self.loginCover.alpha = (dict! as NSDictionary).getValueFromKey("show") == "1" ? 1 : 0
                                                 
-                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwibmJmIjoxNTk3ODg5OTQ4LCJleHAiOjE1OTg0OTQ3NDgsImlhdCI6MTU5Nzg4OTk0OH0.JwTz8v-64UHq3uc295brzy0qDeivqEZZWA4nzW8qSiE"] as [String : Any]
+                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNTk4Njk0MjQyLCJleHAiOjE1OTkyOTkwNDIsImlhdCI6MTU5ODY5NDI0Mn0.Tp9fI-8gN-wLaa5UYNQ7AIRoYJB1_87nNO9F95zR4A4"] as [String : Any]
                         
                         if (dict! as NSDictionary).getValueFromKey("show") == "0" {
                             
-                            self.add(["name":"Admin" as Any, "pass":"Abc@123" as Any], andKey: "log")
+                            self.add(["name":"admin" as Any, "pass":"Abc@123" as Any], andKey: "log")
 
                             self.add((information as! NSDictionary).reFormat() as? [AnyHashable : Any], andKey: "info")
 

@@ -32,7 +32,7 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
 
     var dataList: NSMutableArray!
 
-    var dList: NSMutableArray!
+    var dList: NSMutableArray = NSMutableArray()
     
     let throttler = Throttler(minimumDelay: 0.5)
 
@@ -53,7 +53,7 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
     
       dataList = NSMutableArray.init()
         
-      dList = NSMutableArray.init()
+//      dList = NSMutableArray.init()
     
       tableView.withCell("Disaster_Cell")
         
@@ -85,6 +85,21 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
         requestEvent()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if !hideShow {
+            didPressSearch()
+        }
+    }
+    
+    func updateFilter(array1: NSMutableArray) {
+       let bond = dList.count != array1.count
+       dList = array1
+       disTableView.reloadData()
+       requestEvent(loading: bond)
+    }
+    
     func yearNumb() -> NSArray {
         let arr = NSMutableArray.init()
         var x = Int(getYear())!
@@ -106,7 +121,7 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
         requestEvent()
     }
     
-   @objc func requestEvent() {
+    @objc func requestEvent(loading: Bool = true) {
 
         let condition = self.searchText.hasText || self.year != "" || self.disList().count != 0
         
@@ -124,7 +139,7 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
                                                   "method":"GET",
                                                   "overrideAlert":"1",
                                                   "overrideLoading":"1",
-                                                  "host":self], withCache: { (cacheString) in
+                                                  "host": loading ? self : (Any).self], withCache: { (cacheString) in
       }, andCompletion: { (response, errorCode, error, isValid, object) in
         
           let result = response?.dictionize() ?? [:]
@@ -146,11 +161,7 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
             self.showToast("Không có dữ liệu. Mời bạn thử lại sau", andPos: 0)
         }
       })
-    
-    print("===>", self.fileURLInDocumentDirectory("Lũ".withoutSpecialCharacters()))
-    if let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.path {
-        print("Documents Directory: \(documentsPath)")
-    }
+
     }
     
     func disList() -> NSArray {
@@ -184,8 +195,10 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
                 (modDict as! NSMutableDictionary)["check"] = "0"
                 self.dList.add(modDict)
             }
+            
+            self.parenting().dataList = self.dList
                          
-             self.disTableView.reloadData()
+            self.disTableView.reloadData()
         })
        }
     
@@ -197,15 +210,19 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func didPressSearch() {
-        hideShow = !hideShow
         self.view.endEditing(true)
+        hideShow = !hideShow
         filterView.alpha = hideShow ? 0 : 1
         coverView.isHidden = !hideShow ? false : true
     }
     
     @IBAction func didPressBack() {
         self.view.endEditing(true)
-        (self.parent as! PC_Disaster_Tab_ViewController).navigationController?.popViewController(animated: true)
+        parenting().navigationController?.popViewController(animated: true)
+    }
+    
+    func parenting() -> PC_Disaster_Tab_ViewController{
+        return (self.parent as! PC_Disaster_Tab_ViewController)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -214,7 +231,7 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func oMap() -> PC_Disaster_Map_ViewController {
-        return (self.parent as! PC_Disaster_Tab_ViewController).viewControllers?.last as! PC_Disaster_Map_ViewController
+        return parenting().viewControllers?.last as! PC_Disaster_Map_ViewController
     }
     
     func storeImageToDocumentDirectory(image: UIImage, fileName: String) -> URL? {
@@ -319,8 +336,6 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
             
             let lab2 = self.withView(cell, tag: 3) as! UILabel
             
-//            lab2.text = "Vị trí: " + data.getValueFromKey("lat") + " - " + data.getValueFromKey("lon")
-
             let attributedString2 = NSMutableAttributedString(string: "Vị trí: ", attributes:attributsBold)
             let boldStringPart2 = NSMutableAttributedString(string: data.getValueFromKey("lon") + " - " + data.getValueFromKey("lat"), attributes:attributsNormal)
             attributedString2.append(boldStringPart2)
@@ -331,8 +346,6 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
             
             let lab3 = self.withView(cell, tag: 4) as! UILabel
             
-//            lab3.text = "Vùng ảnh hưởng: " + data.getValueFromKey("kv_anhhuong")
-
             let attributedString3 = NSMutableAttributedString(string: "Vùng ảnh hưởng: ", attributes:attributsBold)
                 let boldStringPart3 = NSMutableAttributedString(string: data.getValueFromKey("kv_anhhuong"), attributes:attributsNormal)
                 attributedString3.append(boldStringPart3)
@@ -340,11 +353,8 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
                 lab3.attributedText = attributedString3
             
             
-            
             let lab4 = self.withView(cell, tag: 5) as! UILabel
                         
-//            lab4.text = "Cấp độ rủi ro thiên tai: " + data.getValueFromKey("level")
-
             let attributedString4 = NSMutableAttributedString(string: "Cấp độ rủi ro thiên tai: ", attributes:attributsBold)
                let boldStringPart4 = NSMutableAttributedString(string: data.getValueFromKey("disaster_level"), attributes:attributsNormal)
                attributedString4.append(boldStringPart4)
@@ -353,7 +363,7 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
             
             
         } else {
-            let data = dList![indexPath.row] as! NSMutableDictionary
+            let data = dList[indexPath.row] as! NSMutableDictionary
 
             let title = self.withView(cell, tag: 101) as! UILabel
 
@@ -406,16 +416,17 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
         self.view.endEditing(true)
 
         if tableView == disTableView {
-            let data = dList![indexPath.row] as! NSMutableDictionary
+            let data = dList[indexPath.row] as! NSMutableDictionary
             data["check"] = (data["check"] as! String) == "1" ? "0" : "1"
             self.disTableView.reloadData()
             self.requestEvent()
             self.oMap().listtypeid = self.typeId()
+            self.parenting().updateMap(array: self.dList)
         } else {
             let data = dataList![indexPath.row] as! NSDictionary
             self.oMap().eventId = data.getValueFromKey("id")
             self.oMap().layerId = ""
-            (self.parent as! PC_Disaster_Tab_ViewController).changeMap()
+            parenting().changeMap()
         }
     }
 }

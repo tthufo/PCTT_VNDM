@@ -72,7 +72,7 @@
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
-                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJJ-Hu-LfA">
+                <view hidden="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJJ-Hu-LfA">
                     <rect key="frame" x="0.0" y="152" width="414" height="710"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
@@ -128,7 +128,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSb-PD-HGy">
-                            <rect key="frame" x="370" y="0.0" width="44" height="44"/>
+                            <rect key="frame" x="368" y="0.0" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="KIs-qL-DXD"/>
                                 <constraint firstAttribute="width" constant="44" id="pXx-pK-YVl"/>
@@ -141,7 +141,7 @@
                     </subviews>
                     <color key="backgroundColor" red="0.10196078431372549" green="0.41960784313725491" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="GSb-PD-HGy" secondAttribute="trailing" id="Avb-gV-HzS"/>
+                        <constraint firstAttribute="trailing" secondItem="GSb-PD-HGy" secondAttribute="trailing" constant="2" id="Avb-gV-HzS"/>
                         <constraint firstItem="Ap8-nG-kkX" firstAttribute="centerX" secondItem="kJw-LL-a8t" secondAttribute="centerX" id="Jqz-Bu-dRb"/>
                         <constraint firstItem="4JV-pn-L9K" firstAttribute="leading" secondItem="kJw-LL-a8t" secondAttribute="leading" constant="8" id="Suv-pZ-87o"/>
                         <constraint firstAttribute="height" constant="44" id="bS4-yk-kc6"/>

@@ -66,6 +66,14 @@ class PC_Disaster_Map_ViewController: UIViewController, WKUIDelegate, WKNavigati
         loadWebParam()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+       super.viewWillDisappear(animated)
+       
+       if !hideShow {
+           didPressSearch()
+       }
+   }
+    
     func loadWebParam() {
         
         // type = all, current, list
@@ -85,9 +93,21 @@ class PC_Disaster_Map_ViewController: UIViewController, WKUIDelegate, WKNavigati
         webView.load(request)
     }
     
+    func updateFilter(array: NSMutableArray) {
+        if dList != nil {
+            dList.removeAllObjects()
+            dList.addObjects(from: array as! [Any])
+            disTableView.reloadData()
+        }
+    }
+    
+    func parenting() -> PC_Disaster_Tab_ViewController{
+        return (self.parent as! PC_Disaster_Tab_ViewController)
+    }
+    
     @IBAction func didPressBack() {
         self.view.endEditing(true)
-         (self.parent as! PC_Disaster_Tab_ViewController).navigationController?.popViewController(animated: true)
+        parenting().navigationController?.popViewController(animated: true)
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -128,8 +148,8 @@ class PC_Disaster_Map_ViewController: UIViewController, WKUIDelegate, WKNavigati
         return dis as NSArray
     }
     
-    func oMap() -> PC_Disaster_Map_ViewController {
-       return (self.parent as! PC_Disaster_Tab_ViewController).viewControllers?.last as! PC_Disaster_Map_ViewController
+    func oMap() -> PC_Disaster_ViewController {
+       return parenting().viewControllers?.first as! PC_Disaster_ViewController
     }
 }
 
@@ -162,9 +182,9 @@ extension PC_Disaster_Map_ViewController: UITableViewDataSource, UITableViewDele
         butt.action(forTouch: [:]) { (obj) in
             data["check"] = (data["check"] as! String) == "1" ? "0" : "1"
             self.disTableView.reloadData()
-            
-//            self.requestEvent()
-//            self.oMap().listtypeid = self.typeId()
+            self.listtypeid = self.typeId()
+            self.loadWebParam()
+            self.parenting().updateDisaster(array: self.dList)
         }
         
         let img = self.withView(cell, tag: 1111) as! UIImageView
@@ -203,8 +223,9 @@ extension PC_Disaster_Map_ViewController: UITableViewDataSource, UITableViewDele
             let data = dList![indexPath.row] as! NSMutableDictionary
             data["check"] = (data["check"] as! String) == "1" ? "0" : "1"
             self.disTableView.reloadData()
-//            self.requestEvent()
-//            self.oMap().listtypeid = self.typeId()
+            self.listtypeid = self.typeId()
+            self.loadWebParam()
+            self.parenting().updateDisaster(array: self.dList)
         } else {
 //            let data = dataList![indexPath.row] as! NSDictionary
 //            self.oMap().eventId = data.getValueFromKey("id")

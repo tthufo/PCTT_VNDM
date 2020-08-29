@@ -12,6 +12,8 @@ class PC_Disaster_Tab_ViewController: UITabBarController {
 
     var line: UIView!
     
+    var dataList = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,14 +64,29 @@ class PC_Disaster_Tab_ViewController: UITabBarController {
         self.selectedIndex = 1
     }
     
+    func firster() -> PC_Disaster_ViewController {
+        return (self.viewControllers?.first as! PC_Disaster_ViewController)
+    }
+    
+    func laster() -> PC_Disaster_Map_ViewController {
+        return (self.viewControllers?.last as! PC_Disaster_Map_ViewController)
+    }
+    
     func setMap(subLayerId: String, layerId: String) {
-        (self.viewControllers?.last as! PC_Disaster_Map_ViewController).layerId = layerId
-        (self.viewControllers?.last as! PC_Disaster_Map_ViewController).subLayerId = subLayerId
+        laster().layerId = layerId
+        laster().subLayerId = subLayerId
+    }
+    
+    func updateMap(array: NSMutableArray) {
+        laster().updateFilter(array: array)
+    }
+    
+    func updateDisaster(array: NSMutableArray) {
+        firster().updateFilter(array1: array)
     }
     
     func rootSelect(index: Int) {
         self.selectedIndex = index
-        
         changePos(pos: index)
     }
     
@@ -77,6 +94,15 @@ class PC_Disaster_Tab_ViewController: UITabBarController {
         if let items = tabBar.items {
             items.enumerated().forEach { if $1 == item {
                     self.changePos(pos: $0)
+                    if $0 == 0 {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                            self.updateDisaster(array: self.dataList)
+                        })
+                    } else {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                            self.updateMap(array: self.dataList)
+                       })
+                    }
                 }
             }
         }
