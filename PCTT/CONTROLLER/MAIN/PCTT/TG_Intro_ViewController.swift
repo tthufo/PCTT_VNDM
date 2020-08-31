@@ -55,10 +55,16 @@ class TG_Intro_ViewController: UIViewController {
         
         tableView.withCell("PC_Info_Cell")
         
+        let intro = "<h1>Giới thiệu</h1><br/><h2>Ứng dụng giám sát thông tin thiên tai là một phần của Hệ thống giám sát thiên tai Việt Nam - VNDMS, được Văn phòng Thường trực Ban Chỉ đạo Trung ương về phòng chống thiên tai xây dựng nhằm tăng cường công tác giám sát, ứng phó thiên tai trong các tình huống thiên tai, ứng phó khẩn cấp.</h4>"
+    
         if isIntro {
             let link = URL(string:"http://vndms.gisgo.vn/?cmd=intro")!
             let request = URLRequest(url: link)
-            webView.load(request)
+            if Information.check != "0" {
+                webView.load(request)
+            } else {
+                webView.loadHTMLString(intro, baseURL: nil)
+            }
         }
         
         webView.isHidden = !isIntro
@@ -67,7 +73,7 @@ class TG_Intro_ViewController: UIViewController {
         
         titleLabel.isHidden = isIntro
         
-        didRequestFAQ()
+//        didRequestFAQ()
     }
     
     func didRequestFAQ() {
