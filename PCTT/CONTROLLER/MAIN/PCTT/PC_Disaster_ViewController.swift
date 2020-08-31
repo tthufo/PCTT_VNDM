@@ -191,6 +191,27 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
              self.dList.removeAllObjects()
            
             for dict in response?.dictionize()["data"] as! [Any] {
+                
+                let data = dict as! NSDictionary
+                
+                let stringing = data.getValueFromKey("image")
+                
+                let imageName = (data.getValueFromKey("name_disaster")!).withoutSpecialCharacters()
+                
+                if self.existingFileImage(fileName: imageName) {
+                    print("===>", imageName)
+                } else {
+                    if let decodedData = Data(base64Encoded: stringing!),
+                       let decodedString = String(data: decodedData, encoding: .utf8) {
+                       let dee = decodedString.data(using: .utf8)
+                       let namSvgImgVar = SVGKImage.init(data: dee)
+
+                        DispatchQueue.background(background: {
+                           self.storeImageToDocumentDirectory(image: (namSvgImgVar?.uiImage)!, fileName: imageName)
+                        }, completion:{
+                        })
+                    }
+                }
                 let modDict = NSMutableDictionary.init(dictionary: (dict as! NSDictionary) )
                 (modDict as! NSMutableDictionary)["check"] = "0"
                 self.dList.add(modDict)
@@ -241,6 +262,7 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
         let fileURL = self.fileURLInDocumentDirectory(fileName)
         do {
             try data.write(to: fileURL)
+            print(fileURL)
             return fileURL
         } catch {
             return nil
@@ -303,23 +325,30 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
 
             let img = self.withView(cell, tag: 1111) as! UIImageView
 
-            let stringing = (data["disaster"] as! NSDictionary).getValueFromKey("image")
+//            let stringing = (data["disaster"] as! NSDictionary).getValueFromKey("image")
             
             let imageName = ((data["disaster"] as! NSDictionary).getValueFromKey("name_disaster")!).withoutSpecialCharacters()
             
-            if self.existingFileImage(fileName: imageName) {
-                img.image = UIImage.init(contentsOfFile: self.fileURLInDocumentDirectory(imageName).path)
-            } else {
-                if let decodedData = Data(base64Encoded: stringing!),
-                   let decodedString = String(data: decodedData, encoding: .utf8) {
-                   let dee = decodedString.data(using: .utf8)
-                   let namSvgImgVar = SVGKImage.init(data: dee)
+//            if self.existingFileImage(fileName: imageName) {
+//                img.image = UIImage.init(contentsOfFile: self.fileURLInDocumentDirectory(imageName).path)
+                img.sd_setImage(with: self.fileURLInDocumentDirectory(imageName)) { (image, error, cacheType, url) in
                     
-                   self.storeImageToDocumentDirectory(image: (namSvgImgVar?.uiImage)!, fileName: imageName)
-                    
-                   img.image = namSvgImgVar?.uiImage
                 }
-            }
+//            }
+//            else {
+//                if let decodedData = Data(base64Encoded: stringing!),
+//                   let decodedString = String(data: decodedData, encoding: .utf8) {
+//                   let dee = decodedString.data(using: .utf8)
+//                   let namSvgImgVar = SVGKImage.init(data: dee)
+//
+//                    DispatchQueue.background(background: {
+//                      self.storeImageToDocumentDirectory(image: (namSvgImgVar?.uiImage)!, fileName: imageName)
+//                    }, completion:{
+//                    })
+//
+//                   img.image = namSvgImgVar?.uiImage
+//                }
+//            }
             
             let lab1 = self.withView(cell, tag: 2) as! UILabel
             
@@ -386,11 +415,35 @@ extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate
 
             let stringing = data.getValueFromKey("image")
 
-            if let decodedData = Data(base64Encoded: stringing!),
-               let decodedString = String(data: decodedData, encoding: .utf8) {
-               let dee = decodedString.data(using: .utf8)
-               let namSvgImgVar = SVGKImage.init(data: dee)
-               img.image = namSvgImgVar?.uiImage
+            let imageName = (data.getValueFromKey("name_disaster")!).withoutSpecialCharacters()
+
+//            if let decodedData = Data(base64Encoded: stringing!),
+//               let decodedString = String(data: decodedData, encoding: .utf8) {
+//               let dee = decodedString.data(using: .utf8)
+//               let namSvgImgVar = SVGKImage.init(data: dee)
+//               img.image = namSvgImgVar?.uiImage
+//            }
+            
+            
+            if self.existingFileImage(fileName: imageName) {
+//                img.image = UIImage.init(contentsOfFile: self.fileURLInDocumentDirectory(imageName).path)
+                img.sd_setImage(with: self.fileURLInDocumentDirectory(imageName)) { (image, error, cacheType, url) in
+                                   
+                               }
+            }
+            else {
+                if let decodedData = Data(base64Encoded: stringing!),
+                   let decodedString = String(data: decodedData, encoding: .utf8) {
+                   let dee = decodedString.data(using: .utf8)
+                   let namSvgImgVar = SVGKImage.init(data: dee)
+
+                    DispatchQueue.background(background: {
+                      self.storeImageToDocumentDirectory(image: (namSvgImgVar?.uiImage)!, fileName: imageName)
+                    }, completion:{
+                    })
+
+                   img.image = namSvgImgVar?.uiImage
+                }
             }
             
             butt.setImage(UIImage.init(named: data.getValueFromKey("check") == "0" ? "ic_tick_inactive_white" : "ic_tick_active"), for: .normal)
@@ -460,5 +513,19 @@ class Throttler {
         // => delay the workItem execution by the minimum delay time
         let delay = previousRun.timeIntervalSinceNow > minimumDelay ? 0 : minimumDelay
         queue.asyncAfter(deadline: .now() + Double(delay), execute: workItem)
+    }
+}
+
+extension DispatchQueue {
+
+    static func background(delay: Double = 0.0, background: (()->Void)? = nil, completion: (() -> Void)? = nil) {
+        DispatchQueue.global(qos: .background).async {
+            background?()
+            if let completion = completion {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                    completion()
+                })
+            }
+        }
     }
 }

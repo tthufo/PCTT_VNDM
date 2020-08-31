@@ -943,7 +943,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
 				PRODUCT_NAME = VNDMS;
 				PROVISIONING_PROFILE_SPECIFIER = monitering_dev;
@@ -979,7 +979,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
 				PRODUCT_NAME = VNDMS;
 				PROVISIONING_PROFILE_SPECIFIER = monitering_dis;

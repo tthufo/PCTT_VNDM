@@ -191,12 +191,35 @@ extension PC_Disaster_Map_ViewController: UITableViewDataSource, UITableViewDele
         
         let stringing = data.getValueFromKey("image")
 
-        if let decodedData = Data(base64Encoded: stringing!),
-           let decodedString = String(data: decodedData, encoding: .utf8) {
-           let dee = decodedString.data(using: .utf8)
-           let namSvgImgVar = SVGKImage.init(data: dee)
-           img.image = namSvgImgVar?.uiImage
+        let imageName = (data.getValueFromKey("name_disaster")!).withoutSpecialCharacters()
+
+        if self.existingFileImage(fileName: imageName) {
+//                img.image = UIImage.init(contentsOfFile: self.fileURLInDocumentDirectory(imageName).path)
+            img.sd_setImage(with: self.fileURLInDocumentDirectory(imageName)) { (image, error, cacheType, url) in
+                               
+           }
         }
+        else {
+            if let decodedData = Data(base64Encoded: stringing!),
+               let decodedString = String(data: decodedData, encoding: .utf8) {
+               let dee = decodedString.data(using: .utf8)
+               let namSvgImgVar = SVGKImage.init(data: dee)
+
+                DispatchQueue.background(background: {
+                  self.storeImageToDocumentDirectory(image: (namSvgImgVar?.uiImage)!, fileName: imageName)
+                }, completion:{
+                })
+
+               img.image = namSvgImgVar?.uiImage
+            }
+        }
+        
+//        if let decodedData = Data(base64Encoded: stringing!),
+//           let decodedString = String(data: decodedData, encoding: .utf8) {
+//           let dee = decodedString.data(using: .utf8)
+//           let namSvgImgVar = SVGKImage.init(data: dee)
+//           img.image = namSvgImgVar?.uiImage
+//        }
         
         butt.setImage(UIImage.init(named: data.getValueFromKey("check") == "0" ? "ic_tick_inactive_white" : "ic_tick_active"), for: .normal)
         
@@ -232,5 +255,27 @@ extension PC_Disaster_Map_ViewController: UITableViewDataSource, UITableViewDele
 //            self.oMap().layerId = ""
 //            (self.parent as! PC_Disaster_Tab_ViewController).changeMap()
         }
+    }
+    
+    func storeImageToDocumentDirectory(image: UIImage, fileName: String) -> URL? {
+        guard let data = image.pngData() else {
+            return nil
+        }
+        let fileURL = self.fileURLInDocumentDirectory(fileName)
+        do {
+            try data.write(to: fileURL)
+            print(fileURL)
+            return fileURL
+        } catch {
+            return nil
+        }
+    }
+    
+    var documentsDirectoryURL: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+    
+    func fileURLInDocumentDirectory(_ fileName: String) -> URL {
+        return self.documentsDirectoryURL.appendingPathComponent(fileName)
     }
 }
