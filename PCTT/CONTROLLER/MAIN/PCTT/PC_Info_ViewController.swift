@@ -18,24 +18,28 @@ class PC_Info_ViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet var topView: UIView!
+    
+    @IBOutlet var topHeight: NSLayoutConstraint!
+
     var dataList: NSMutableArray!
+ 
+    @IBOutlet var headerImg: UIImageView!
 
-  @IBOutlet var headerImg: UIImageView!
-
-  @IBOutlet var logoLeft: UIImageView!
+    @IBOutlet var logoLeft: UIImageView!
      
- override func viewDidLoad() {
-     super.viewDidLoad()
+    override func viewDidLoad() {
+       super.viewDidLoad()
      
-     if Information.check != "0" {
-         logoLeft.image = UIImage(named: "logo_tc")
-     }
+       if Information.check != "0" {
+           logoLeft.image = UIImage(named: "logo_tc")
+       }
       
-      if Information.check == "0" {
+       if Information.check == "0" {
           headerImg.image = UIImage(named: "bg_text_dms")
-      }
+       }
         
-        dataList = NSMutableArray.init(array: [["title":"Thông tin tài khoản", "image":"user_info"],
+       dataList = NSMutableArray.init(array: [["title":"Thông tin tài khoản", "image":"user_info"],
                                                ["title":"Đổi mật khẩu", "image":"change_pass"],
 //                                               ["title":"Đóng góp ý tưởng", "image":"contribution"],
                                                ["title":"Cho phép nhận thông báo", "image":"notification"],
@@ -47,6 +51,16 @@ class PC_Info_ViewController: UIViewController {
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         
         bottom.text = "VNDMS Ver %@".format(parameters: appVersion!)
+        
+        topHeight.constant = isLD() ? 44 : 0
+        
+        for v in topView.subviews {
+            v.isHidden = isLD() ? false : true
+        }
+    }
+    
+    func isLD() -> Bool {
+        return Information.userInfo?.getValueFromKey("IsLanhDao") == "1"
     }
     
     func didPressLogout() {
@@ -86,6 +100,10 @@ class PC_Info_ViewController: UIViewController {
                                 self.showToast("Cập nhật thông báo thành công", andPos: 0)
                                               
                               })
+    }
+    
+    @IBAction func didPressback() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

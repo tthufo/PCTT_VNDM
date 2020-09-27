@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PC_New_Map_ViewController" customModule="VNDMS" customModuleProvider="target">
             <connections>
+                <outlet property="LDMenu" destination="jXU-1m-BdX" id="OXv-p2-qV3"/>
                 <outlet property="badge" destination="Dha-co-t7P" id="oN2-Ew-5wU"/>
                 <outlet property="headerImg" destination="H7e-RJ-Pha" id="qFY-7V-ZFg"/>
                 <outlet property="logoLeft" destination="ICy-5U-UZr" id="Kj5-qi-JhI"/>
@@ -148,16 +149,107 @@
                         <constraint firstItem="GLs-HJ-W8A" firstAttribute="centerX" secondItem="oZ6-1g-MP4" secondAttribute="centerX" id="yWF-yj-5e3"/>
                     </constraints>
                 </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXU-1m-BdX">
+                    <rect key="frame" x="0.0" y="646" width="414" height="90"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyg-JQ-l6Z">
+                            <rect key="frame" x="141" y="10" width="55" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <state key="normal" backgroundImage="ic_canhbao"/>
+                            <connections>
+                                <action selector="điPressWarning" destination="-1" eventType="touchUpInside" id="nFi-L3-gPv"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TT Cảnh báo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMb-YP-O3R">
+                            <rect key="frame" x="124" y="69" width="88" height="18"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tài khoản" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAa-Td-xiB">
+                            <rect key="frame" x="312" y="69" width="94" height="18"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raR-GC-eaA">
+                            <rect key="frame" x="32" y="10" width="55" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <state key="normal" backgroundImage="ic_sukienthientai"/>
+                            <connections>
+                                <action selector="didPressDisaster" destination="-1" eventType="touchUpInside" id="9QP-xe-ZEy"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TT Thiên tai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nF-XI-5Rn">
+                            <rect key="frame" x="18" y="69" width="82" height="18"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-a9-O0t">
+                            <rect key="frame" x="68" y="10" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Danh bạ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8u-yB-pKw">
+                            <rect key="frame" x="238" y="69" width="57" height="18"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YA-MP-X3N">
+                            <rect key="frame" x="239" y="10" width="55" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <state key="normal" backgroundImage="ic_danhba"/>
+                            <connections>
+                                <action selector="didPressContact" destination="-1" eventType="touchUpInside" id="zYv-gT-mrr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFm-VI-ojc">
+                            <rect key="frame" x="332" y="10" width="55" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <state key="normal" image="ic_hoidap"/>
+                            <connections>
+                                <action selector="didPressInfo" destination="-1" eventType="touchUpInside" id="Ifr-tL-sJZ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="1SB-kp-LSN"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="jXU-1m-BdX" firstAttribute="trailing" secondItem="4ch-V0-R0Z" secondAttribute="trailing" id="5Bd-LD-WxV"/>
                 <constraint firstItem="oZ6-1g-MP4" firstAttribute="bottom" secondItem="4ch-V0-R0Z" secondAttribute="bottom" id="6hF-aM-Vqw"/>
+                <constraint firstItem="jXU-1m-BdX" firstAttribute="leading" secondItem="4ch-V0-R0Z" secondAttribute="leading" id="9EW-OC-bKo"/>
                 <constraint firstItem="blX-qE-nWV" firstAttribute="top" secondItem="JRa-Wu-uCo" secondAttribute="bottom" id="HGz-kd-azi"/>
                 <constraint firstItem="blX-qE-nWV" firstAttribute="trailing" secondItem="4ch-V0-R0Z" secondAttribute="trailing" id="O7c-da-fAa"/>
                 <constraint firstItem="blX-qE-nWV" firstAttribute="leading" secondItem="4ch-V0-R0Z" secondAttribute="leading" id="RDg-JY-IRa"/>
                 <constraint firstItem="oZ6-1g-MP4" firstAttribute="trailing" secondItem="4ch-V0-R0Z" secondAttribute="trailing" id="SHT-ow-lTt"/>
                 <constraint firstItem="oZ6-1g-MP4" firstAttribute="top" secondItem="blX-qE-nWV" secondAttribute="bottom" id="TCu-o6-BmC"/>
                 <constraint firstItem="TSY-Be-pMJ" firstAttribute="top" secondItem="4ch-V0-R0Z" secondAttribute="top" constant="16" id="Tic-qe-quy"/>
+                <constraint firstItem="4ch-V0-R0Z" firstAttribute="bottom" secondItem="jXU-1m-BdX" secondAttribute="bottom" id="VLL-l0-Tvx"/>
                 <constraint firstItem="TSY-Be-pMJ" firstAttribute="bottom" secondItem="4ch-V0-R0Z" secondAttribute="bottom" id="ZEZ-Q4-p5h"/>
                 <constraint firstItem="JRa-Wu-uCo" firstAttribute="top" secondItem="4ch-V0-R0Z" secondAttribute="top" id="aes-WL-xil"/>
                 <constraint firstItem="oZ6-1g-MP4" firstAttribute="leading" secondItem="4ch-V0-R0Z" secondAttribute="leading" id="c7j-cB-r4f"/>
@@ -172,7 +264,9 @@
     <resources>
         <image name="bg_text_header" width="201.33332824707031" height="16.666666030883789"/>
         <image name="ic_canhbao" width="100.66666412353516" height="100.66666412353516"/>
+        <image name="ic_danhba" width="118.33333587646484" height="118.33333587646484"/>
         <image name="ic_ful_function" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_hoidap" width="100.66666412353516" height="100.66666412353516"/>
         <image name="ic_sukienthientai" width="101" height="101.66666412353516"/>
         <image name="logo" width="76" height="76"/>
     </resources>

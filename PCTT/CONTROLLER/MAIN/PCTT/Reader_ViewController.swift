@@ -63,6 +63,17 @@ class Reader_ViewController: UIViewController {
         let typing = config.getValueFromKey("name_file")?.components(separatedBy: ".").last
 
         let path = self.pdfFile(fileName: self.config.getValueFromKey("id"), type: typing!)
+
+        do {
+            let data = try Data(contentsOf: URL.init(fileURLWithPath: path))
+
+            print("++++", data)
+
+        }
+        catch {
+            // catch errors here
+        }
+        
         webView.loadFileURL(URL(fileURLWithPath: path), allowingReadAccessTo: URL(fileURLWithPath: path))
         
 //        if let pdfDocument = PDFDocument(url: URL(fileURLWithPath: path)) {

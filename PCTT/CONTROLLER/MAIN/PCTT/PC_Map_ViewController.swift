@@ -47,7 +47,27 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
                                       ["title": "Bản đồ nền", "img": "ic_bandonen", "category": "vnmap"],
                                       ["title": "Tài liệu tham khảo", "img": "ic_documents"],
 //                                      ["title": "Hỏi & đáp", "img": "ic_hoidap"],
-      ]
+    ]
+    
+    var dataList1: NSMutableArray = [
+            ["title": "Sự kiện T.Tai", "img": "ic_sukienthientai", "badge": "0"], // 0
+                                        ["title": "Cảnh báo", "img": "ic_canhbao", "category": "2"],
+                                         ["title": "Quan trắc", "img": "ic_quantrac", "category": "1"],
+                                         
+                                          ["title": "GS Hồ chứa", "img": "ic_hochua", "category": "4"],
+                                          ["title": "GS Đê điều", "img": "ic_dedieu", "category": "5"],
+                                          ["title": "GS tầu thuyền", "img": "ic_tauthuyen", "category": "6"],
+                                          
+    //                                      ["title": "Đường đi bão", "img": "ic_duongdibao", "category": "3"],
+//                                          ["title": "Cập nhật dữ liệu", "img": "update"],
+                                          ["title": "Hình ảnh T.Tai", "img": "ic_hathientai"],
+                                          ["title": "Đ.điểm Y.thích", "img": "yeu_thich"],
+                                          
+                                          ["title": "Danh bạ", "img": "ic_danhba"],
+                                          ["title": "Bản đồ nền", "img": "ic_bandonen", "category": "vnmap"],
+                                          ["title": "Tài liệu tham khảo", "img": "ic_documents"],
+    //                                      ["title": "Hỏi & đáp", "img": "ic_hoidap"],
+          ]
     
     @IBOutlet var logoLeft: UIImageView!
        
@@ -67,6 +87,8 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
             headerImg.image = UIImage(named: "bg_text_dms")
             
             dataList.removeLastObject()
+            
+            dataList.removeObject(at: 6)
         }
     }
     
@@ -198,18 +220,30 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
 //            let contact = PC_Contact_ViewController.init()
 //            self.navigationController?.pushViewController(contact, animated: true)
         
+        var fa = 0
+        
+        if Information.check == "0" {
+            fa = -1
+        }
+        
         if indexPath.item == 0 {
             let tab = PC_Disaster_Tab_ViewController.init()
             self.navigationController?.pushViewController(tab, animated: true)
-        } else if indexPath.item == 6 {
-            self.navigationController?.pushViewController(PC_Update_ViewController.init(), animated: true)
-        } else if indexPath.item == 7 {
+        } else if indexPath.item == 6 + fa {
+            if Information.check == "0" {
+                let map = PC_Inner_Map_ViewController.init()
+                map.category = data.getValueFromKey("category") as NSString?
+                self.navigationController?.pushViewController(map, animated: true)
+            } else {
+                self.navigationController?.pushViewController(PC_Update_ViewController.init(), animated: true)
+            }
+        } else if indexPath.item == 7 + fa {
             let event = PC_List_Event_ViewController.init()
             self.navigationController?.pushViewController(event, animated: true)
-        } else if indexPath.item == 8 {
+        } else if indexPath.item == 8 + fa {
             let map = AP_Map_ViewController.init()
             self.navigationController?.pushViewController(map, animated: true)
-        }  else if indexPath.item == 9 {
+        }  else if indexPath.item == 9 + fa {
             let map = PC_Contact_ViewController.init()
             self.navigationController?.pushViewController(map, animated: true)
         } else if indexPath.item == 11 {

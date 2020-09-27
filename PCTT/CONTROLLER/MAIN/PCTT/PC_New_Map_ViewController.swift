@@ -19,6 +19,8 @@ class PC_New_Map_ViewController: UIViewController {
     @IBOutlet var logoLeft: UIImageView!
           
     @IBOutlet var headerImg: UIImageView!
+
+    @IBOutlet var LDMenu: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +33,19 @@ class PC_New_Map_ViewController: UIViewController {
            headerImg.image = UIImage(named: "bg_text_dms")
        }
         
+        LDMenu.isHidden = self.isLD() ? false : true
+        
 //        let refreshControl = UIRefreshControl()
 //        refreshControl.addTarget(self, action: #selector(reloadWebView(_:)), for: .valueChanged)
 //        webView.scrollView.addSubview(refreshControl)
+        
+        print(Information.userInfo)
+        
     }
     
-//    @objc func reloadWebView(_ sender: UIRefreshControl) {
-//        webView.reload()
-//        sender.endRefreshing()
-//    }
+    func isLD() -> Bool {
+        return Information.userInfo?.getValueFromKey("IsLanhDao") == "1"
+    }
     
     func current() {
         LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "EventDisaster"),
@@ -82,6 +88,14 @@ class PC_New_Map_ViewController: UIViewController {
         self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: true)
        }
 
+    
+    @IBAction func didPressContact() {
+           self.navigationController?.pushViewController(PC_Contact_ViewController.init(), animated: true)
+          }
+    
+    @IBAction func didPressInfo() {
+           self.navigationController?.pushViewController(PC_Info_ViewController.init(), animated: true)
+          }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reloading()

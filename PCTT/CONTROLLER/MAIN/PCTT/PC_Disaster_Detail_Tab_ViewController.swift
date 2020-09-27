@@ -17,6 +17,8 @@ class PC_Disaster_Detail_Tab_ViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let information = PC_Information_ViewController.init()
+
         let doc = PC_Doc_ViewController.init()
         
         let info = PC_Project_ViewController.init()
@@ -31,6 +33,17 @@ class PC_Disaster_Detail_Tab_ViewController: UITabBarController {
 
         self.delegate = self as? UITabBarControllerDelegate
 
+        
+        
+        let tab0:UITabBarItem = UITabBarItem(title: "Thông tin", image: UIImage(named: "tab8")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal).alpha(0.5), selectedImage: UIImage(named: "tab8"))
+
+        tab0.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0)
+
+        information.tabBarItem = tab0
+
+        
+        
+        
         let tab1:UITabBarItem = UITabBarItem(title: "Văn bản", image: UIImage(named: "tab7")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal).alpha(0.5), selectedImage: UIImage(named: "tab7"))
 
         tab1.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0)
@@ -65,7 +78,7 @@ class PC_Disaster_Detail_Tab_ViewController: UITabBarController {
         
         
 
-        viewControllers = [doc, info, layer, report, hd];
+        viewControllers = [information, doc, info, layer, report, hd];
 
         for item in self.tabBar.items!{
             item.selectedImage = item.selectedImage?.withRenderingMode(.alwaysOriginal)
@@ -79,12 +92,17 @@ class PC_Disaster_Detail_Tab_ViewController: UITabBarController {
         requestPointDetail()
     }
     
+    override var traitCollection: UITraitCollection {
+        let realTraits = super.traitCollection
+        let fakeTraits = UITraitCollection(horizontalSizeClass: .regular)
+        return UITraitCollection(traitsFrom: [realTraits, fakeTraits])
+    }
+    
     func requestPointDetail() {
-        print("==>", self.pointId)
-
         if self.pointId == "" {
             return
         }
+        
         LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "EventDisaster/%@".format(parameters: self.pointId ?? "")),
                                                      "header":["Authorization":Information.token == nil ? "" : Information.token!],
                                                      "method":"GET",
@@ -99,16 +117,22 @@ class PC_Disaster_Detail_Tab_ViewController: UITabBarController {
                  self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
                  return
              }
-                                    
-            (self.viewControllers![2] as! PC_Layer_ViewController).result = result
-
-            (self.viewControllers![0] as! PC_Doc_ViewController).result = result
-
-            (self.viewControllers![0] as! PC_Doc_ViewController).reloading()
             
-            (self.viewControllers![1] as! PC_Project_ViewController).result = result
+            (self.viewControllers![0] as! PC_Information_ViewController).result = result
 
-            (self.viewControllers![3] as! PC_Report_ViewController).result = result
+            (self.viewControllers![0] as! PC_Information_ViewController).reloading()
+                                    
+            (self.viewControllers![3] as! PC_Layer_ViewController).result = result
+
+            (self.viewControllers![1] as! PC_Doc_ViewController).result = result
+
+//            (self.viewControllers![1] as! PC_Doc_ViewController).reloading()
+            
+            (self.viewControllers![2] as! PC_Project_ViewController).result = result
+
+            (self.viewControllers![4] as! PC_Report_ViewController).result = result
+
+            (self.viewControllers![5] as! PC_HD_ViewController).result = result
 
          })
        }

@@ -113,6 +113,10 @@
 		FC8F4AEF230FE9420082F3B2 /* PC_FeedBack_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8F4AED230FE9420082F3B2 /* PC_FeedBack_ViewController.swift */; };
 		FC8F4AF0230FE9420082F3B2 /* PC_FeedBack_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC8F4AEE230FE9420082F3B2 /* PC_FeedBack_ViewController.xib */; };
 		FC8F4AF2230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC8F4AF1230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib */; };
+		FC9D8DD22520A86A00ED2129 /* PC_Information_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D8DD02520A86A00ED2129 /* PC_Information_ViewController.swift */; };
+		FC9D8DD32520A86A00ED2129 /* PC_Information_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9D8DD12520A86A00ED2129 /* PC_Information_ViewController.xib */; };
+		FC9D8DD62520C39400ED2129 /* Contact_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D8DD42520C39400ED2129 /* Contact_ViewController.swift */; };
+		FC9D8DD72520C39400ED2129 /* Contact_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9D8DD52520C39400ED2129 /* Contact_ViewController.xib */; };
 		FCA5F32B2371DAB700274600 /* PC_Info_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA5F32A2371DAB700274600 /* PC_Info_Cell.xib */; };
 		FCA929B2240E55B30098BC45 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA929B1240E55B30098BC45 /* WebKit.framework */; };
 		FCB19455231598DA007120AF /* ChatAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB19451231598DA007120AF /* ChatAccessory.swift */; };
@@ -261,6 +265,10 @@
 		FC8F4AED230FE9420082F3B2 /* PC_FeedBack_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_FeedBack_ViewController.swift; sourceTree = "<group>"; };
 		FC8F4AEE230FE9420082F3B2 /* PC_FeedBack_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_FeedBack_ViewController.xib; sourceTree = "<group>"; };
 		FC8F4AF1230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_FeedBack_Cell.xib; sourceTree = "<group>"; };
+		FC9D8DD02520A86A00ED2129 /* PC_Information_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Information_ViewController.swift; sourceTree = "<group>"; };
+		FC9D8DD12520A86A00ED2129 /* PC_Information_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Information_ViewController.xib; sourceTree = "<group>"; };
+		FC9D8DD42520C39400ED2129 /* Contact_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_ViewController.swift; sourceTree = "<group>"; };
+		FC9D8DD52520C39400ED2129 /* Contact_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Contact_ViewController.xib; sourceTree = "<group>"; };
 		FCA5F32A2371DAB700274600 /* PC_Info_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Info_Cell.xib; sourceTree = "<group>"; };
 		FCA929B1240E55B30098BC45 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FCB19451231598DA007120AF /* ChatAccessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatAccessory.swift; sourceTree = "<group>"; };
@@ -437,6 +445,10 @@
 				FC4C6A4624E9646100BD84D1 /* Reader_ViewController.xib */,
 				FC4C6A4924E964D900BD84D1 /* DownLoad.h */,
 				FC4C6A4A24E964D900BD84D1 /* DownLoad.m */,
+				FC9D8DD02520A86A00ED2129 /* PC_Information_ViewController.swift */,
+				FC9D8DD12520A86A00ED2129 /* PC_Information_ViewController.xib */,
+				FC9D8DD42520C39400ED2129 /* Contact_ViewController.swift */,
+				FC9D8DD52520C39400ED2129 /* Contact_ViewController.xib */,
 			);
 			name = Disaster_Detail;
 			sourceTree = "<group>";
@@ -600,6 +612,7 @@
 				FC235ADD23830F8C0093A108 /* PC_File_Cell.xib in Resources */,
 				FC235ADB2382CE7F0093A108 /* PC_Upload_ViewController.xib in Resources */,
 				FC235AD72382CABD0093A108 /* PC_List_Event_ViewController.xib in Resources */,
+				FC9D8DD32520A86A00ED2129 /* PC_Information_ViewController.xib in Resources */,
 				FCFF18D02328ACF1001DF8A2 /* TG_Empty_Cell.xib in Resources */,
 				FC1B307122F6EEF6002E873F /* PC_Main_ViewController.xib in Resources */,
 				FCC247A624E1548F0099605D /* PC_Contact_ViewController.xib in Resources */,
@@ -624,6 +637,7 @@
 				FC7491BE24EB8817002730BE /* GoogleService-Info.plist in Resources */,
 				FC4913BF24E64AAA00F1967A /* Layer_Cell.xib in Resources */,
 				FC4C6A4424E93EE600BD84D1 /* Report_Cell.xib in Resources */,
+				FC9D8DD72520C39400ED2129 /* Contact_ViewController.xib in Resources */,
 				FC69937822FB503F00C62D42 /* PC_Station_Cell0.xib in Resources */,
 				FC1AC73E23708CA900B11288 /* PC_Map_ViewController.xib in Resources */,
 				FC1AC74923709C9C00B11288 /* PC_Info_ViewController.xib in Resources */,
@@ -730,6 +744,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCEDD7E022F9E19500DC4613 /* PC_Notification_ViewController.swift in Sources */,
+				FC9D8DD22520A86A00ED2129 /* PC_Information_ViewController.swift in Sources */,
 				FC1AC74523708DF800B11288 /* NSObject+TabbarExtension.m in Sources */,
 				FC247D23238246480025D417 /* PC_FeedBack_New_ViewController.swift in Sources */,
 				FCFCD732233AD94200804047 /* XMLReader.m in Sources */,
@@ -753,6 +768,7 @@
 				FC5D982622F54134006FA3F1 /* ViewController.swift in Sources */,
 				FC31018E23195B7F009DBF95 /* EM_MenuView.m in Sources */,
 				FC4913A724E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift in Sources */,
+				FC9D8DD62520C39400ED2129 /* Contact_ViewController.swift in Sources */,
 				FC1AC73923708C6100B11288 /* TG_Root_ViewController.swift in Sources */,
 				FC4913B424E624B900F1967A /* PC_Layer_ViewController.swift in Sources */,
 				FC4913B824E624DB00F1967A /* PC_Report_ViewController.swift in Sources */,
@@ -930,7 +946,7 @@
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development: Thanh Hai Tran (ZWKS8AV396)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GAJPP6PZBM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -966,7 +982,7 @@
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: VIETGIS - GIS SOLUTION AND TECHNOLOGY COMPANY LIMITED (GAJPP6PZBM)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GAJPP6PZBM;
 				FRAMEWORK_SEARCH_PATHS = (
