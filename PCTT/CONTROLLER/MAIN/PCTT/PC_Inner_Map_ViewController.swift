@@ -37,9 +37,11 @@ class PC_Inner_Map_ViewController: UIViewController, WKUIDelegate, WKNavigationD
             lng = location.getValueFromKey("lng")
         }
         
-        let url = category != "vnmap" ? "http://vndms.gisgo.vn/?cmd=category&values=%@&lat=%@&lng=%@&isAuth=1".format(parameters: category, lat, lng ) : "http://vndms.gisgo.vn/?cmd=%@&values=%@&lat=%@&lng=%@&isAuth=1".format(parameters: "setmap", category, lat, lng )
+        let token = Information.userInfo?.getValueFromKey("Token") ?? ""
+
+        let url = category != "vnmap" ? "http://vndms.gisgo.vn/?cmd=category&values=%@&lat=%@&lng=%@&isAuth=1&token=%@".format(parameters: category, lat, lng, token ) : "http://vndms.gisgo.vn/?cmd=%@&values=%@&lat=%@&lng=%@&isAuth=1&token=%@".format(parameters: "setmap", category, lat, lng, token )
                         
-        let link = URL(string: directUrl != "" ? directUrl as String : url)!
+        let link = URL(string: directUrl != "" ? directUrl as String : (url as NSString).encodeUrl())!
         let request = URLRequest(url: link)
         webView.load(request)
                 

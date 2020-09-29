@@ -86,7 +86,9 @@ class PC_Disaster_Map_ViewController: UIViewController, WKUIDelegate, WKNavigati
         
         let type = year != "" || listtypeid != "" || keyword != "" ? "list" : "current"
         
-        let param = "http://vndms.gisgo.vn/?cmd=disaster&type=%@&year=%@&listtypeid=%@&subLayerId=%@&id=%@&layerids=%@&token=%@&keyword=%@".format(parameters: type, year, listtypeid, subLayerId, eventId, layerId, FirePush.shareInstance()?.deviceToken()! as! CVarArg, keyword)
+        let token = Information.userInfo?.getValueFromKey("Token") ?? ""
+
+        let param = "http://vndms.gisgo.vn/?cmd=disaster&type=%@&year=%@&listtypeid=%@&subLayerId=%@&id=%@&layerids=%@&token=%@&keyword=%@".format(parameters: type, year, listtypeid, subLayerId, eventId, layerId, token, keyword)
                 
         let link = URL(string: (param as NSString).encodeUrl())!
         let request = URLRequest(url: link)

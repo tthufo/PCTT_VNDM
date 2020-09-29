@@ -102,9 +102,12 @@ class PC_New_Map_ViewController: UIViewController {
     }
     
     func reloading() {
-      let param = "http://vndms.gisgo.vn/?cmd=home&token=" + (FirePush.shareInstance()?.deviceToken())!
+        
+      let token = Information.userInfo?.getValueFromKey("Token") ?? ""
+        
+      let param = "http://vndms.gisgo.vn/?cmd=home&token=" + token
                                           
-      let link = URL(string: param)!
+      let link = URL(string: (param as NSString).encodeUrl())!
      
       let request = URLRequest(url: link)
      
