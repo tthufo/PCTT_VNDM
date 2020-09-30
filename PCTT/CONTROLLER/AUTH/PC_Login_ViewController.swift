@@ -31,7 +31,11 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var passErr: UILabel!
     
+    @IBOutlet var socialView: UIView!
+
     @IBOutlet var bottom: MarqueeLabel!
+    
+    var lock: Bool = false
 
     var loginCover: UIView!
     
@@ -101,6 +105,11 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
         kb.keyboard { (height, isOn) in
                         
             UIView.animate(withDuration: 0, animations: {
+                
+                if self.lock {
+                    return
+                }
+                
                 var frame = self.login.frame
                 
                 frame.origin.y -= isOn ? (height - CGFloat(self.bottomGap)) : (-height + CGFloat(self.bottomGap))
@@ -123,7 +132,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
         
         var frame = logo.frame
 
-        frame.origin.y = CGFloat(self.screenHeight() - 237) / 2
+        frame.origin.y = CGFloat(self.screenHeight() - 300) / 2
 
         frame.origin.x = CGFloat(self.screenWidth() - 250) / 2
         
@@ -160,7 +169,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
 //                        self.setUpLogin()
 //                    }
                                
-            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/y8jjst0m3cc0yhy/PCTT_WebView_PCTT_VER_9.plist", "overrideAlert":"1"], withCache: { (cache) in
+            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/qe9s9ahj0kjtpct/PCTT_WebView_PCTT_VER_10.plist", "overrideAlert":"1"], withCache: { (cache) in
                                                                         
             }, andCompletion: { (response, errorCode, error, isValid, object) in
                         
@@ -272,7 +281,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
     func setUpLogin() {
         var frame = login.frame
         
-        frame.origin.y = CGFloat(self.screenHeight() - 363) / 2 + CGFloat(self.topGap)
+        frame.origin.y = CGFloat(self.screenHeight() - 470) / 2 + CGFloat(self.topGap)
         
         frame.size.width = CGFloat(self.screenWidth() - 40)
         
@@ -285,11 +294,35 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
         UIView.animate(withDuration: 0.5, animations: {
 
             self.login.alpha = 1
+            
+            self.socialView.alpha = 1
 
         }) { (done) in
             
         }
     }
+    
+    @IBAction func didPressGG() {
+       self.view.endEditing(true)
+        lock = true
+        GG_PlugIn.shareInstance()?.startLogGoogle(completion: { (responseString, object, errorCode, description, error) in
+            if object != nil {
+                print(object);
+            }
+            self.lock = false
+        }, andHost: nil)
+   }
+    
+    @IBAction func didPressFB() {
+          self.view.endEditing(true)
+           lock = true
+        FB_Plugin.shareInstance()?.startLoginFacebook(completion: { (responseString, object, errorCode, description, error) in
+            if object != nil {
+                print(object);
+            }
+            self.lock = false
+        })
+      }
     
     @IBAction func didPressForget() {
         self.view.endEditing(true)

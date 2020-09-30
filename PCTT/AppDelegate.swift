@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(APIMAP)
         
         FirePush.shareInstance().didRegister()
+        
+        GG_PlugIn.shareInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
+
+        FB_Plugin.shareInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         if self.getValue("push") == "0" {
 //            FirePush.shareInstance()?.didUnregisterNotification()
@@ -117,6 +121,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         FirePush.shareInstance()?.connectToFcm()
+        
+        FB_Plugin.shareInstance()?.applicationDidBecomeActive(application)
+        
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         if let last = (self.window?.rootViewController as! Navigation_ViewController).viewControllers.last as? PC_New_Map_ViewController {
             last.reloading()
@@ -130,6 +137,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
     {
         completionHandler([.alert, .badge, .sound])
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if (url.scheme?.hasPrefix("fb"))! {
+           return (FB_Plugin.shareInstance()?.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation]))!
+        } else {
+            return (GG_PlugIn.shareInstance()?.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation]))!
+        }
     }
 }
 

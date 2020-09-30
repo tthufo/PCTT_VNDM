@@ -26,5 +26,11 @@ target 'PCTT' do
   pod 'DKImagePickerController'
   
   pod 'SVGKit'
+  
+  pod 'FBPod'
+  
+  pod 'GGPod'
+
+  pod 'ZaloSDK'
 
 end

@@ -13,3 +13,5 @@
 #import "Download.h"
 #import "SVGKit.h"
 #import "Navigation_ViewController.h"
+#import "GG_PlugIn.h"
+#import "FB_Plugin.h"

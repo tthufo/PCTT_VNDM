@@ -69,5 +69,21 @@
 	<string>http://vndms.dmc.gov.vn/api</string>
 	<key>tile</key>
 	<string>http://103.7.41.156:9090/VNBase</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb154572565140483</string>
+				<string>com.googleusercontent.apps.387423726605-8f12o80qghdcc4v6nn2v8hp7t9gemk9l</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookDisplayName</key>
+	<string>bla</string>
+	<key>FacebookAppID</key>
+	<string>154572565140483</string>
 </dict>
 </plist>
