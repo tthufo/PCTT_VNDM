@@ -160,9 +160,9 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
 //                        self.setUpLogin()
 //                    }
                                
-            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/i871frksu7cf7hr/PCTT_WebView_PCTT_VER_8.plist", "overrideAlert":"1"], withCache: { (cache) in
+            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/y8jjst0m3cc0yhy/PCTT_WebView_PCTT_VER_9.plist", "overrideAlert":"1"], withCache: { (cache) in
                                                                         
-                }, andCompletion: { (response, errorCode, error, isValid, object) in
+            }, andCompletion: { (response, errorCode, error, isValid, object) in
                         
                         if error != nil {
                             Information.check = "1"
@@ -198,7 +198,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                         
 //                        self.loginCover.alpha = (dict! as NSDictionary).getValueFromKey("show") == "1" ? 1 : 0
                                                 
-                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNTk4Njk0MjQyLCJleHAiOjE1OTkyOTkwNDIsImlhdCI6MTU5ODY5NDI0Mn0.Tp9fI-8gN-wLaa5UYNQ7AIRoYJB1_87nNO9F95zR4A4"] as [String : Any]
+                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy91c2VyZGF0YSI6IiIsIm5iZiI6MTYwMTQ0ODA2NCwiZXhwIjoxNjAyMDUyODY0LCJpYXQiOjE2MDE0NDgwNjR9.SHaHvX17-CjPpaR11TSPluLliaaC3-Hr7nDQIIXN6To"] as [String : Any]
                         
                         if (dict! as NSDictionary).getValueFromKey("show") == "0" {
                             
@@ -328,6 +328,8 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                 self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
                 return
             }
+            
+            print(result)
             
             self.add(["name":self.uName.text as Any, "pass":self.pass.text as Any], andKey: "log")
 

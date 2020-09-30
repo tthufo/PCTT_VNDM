@@ -50,24 +50,24 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
     ]
     
     var dataList1: NSMutableArray = [
-            ["title": "Sự kiện T.Tai", "img": "ic_sukienthientai", "badge": "0"], // 0
-                                        ["title": "Cảnh báo", "img": "ic_canhbao", "category": "2"],
-                                         ["title": "Quan trắc", "img": "ic_quantrac", "category": "1"],
-                                         
-                                          ["title": "GS Hồ chứa", "img": "ic_hochua", "category": "4"],
-                                          ["title": "GS Đê điều", "img": "ic_dedieu", "category": "5"],
-                                          ["title": "GS tầu thuyền", "img": "ic_tauthuyen", "category": "6"],
-                                          
+                    ["title": "Sự kiện T.Tai", "img": "ic_sukienthientai", "badge": "0"], // 0
+                    ["title": "Cảnh báo", "img": "ic_canhbao", "category": "2"],
+                     ["title": "Quan trắc", "img": "ic_quantrac", "category": "1"],
+                     
+                      ["title": "GS Hồ chứa", "img": "ic_hochua", "category": "4"],
+                      ["title": "GS Đê điều", "img": "ic_dedieu", "category": "5"],
+                      ["title": "GS tầu thuyền", "img": "ic_tauthuyen", "category": "6"],
+                      
     //                                      ["title": "Đường đi bão", "img": "ic_duongdibao", "category": "3"],
-//                                          ["title": "Cập nhật dữ liệu", "img": "update"],
-                                          ["title": "Hình ảnh T.Tai", "img": "ic_hathientai"],
-                                          ["title": "Đ.điểm Y.thích", "img": "yeu_thich"],
-                                          
-                                          ["title": "Danh bạ", "img": "ic_danhba"],
-                                          ["title": "Bản đồ nền", "img": "ic_bandonen", "category": "vnmap"],
-                                          ["title": "Tài liệu tham khảo", "img": "ic_documents"],
+                      ["title": "Cập nhật dữ liệu", "img": "update", "category": "3"],
+                      ["title": "Hình ảnh T.Tai", "img": "ic_hathientai"],
+                      ["title": "Đ.điểm Y.thích", "img": "yeu_thich"],
+                      
+//                      ["title": "Danh bạ", "img": "ic_danhba"],
+//                      ["title": "Bản đồ nền", "img": "ic_bandonen", "category": "vnmap"],
+//                      ["title": "Tài liệu tham khảo", "img": "ic_documents"],
     //                                      ["title": "Hỏi & đáp", "img": "ic_hoidap"],
-          ]
+    ]
     
     @IBOutlet var logoLeft: UIImageView!
        
@@ -86,9 +86,21 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
         if Information.check == "0" {
             headerImg.image = UIImage(named: "bg_text_dms")
             
-            dataList.removeLastObject()
+            dataList.removeAllObjects()
             
-            dataList.removeObject(at: 6)
+            dataList.addObjects(from: dataList1 as! [Any])
+            
+//            dataList.removeLastObject()
+//
+//            dataList.removeLastObject()
+//
+//            dataList.removeLastObject()
+
+//            dataList.removeObjects(in: [9, 10, 11])
+
+//            dataList.removeObject(at: 6)
+            
+            self.collectionView.reloadData()
         }
     }
     
@@ -201,6 +213,32 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
 
         let data = dataList[indexPath.item] as! NSDictionary
         
+        if Information.check == "0" {
+            if indexPath.item == 0 {
+                   let tab = PC_Disaster_Tab_ViewController.init()
+                   self.navigationController?.pushViewController(tab, animated: true)
+               } else if indexPath.item == 6 + 0 {
+                   if Information.check == "0" {
+                       let map = PC_Inner_Map_ViewController.init()
+                       map.category = data.getValueFromKey("category") as NSString?
+                       self.navigationController?.pushViewController(map, animated: true)
+                   } else {
+                       self.navigationController?.pushViewController(PC_Update_ViewController.init(), animated: true)
+                   }
+               } else if indexPath.item == 7 + 0 {
+                   let event = PC_List_Event_ViewController.init()
+                   self.navigationController?.pushViewController(event, animated: true)
+               } else if indexPath.item == 8 + 0 {
+                   let map = AP_Map_ViewController.init()
+                   self.navigationController?.pushViewController(map, animated: true)
+               }  else {
+                   let map = PC_Inner_Map_ViewController.init()
+                   map.category = data.getValueFromKey("category") as NSString?
+                   self.navigationController?.pushViewController(map, animated: true)
+               }
+            return
+        }
+
 //        if indexPath.item == 8 {
 //            let question = TG_Intro_ViewController.init()
 //            question.isIntro = false

@@ -78,8 +78,8 @@ class PC_Disaster_Detail_Tab_ViewController: UITabBarController {
         
         
 
-        viewControllers = [information, doc, info, layer, report, hd];
-
+        viewControllers = Information.check != "0" ? [information, doc, info, layer, report, hd] : [information];
+        
         for item in self.tabBar.items!{
             item.selectedImage = item.selectedImage?.withRenderingMode(.alwaysOriginal)
             item.image = item.image?.withRenderingMode(.alwaysOriginal)
@@ -121,18 +121,20 @@ class PC_Disaster_Detail_Tab_ViewController: UITabBarController {
             (self.viewControllers![0] as! PC_Information_ViewController).result = result
 
             (self.viewControllers![0] as! PC_Information_ViewController).reloading()
-                                    
-            (self.viewControllers![3] as! PC_Layer_ViewController).result = result
+                                 
+            if Information.check != "0" {
+                (self.viewControllers![3] as! PC_Layer_ViewController).result = result
 
-            (self.viewControllers![1] as! PC_Doc_ViewController).result = result
+                (self.viewControllers![1] as! PC_Doc_ViewController).result = result
 
-//            (self.viewControllers![1] as! PC_Doc_ViewController).reloading()
-            
-            (self.viewControllers![2] as! PC_Project_ViewController).result = result
+    //            (self.viewControllers![1] as! PC_Doc_ViewController).reloading()
+                
+                (self.viewControllers![2] as! PC_Project_ViewController).result = result
 
-            (self.viewControllers![4] as! PC_Report_ViewController).result = result
+                (self.viewControllers![4] as! PC_Report_ViewController).result = result
 
-            (self.viewControllers![5] as! PC_HD_ViewController).result = result
+                (self.viewControllers![5] as! PC_HD_ViewController).result = result
+            }
 
          })
        }
