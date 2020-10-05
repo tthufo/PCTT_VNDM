@@ -47,7 +47,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoặc đăng nhập bằng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYX-Ir-xRt">
                             <rect key="frame" x="97" y="8" width="180" height="22"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="180" id="rHF-xT-R9n"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="rHF-xT-R9n"/>
                                 <constraint firstAttribute="height" constant="22" id="tjD-YR-Ea1"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -72,6 +72,9 @@
                                 <constraint firstAttribute="height" constant="49" id="eZR-3r-sRA"/>
                             </constraints>
                             <state key="normal" image="zz"/>
+                            <connections>
+                                <action selector="didPressZL" destination="-1" eventType="touchUpInside" id="4yJ-Zb-gYv"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNs-fD-Kn6">
                             <rect key="frame" x="87.666666666666671" y="40" width="51.000000000000014" height="49"/>

@@ -12,7 +12,7 @@ class PC_Contact_ViewController: ViewPagerController, UITextFieldDelegate {
 
     var controllers: NSMutableArray!
 
-     var titles = ["BCD TW", "VP BCD TỈNH", "THEO VỊ TRÍ"]
+     var titles = ["BCĐ TW", "VP BCH TỈNH", "THEO VỊ TRÍ"]
 
 //     @IBOutlet var tableView: UITableView!
         

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PC_Forgot_ViewController" customModule="PCTT" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PC_Forgot_ViewController" customModule="VNDMS" customModuleProvider="target">
             <connections>
                 <outlet property="bg" destination="rNh-x1-sW9" id="Dfc-bt-2d0"/>
                 <outlet property="bottom" destination="0V9-x0-1ig" id="403-Mo-d6U"/>
@@ -219,7 +219,7 @@
     <resources>
         <image name="bg_login" width="240" height="427"/>
         <image name="icon_back" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="logo" width="255.33332824707031" height="255.33332824707031"/>
+        <image name="logo" width="76" height="76"/>
         <image name="phone" width="26.666666030883789" height="26.666666030883789"/>
     </resources>
 </document>

@@ -8,6 +8,7 @@
 
 import UIKit
 import MarqueeLabel
+import ZaloSDK
 
 class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
  
@@ -110,6 +111,10 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                     return
                 }
                 
+                if IS_IPAD {
+                    return
+                }
+                
                 var frame = self.login.frame
                 
                 frame.origin.y -= isOn ? (height - CGFloat(self.bottomGap)) : (-height + CGFloat(self.bottomGap))
@@ -149,6 +154,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                 UIView.animate(withDuration: 1, animations: {
                     self.cover.alpha = 0
                 }) { (done) in
+                    
 //                    UIView.animate(withDuration: 0.5, animations: {
 //                        var frame = self.logo.frame
 //
@@ -307,7 +313,8 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
         lock = true
         GG_PlugIn.shareInstance()?.startLogGoogle(completion: { (responseString, object, errorCode, description, error) in
             if object != nil {
-                print(object);
+                print((object as! NSDictionary).getValueFromKey("uId"));
+                self.socialLogin(type: "google", token: (object as! NSDictionary).getValueFromKey("uId"));
             }
             self.lock = false
         }, andHost: nil)
@@ -318,11 +325,63 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
            lock = true
         FB_Plugin.shareInstance()?.startLoginFacebook(completion: { (responseString, object, errorCode, description, error) in
             if object != nil {
-                print(object);
+                print(((object as! NSDictionary)["info"] as! NSDictionary).getValueFromKey("id"));
+                self.socialLogin(type: "facebook", token: ((object as! NSDictionary)["info"] as! NSDictionary).getValueFromKey("id"));
             }
             self.lock = false
         })
       }
+    
+    @IBAction func didPressZL() {
+         self.view.endEditing(true)
+          lock = true
+        ZaloSDK.sharedInstance()?.authenticateZalo(with: ZAZAloSDKAuthenTypeViaZaloAppAndWebView, parentController: self, isShowLoading: true) { (objc) in
+            if objc!.isSucess {
+                print(objc!.oauthCode)
+                self.socialLogin(type: "zalo", token: objc!.oauthCode);
+            }
+            self.lock = false
+        }
+     }
+    
+    func socialLogin(type: String, token: String) {
+         self.view.endEditing(true)
+                
+                LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"auth/" + type,
+                                                            "accesstoken":token,
+                                                            "mobiletoken":FirePush.shareInstance()?.deviceToken() ?? "",
+                                                            "tokentype":1,
+                                                            "overrideAlert":"1",
+                                                            "overrideLoading":"1",
+                                                            "postFix":"auth/" + type,
+                                                            "host":self], withCache: { (cacheString) in
+                }, andCompletion: { (response, errorCode, error, isValid, object) in
+                    let result = response?.dictionize() ?? [:]
+                                            
+                    if result.getValueFromKey("status") != "OK" {
+                        self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
+                        return
+                    }
+                    
+                    print("====>", result)
+                    
+                    self.add(["name":self.uName.text as Any, "pass":self.pass.text as Any], andKey: "log")
+
+                    self.add((response?.dictionize()["data"] as! NSDictionary).reFormat() as? [AnyHashable : Any], andKey: "info")
+
+                    Information.saveInfo()
+                    
+                    self.addValue((response?.dictionize()["data"] as! NSDictionary).getValueFromKey("Token"), andKey: "token")
+                    
+                    Information.saveToken()
+                    
+                    if Information.check == "1" {
+                        self.navigationController?.pushViewController(PC_New_Map_ViewController.init(), animated: true)
+                    } else {
+                        self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: true)
+                    }
+                })
+    }
     
     @IBAction func didPressForget() {
         self.view.endEditing(true)

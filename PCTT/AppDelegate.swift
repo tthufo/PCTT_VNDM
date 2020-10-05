@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import UserNotifications
+import ZaloSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FB_Plugin.shareInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
 
+        ZaloSDK.sharedInstance()?.initialize(withAppId: "314411592040398357")
+        
         if self.getValue("push") == "0" {
 //            FirePush.shareInstance()?.didUnregisterNotification()
         }
@@ -143,6 +146,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if (url.scheme?.hasPrefix("fb"))! {
            return (FB_Plugin.shareInstance()?.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation]))!
+        } else if (url.scheme?.hasPrefix("zalo"))! {
+            return (ZDKApplicationDelegate.sharedInstance()?.application(app, open: url, options: options))!
         } else {
             return (GG_PlugIn.shareInstance()?.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation]))!
         }
