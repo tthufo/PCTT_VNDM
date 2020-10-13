@@ -72,7 +72,7 @@ class PC_Register_ViewController: UIViewController, UITextFieldDelegate {
         
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         
-        bottom.text = "VNDMS Ver %@".format(parameters: appVersion!)
+        bottom.text = "Ver %@".format(parameters: appVersion!)
         
         self.view.action(forTouch: [:]) { (objc) in
             self.view.endEditing(true)

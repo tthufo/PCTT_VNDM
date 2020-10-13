@@ -158,7 +158,7 @@ class PC_Disaster_Map_ViewController: UIViewController, WKUIDelegate, WKNavigati
 extension PC_Disaster_Map_ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

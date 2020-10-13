@@ -8,7 +8,7 @@
 
 import UIKit
 
-import DKImagePickerController
+//import DKImagePickerController
 
 class PC_Inner_Info_ViewController: UIViewController, UITextFieldDelegate {
 

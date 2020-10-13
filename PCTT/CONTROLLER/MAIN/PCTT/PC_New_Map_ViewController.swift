@@ -25,9 +25,9 @@ class PC_New_Map_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if Information.check != "0" {
-              logoLeft.image = UIImage(named: "logo_tc")
-          }
+       if Information.check != "0" {
+          logoLeft.image = UIImage(named: "logo_tc")
+       }
            
        if Information.check == "0" {
            headerImg.image = UIImage(named: "bg_text_dms")
@@ -39,8 +39,9 @@ class PC_New_Map_ViewController: UIViewController {
 //        refreshControl.addTarget(self, action: #selector(reloadWebView(_:)), for: .valueChanged)
 //        webView.scrollView.addSubview(refreshControl)
         
-        print(Information.userInfo)
+//        print(Information.userInfo)
         
+        requestDisasterImage()
     }
     
     func isLD() -> Bool {
@@ -114,5 +115,69 @@ class PC_New_Map_ViewController: UIViewController {
       webView.load(request)
  
       current()
+    }
+    
+    func requestDisasterImage() {
+        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "CategoryDisasterList"),
+                                                  "header":["Authorization":Information.token == nil ? "" : Information.token!],
+                                                  "method":"GET",
+                                                  "overrideAlert":"1",
+                                                  "overrideLoading":"1",
+                                                  "host":self], withCache: { (cacheString) in
+      }, andCompletion: { (response, errorCode, error, isValid, object) in
+        
+          let result = response?.dictionize() ?? [:]
+                                         
+          if result.getValueFromKey("status") != "OK" {
+              self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
+              return
+          }
+                          
+         for dict in response?.dictionize()["data"] as! [Any] {
+             
+             let data = dict as! NSDictionary
+             
+             let stringing = data.getValueFromKey("image")
+             
+             let imageName = (data.getValueFromKey("name_disaster")!).withoutSpecialCharacters()
+             
+             if self.existingFileImage(fileName: imageName) {
+                 print("===>", imageName)
+             } else {
+                 if let decodedData = Data(base64Encoded: stringing!),
+                    let decodedString = String(data: decodedData, encoding: .utf8) {
+                    let dee = decodedString.data(using: .utf8)
+                    let namSvgImgVar = SVGKImage.init(data: dee)
+
+                     DispatchQueue.background(background: {
+                        self.storeImageToDocumentDirectory(image: (namSvgImgVar?.uiImage)!, fileName: imageName)
+                     }, completion:{
+                     })
+                 }
+             }
+         }
+     })
+    }
+    
+    func storeImageToDocumentDirectory(image: UIImage, fileName: String) -> URL? {
+        guard let data = image.pngData() else {
+            return nil
+        }
+        let fileURL = self.fileURLInDocumentDirectory(fileName)
+        do {
+            try data.write(to: fileURL)
+            print(fileURL)
+            return fileURL
+        } catch {
+            return nil
+        }
+    }
+    
+    var documentsDirectoryURL: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+    
+    func fileURLInDocumentDirectory(_ fileName: String) -> URL {
+        return self.documentsDirectoryURL.appendingPathComponent(fileName)
     }
 }

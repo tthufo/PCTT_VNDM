@@ -99,7 +99,7 @@ class PC_Disaster_Tab_ViewController: UITabBarController {
                             self.updateDisaster(array: self.dataList)
                         })
                     } else {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9, execute: {
                             self.updateMap(array: self.dataList)
                        })
                     }

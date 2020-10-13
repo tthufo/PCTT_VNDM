@@ -70,7 +70,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
         
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         
-        bottom.text = "VNDMS Ver %@".format(parameters: appVersion!)
+        bottom.text = "Ver %@".format(parameters: appVersion!)
         
         bottom.action(forTouch: [:]) { (obj) in
 //            self.callNumber(phoneNumber: Information.phone)
@@ -175,7 +175,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
 //                        self.setUpLogin()
 //                    }
                                
-            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/qe9s9ahj0kjtpct/PCTT_WebView_PCTT_VER_10.plist", "overrideAlert":"1"], withCache: { (cache) in
+            LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/hajobsp6cm6o3so/PCTT_WebView_PCTT_VER_11.plist", "overrideAlert":"1"], withCache: { (cache) in
                                                                         
             }, andCompletion: { (response, errorCode, error, isValid, object) in
                         
@@ -213,7 +213,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                         
 //                        self.loginCover.alpha = (dict! as NSDictionary).getValueFromKey("show") == "1" ? 1 : 0
                                                 
-                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy91c2VyZGF0YSI6IiIsIm5iZiI6MTYwMTQ0ODA2NCwiZXhwIjoxNjAyMDUyODY0LCJpYXQiOjE2MDE0NDgwNjR9.SHaHvX17-CjPpaR11TSPluLliaaC3-Hr7nDQIIXN6To"] as [String : Any]
+                        let information = [ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy91c2VyZGF0YSI6IiIsIm5iZiI6MTYwMjE1MTAxNSwiZXhwIjoxNjAyNzU1ODE1LCJpYXQiOjE2MDIxNTEwMTV9.hpMk_yacF-_Dm4Zjy-9usfmvmqUuTOusdcYWB-TV5do"] as [String : Any]
                         
                         if (dict! as NSDictionary).getValueFromKey("show") == "0" {
                             
@@ -317,7 +317,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                 self.socialLogin(type: "google", token: (object as! NSDictionary).getValueFromKey("uId"));
             }
             self.lock = false
-        }, andHost: nil)
+        }, andHost: self)
    }
     
     @IBAction func didPressFB() {
@@ -347,40 +347,40 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
     func socialLogin(type: String, token: String) {
          self.view.endEditing(true)
                 
-                LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"auth/" + type,
-                                                            "accesstoken":token,
-                                                            "mobiletoken":FirePush.shareInstance()?.deviceToken() ?? "",
-                                                            "tokentype":1,
-                                                            "overrideAlert":"1",
-                                                            "overrideLoading":"1",
-                                                            "postFix":"auth/" + type,
-                                                            "host":self], withCache: { (cacheString) in
-                }, andCompletion: { (response, errorCode, error, isValid, object) in
-                    let result = response?.dictionize() ?? [:]
-                                            
-                    if result.getValueFromKey("status") != "OK" {
-                        self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
-                        return
-                    }
-                    
-                    print("====>", result)
-                    
-                    self.add(["name":self.uName.text as Any, "pass":self.pass.text as Any], andKey: "log")
+            LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"auth/" + type,
+                                                        "accesstoken":token,
+                                                        "mobiletoken":FirePush.shareInstance()?.deviceToken() ?? "",
+                                                        "tokentype":1,
+                                                        "overrideAlert":"1",
+                                                        "overrideLoading":"1",
+                                                        "postFix":"auth/" + type,
+                                                        "host":self], withCache: { (cacheString) in
+            }, andCompletion: { (response, errorCode, error, isValid, object) in
+                let result = response?.dictionize() ?? [:]
+                                        
+                print("====>", result)
 
-                    self.add((response?.dictionize()["data"] as! NSDictionary).reFormat() as? [AnyHashable : Any], andKey: "info")
+                if result.getValueFromKey("status") != "OK" {
+                    self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
+                    return
+                }
+                                    
+                self.add(["name":self.uName.text as Any, "pass":self.pass.text as Any], andKey: "log")
 
-                    Information.saveInfo()
-                    
-                    self.addValue((response?.dictionize()["data"] as! NSDictionary).getValueFromKey("Token"), andKey: "token")
-                    
-                    Information.saveToken()
-                    
-                    if Information.check == "1" {
-                        self.navigationController?.pushViewController(PC_New_Map_ViewController.init(), animated: true)
-                    } else {
-                        self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: true)
-                    }
-                })
+                self.add((response?.dictionize()["data"] as! NSDictionary).reFormat() as? [AnyHashable : Any], andKey: "info")
+
+                Information.saveInfo()
+                
+                self.addValue((response?.dictionize()["data"] as! NSDictionary).getValueFromKey("Token"), andKey: "token")
+                
+                Information.saveToken()
+                
+                if Information.check == "1" {
+                    self.navigationController?.pushViewController(PC_New_Map_ViewController.init(), animated: true)
+                } else {
+                    self.navigationController?.pushViewController(TG_Root_ViewController.init(), animated: true)
+                }
+            })
     }
     
     @IBAction func didPressForget() {

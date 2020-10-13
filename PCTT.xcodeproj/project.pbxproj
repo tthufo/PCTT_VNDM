@@ -62,6 +62,7 @@
 		FC30E0E52394C23B009174E4 /* WMSTileLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC30E0E32394C239009174E4 /* WMSTileLayer.m */; };
 		FC31018E23195B7F009DBF95 /* EM_MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31018B23195B7F009DBF95 /* EM_MenuView.m */; };
 		FC31018F23195B7F009DBF95 /* EM_Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC31018D23195B7F009DBF95 /* EM_Menu.xib */; };
+		FC48B2E6252DC325007A19D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC48B2E5252DC324007A19D8 /* GoogleService-Info.plist */; };
 		FC49139424E2744000F1967A /* PC_Disaster_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC49139224E2744000F1967A /* PC_Disaster_ViewController.swift */; };
 		FC49139524E2744000F1967A /* PC_Disaster_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC49139324E2744000F1967A /* PC_Disaster_ViewController.xib */; };
 		FC49139A24E276DA00F1967A /* PC_Disaster_Tab_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC49139924E276DA00F1967A /* PC_Disaster_Tab_ViewController.swift */; };
@@ -108,7 +109,6 @@
 		FC69937522FB4A8200C62D42 /* PC_Station_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69937322FB4A8200C62D42 /* PC_Station_ViewController.swift */; };
 		FC69937622FB4A8200C62D42 /* PC_Station_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC69937422FB4A8200C62D42 /* PC_Station_ViewController.xib */; };
 		FC69937822FB503F00C62D42 /* PC_Station_Cell0.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC69937722FB503F00C62D42 /* PC_Station_Cell0.xib */; };
-		FC7491BE24EB8817002730BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC7491BD24EB8817002730BE /* GoogleService-Info.plist */; };
 		FC7491C124EBE23A002730BE /* Navigation_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7491C024EBE23A002730BE /* Navigation_ViewController.m */; };
 		FC8F4AEF230FE9420082F3B2 /* PC_FeedBack_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8F4AED230FE9420082F3B2 /* PC_FeedBack_ViewController.swift */; };
 		FC8F4AF0230FE9420082F3B2 /* PC_FeedBack_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC8F4AEE230FE9420082F3B2 /* PC_FeedBack_ViewController.xib */; };
@@ -209,6 +209,7 @@
 		FC31018B23195B7F009DBF95 /* EM_MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EM_MenuView.m; sourceTree = "<group>"; };
 		FC31018C23195B7F009DBF95 /* EM_MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EM_MenuView.h; sourceTree = "<group>"; };
 		FC31018D23195B7F009DBF95 /* EM_Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EM_Menu.xib; sourceTree = "<group>"; };
+		FC48B2E5252DC324007A19D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Users/thanhhaitran/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC49139224E2744000F1967A /* PC_Disaster_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Disaster_ViewController.swift; sourceTree = "<group>"; };
 		FC49139324E2744000F1967A /* PC_Disaster_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Disaster_ViewController.xib; sourceTree = "<group>"; };
 		FC49139924E276DA00F1967A /* PC_Disaster_Tab_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Disaster_Tab_ViewController.swift; sourceTree = "<group>"; };
@@ -241,7 +242,7 @@
 		FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Register_ViewController.xib; sourceTree = "<group>"; };
 		FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Update_ViewController.swift; sourceTree = "<group>"; };
 		FC5A3A0923D852D700F8F108 /* PC_Update_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Update_ViewController.xib; sourceTree = "<group>"; };
-		FC5D982022F54134006FA3F1 /* VNDMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VNDMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5D982022F54134006FA3F1 /* Hệ thống giám sát thiên tai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hệ thống giám sát thiên tai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5D982322F54134006FA3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC5D982522F54134006FA3F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC5D982822F54134006FA3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -259,7 +260,6 @@
 		FC69937322FB4A8200C62D42 /* PC_Station_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Station_ViewController.swift; sourceTree = "<group>"; };
 		FC69937422FB4A8200C62D42 /* PC_Station_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Station_ViewController.xib; sourceTree = "<group>"; };
 		FC69937722FB503F00C62D42 /* PC_Station_Cell0.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Station_Cell0.xib; sourceTree = "<group>"; };
-		FC7491BD24EB8817002730BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC7491BF24EBE239002730BE /* Navigation_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navigation_ViewController.h; sourceTree = "<group>"; };
 		FC7491C024EBE23A002730BE /* Navigation_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Navigation_ViewController.m; sourceTree = "<group>"; };
 		FC8F4AED230FE9420082F3B2 /* PC_FeedBack_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_FeedBack_ViewController.swift; sourceTree = "<group>"; };
@@ -467,7 +467,7 @@
 		FC5D982122F54134006FA3F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC5D982022F54134006FA3F1 /* VNDMS.app */,
+				FC5D982022F54134006FA3F1 /* Hệ thống giám sát thiên tai.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -477,7 +477,7 @@
 			children = (
 				FC1B9B3722FBCA3100E65F58 /* PCTT.entitlements */,
 				FC1FEA762394F2D700E65443 /* style_json.json */,
-				FC7491BD24EB8817002730BE /* GoogleService-Info.plist */,
+				FC48B2E5252DC324007A19D8 /* GoogleService-Info.plist */,
 				FC49139F24E2854700F1967A /* format.plist */,
 				FC5D983522F554EB006FA3F1 /* CONTROLLER */,
 				FC5D982322F54134006FA3F1 /* AppDelegate.swift */,
@@ -557,7 +557,7 @@
 			);
 			name = PCTT;
 			productName = PCTT;
-			productReference = FC5D982022F54134006FA3F1 /* VNDMS.app */;
+			productReference = FC5D982022F54134006FA3F1 /* Hệ thống giám sát thiên tai.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -634,7 +634,6 @@
 				FC4913A424E469A800F1967A /* Disaster_Cell.xib in Resources */,
 				FC49139524E2744000F1967A /* PC_Disaster_ViewController.xib in Resources */,
 				FC6197B3238EDF2900155EF1 /* AP_Map_ViewController.xib in Resources */,
-				FC7491BE24EB8817002730BE /* GoogleService-Info.plist in Resources */,
 				FC4913BF24E64AAA00F1967A /* Layer_Cell.xib in Resources */,
 				FC4C6A4424E93EE600BD84D1 /* Report_Cell.xib in Resources */,
 				FC9D8DD72520C39400ED2129 /* Contact_ViewController.xib in Resources */,
@@ -651,6 +650,7 @@
 				FC1AA23B22F879E300C09E02 /* PC_Main_Cell.xib in Resources */,
 				FC4913A224E285FC00F1967A /* Cells.xib in Resources */,
 				FC5D982B22F54137006FA3F1 /* Assets.xcassets in Resources */,
+				FC48B2E6252DC325007A19D8 /* GoogleService-Info.plist in Resources */,
 				FC6197B5238EE83800155EF1 /* Annotation.xib in Resources */,
 				FC49139E24E27D4D00F1967A /* PC_Disaster_Map_ViewController.xib in Resources */,
 				2DB6B1B02330B4FB0036A26A /* PC_Station_Cell3.xib in Resources */,
@@ -944,11 +944,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Thanh Hai Tran (ZWKS8AV396)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Huy Nguyen (S6X8K9KLV3)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 10;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GAJPP6PZBM;
+				DEVELOPMENT_TEAM = 3L2APQ2D3U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PCTT",
@@ -959,10 +959,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
-				PRODUCT_NAME = VNDMS;
-				PROVISIONING_PROFILE_SPECIFIER = monitering_dev;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nex.com.dbtt;
+				PRODUCT_MODULE_NAME = VNDMS;
+				PRODUCT_NAME = "Hệ thống giám sát thiên tai";
+				PROVISIONING_PROFILE_SPECIFIER = dbtt_dev;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PCTT/PCTT-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -980,11 +981,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: VIETGIS - GIS SOLUTION AND TECHNOLOGY COMPANY LIMITED (GAJPP6PZBM)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: 3D ART DESIGN CONSULTANCY AND TECHNOLOGY SOLUTION JOINT STOCK COMPANY (3L2APQ2D3U)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 10;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GAJPP6PZBM;
+				DEVELOPMENT_TEAM = 3L2APQ2D3U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PCTT",
@@ -995,10 +996,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.giamsat.vn;
-				PRODUCT_NAME = VNDMS;
-				PROVISIONING_PROFILE_SPECIFIER = monitering_dis;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nex.com.dbtt;
+				PRODUCT_MODULE_NAME = VNDMS;
+				PRODUCT_NAME = "Hệ thống giám sát thiên tai";
+				PROVISIONING_PROFILE_SPECIFIER = dbtt_product;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PCTT/PCTT-Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;

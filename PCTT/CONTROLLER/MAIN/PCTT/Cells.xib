@@ -15,8 +15,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC5-xK-uWa">
-                        <rect key="frame" x="45" y="0.0" width="275" height="44"/>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC5-xK-uWa">
+                        <rect key="frame" x="45" y="0.0" width="225" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="J9a-kP-taz"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -51,7 +54,7 @@
                     <constraint firstAttribute="trailing" secondItem="KAC-Gw-DMG" secondAttribute="trailing" constant="7" id="GnH-ar-ZeI"/>
                     <constraint firstItem="VC5-xK-uWa" firstAttribute="leading" secondItem="m17-Kc-xd2" secondAttribute="leading" constant="45" id="Jj3-b3-XV6"/>
                     <constraint firstItem="CeW-dc-dXK" firstAttribute="centerY" secondItem="m17-Kc-xd2" secondAttribute="centerY" id="VSD-td-qAS"/>
-                    <constraint firstAttribute="trailing" secondItem="VC5-xK-uWa" secondAttribute="trailing" id="W2x-JU-ke8"/>
+                    <constraint firstAttribute="trailing" secondItem="VC5-xK-uWa" secondAttribute="trailing" constant="50" id="W2x-JU-ke8"/>
                     <constraint firstAttribute="bottom" secondItem="VC5-xK-uWa" secondAttribute="bottom" id="nNp-U5-gbx"/>
                     <constraint firstItem="VC5-xK-uWa" firstAttribute="top" secondItem="m17-Kc-xd2" secondAttribute="top" id="vNT-Jl-OBp"/>
                     <constraint firstItem="CeW-dc-dXK" firstAttribute="leading" secondItem="m17-Kc-xd2" secondAttribute="leading" constant="5" id="xYc-tQ-ixR"/>

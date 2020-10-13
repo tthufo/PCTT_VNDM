@@ -50,7 +50,7 @@ class PC_Info_ViewController: UIViewController {
         
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         
-        bottom.text = "VNDMS Ver %@".format(parameters: appVersion!)
+        bottom.text = "Ver %@".format(parameters: appVersion!)
         
         topHeight.constant = isLD() ? 44 : 0
         

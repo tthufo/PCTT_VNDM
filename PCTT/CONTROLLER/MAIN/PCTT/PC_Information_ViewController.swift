@@ -100,7 +100,7 @@ class PC_Information_ViewController: UIViewController, WKUIDelegate, WKNavigatio
                        
             let des = information.getValueFromKey("description") == "" ? "<br/>" : "Mô tả: %@".format(parameters: information.getValueFromKey("description"))
             
-            let link = "<a href=%@>Xem thêm >>></a>".format(parameters: information.getValueFromKey("link_detail"))
+            let link = Information.check == "0" ? "" : "<a href=%@>Xem thêm >>></a>".format(parameters: information.getValueFromKey("link_detail"))
             
             let headerString = "<header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'></header>"
             let body = "Tên: <b>%@</b><br/>Thời gian: <b>%@</b><br/>Khu vực ảnh hưởng: <b>%@</b><br/>Cấp độ rủi ro thiên tai: <b>%@</b><br/>%@<br/>%@".format(parameters:

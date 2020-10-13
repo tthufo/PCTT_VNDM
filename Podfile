@@ -27,9 +27,9 @@ target 'PCTT' do
   
   pod 'SVGKit'
   
-  pod 'FBPod'
-  
-  pod 'GGPod'
+  pod 'FBPod', '~> 0.1.1'
+
+  pod 'GGPod', '~> 0.1'
 
   pod 'ZaloSDK'
 

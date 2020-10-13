@@ -13,13 +13,37 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Giám Sát Thiên Tai</string>
+	<string>VNDMS</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>zalo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>zalo-314411592040398357</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb154572565140483</string>
+				<string>com.googleusercontent.apps.387423726605-v0213k2e0i5h8hqnsan3dhmecjs499mn</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FacebookAppID</key>
+	<string>154572565140483</string>
+	<key>FacebookDisplayName</key>
+	<string>bla</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fb-messenger-share-api</string>
@@ -38,19 +62,19 @@
 		<true/>
 	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Giám Sát Thiên Tai cần truy cập Bluetooth của bạn cho việc cập nhật thông tin người dùng.</string>
+	<string>Hệ thống giám sát thiên tai cần truy cập Bluetooth của bạn cho việc cập nhật thông tin người dùng.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Giám Sát Thiên Tai cần truy cập Camera chụp ảnh của bạn cho việc cập nhật thông tin người dùng.</string>
+	<string>Hệ thống giám sát thiên tai cần truy cập Camera chụp ảnh của bạn cho việc cập nhật thông tin người dùng.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Giám Sát Thiên Tai cần truy cập vị trí của bạn cho việc định vị vùng thời tiết nhanh chóng nhất</string>
+	<string>Hệ thống giám sát thiên tai cần truy cập vị trí của bạn cho việc định vị vùng thời tiết nhanh chóng nhất</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Giám Sát Thiên Tai cần truy cập vị trí của bạn cho việc định vị vùng thời tiết nhanh chóng nhất</string>
+	<string>Hệ thống giám sát thiên tai cần truy cập vị trí của bạn cho việc định vị vùng thời tiết nhanh chóng nhất</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Giám Sát Thiên Tai cần truy cập vị trí của bạn cho việc định vị vùng thời tiết nhanh chóng nhất</string>
+	<string>Hệ thống giám sát thiên tai cần truy cập vị trí của bạn cho việc định vị vùng thời tiết nhanh chóng nhất</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Giám Sát Thiên Tai cần sử dụng Micro của bạn cho việc thu âm.</string>
+	<string>Hệ thống giám sát thiên tai cần sử dụng Micro của bạn cho việc thu âm.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Giám Sát Thiên Tai cần truy cập Bộ sưu tập ảnh của bạn cho việc cập nhật thông tin người dùng.</string>
+	<string>Hệ thống giám sát thiên tai cần truy cập Bộ sưu tập ảnh của bạn cho việc cập nhật thông tin người dùng.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -74,29 +98,5 @@
 	<string>http://vndms.dmc.gov.vn/api</string>
 	<key>tile</key>
 	<string>http://103.7.41.156:9090/VNBase</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>zalo</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>zalo-314411592040398357</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb154572565140483</string>
-				<string>com.googleusercontent.apps.387423726605-8f12o80qghdcc4v6nn2v8hp7t9gemk9l</string>
-			</array>
-		</dict>
-	</array>
-	<key>FacebookDisplayName</key>
-	<string>bla</string>
-	<key>FacebookAppID</key>
-	<string>154572565140483</string>
 </dict>
 </plist>

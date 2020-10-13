@@ -281,7 +281,7 @@ class PC_Disaster_ViewController: UIViewController, UITextFieldDelegate {
 extension PC_Disaster_ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView == disTableView ? 44 : UITableView.automaticDimension
+        return tableView == disTableView ? UITableView.automaticDimension : UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -77,7 +77,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        FirePush.shareInstance()?.didFailedRegisterNotification(error)
+//        print("===>", error)
+//        FirePush.shareInstance()?.didFailedRegisterNotification(error)
 //        self.addValue("0", andKey: "push")
     }
     

@@ -53,7 +53,7 @@ class PC_Forgot_ViewController: UIViewController , UITextFieldDelegate {
         
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 
-        bottom.text = "VNDMS Ver %@".format(parameters: appVersion!)
+        bottom.text = "Ver %@".format(parameters: appVersion!)
         
         bottom.action(forTouch: [:]) { (obj) in
 //            self.callNumber(phoneNumber: Information.phone)
