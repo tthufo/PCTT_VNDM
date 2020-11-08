@@ -8,11 +8,11 @@
 
 import UIKit
 
-class PC_Contact_ViewController: ViewPagerController, UITextFieldDelegate {
+class Contact_Emer_ViewController: ViewPagerController, UITextFieldDelegate {
 
     var controllers: NSMutableArray!
 
-     var titles = ["BCĐ TW", "VP BCH TỈNH", "THEO VỊ TRÍ"]
+     var titles = ["Gọi điện cứu hộ, cứu nạn", "Tin nhắn cứu hộ, cứu nạn"]
 
 //     @IBOutlet var tableView: UITableView!
         
@@ -20,6 +20,8 @@ class PC_Contact_ViewController: ViewPagerController, UITextFieldDelegate {
 
      @IBOutlet var searchView: UIView!
     
+    @IBOutlet var textView: UIView!
+
     @IBOutlet var firstNumber: UILabel!
 
     @IBOutlet var secondNumber: UILabel!
@@ -49,7 +51,7 @@ class PC_Contact_ViewController: ViewPagerController, UITextFieldDelegate {
               headerImg.image = UIImage(named: "bg_text_dms")
           }
         
-        self.topHeight = IS_IPHONE_X() ? "200" : "200"
+        self.topHeight = "200"// IS_IPHONE_X() ? "220" : "100"
 
         controllers = NSMutableArray()
 
@@ -59,9 +61,15 @@ class PC_Contact_ViewController: ViewPagerController, UITextFieldDelegate {
         
         controllers.add(Contact_ViewController.init())
 
-        controllers.add(Contact_ViewController.init())
+        let con = Contact_ViewController.init()
         
-        controllers.add(Contact_ViewController.init())
+        con.emer = true
+        
+        controllers.add(con)
+
+//        controllers.add(Emer_ViewController.init())
+        
+//        controllers.add(Contact_ViewController.init())
         
         
         firstNumber.action(forTouch: [:]) { (obj) in
@@ -116,15 +124,15 @@ class PC_Contact_ViewController: ViewPagerController, UITextFieldDelegate {
         
         let resulting = result["data"] as! NSDictionary
                   
-        (self.controllers![0] as! Contact_ViewController).result = resulting["bcd"] as! NSArray
+        (self.controllers![0] as! Contact_ViewController).result = resulting["dinh_vi"] as! NSArray
 
          (self.controllers![0] as! Contact_ViewController).reloading()
         
-        (self.controllers![1] as! Contact_ViewController).result = resulting["tinh"] as! NSArray
+//        (self.controllers![1] as! Contact_ViewController).result = resulting["tinh"] as! NSArray
 //
 //        (self.controllers![1] as! Contact_ViewController).reloading()
 //
-        (self.controllers![2] as! Contact_ViewController).result = resulting["dinh_vi"] as! NSArray
+//        (self.controllers![2] as! Contact_ViewController).result = resulting["dinh_vi"] as! NSArray
 //
 //        (self.controllers![2] as! Contact_ViewController).reloading()
 
@@ -160,13 +168,13 @@ class PC_Contact_ViewController: ViewPagerController, UITextFieldDelegate {
        label.text = titles[index]
        label.textAlignment = .center
        label.textColor = UIColor.black
-       label.font = UIFont.boldSystemFont(ofSize: 16)
+       label.font = UIFont.boldSystemFont(ofSize: 15)
        label.sizeToFit()
        return label
    }
 }
 
-extension PC_Contact_ViewController: ViewPagerDelegate, ViewPagerDataSource {
+extension Contact_Emer_ViewController: ViewPagerDelegate, ViewPagerDataSource {
     func numberOfTabs(forViewPager viewPager: ViewPagerController!) -> UInt {
         return UInt(titles.count)
     }
@@ -188,6 +196,18 @@ extension PC_Contact_ViewController: ViewPagerDelegate, ViewPagerDataSource {
                 }
             }
         }
+        
+        self.topHeight = index == 0 ? "200" : "130"
+        
+        self.textView.alpha = index == 0 ? 1 : 0
+        
+        self.view.layoutIfNeeded()
+        
+        self.view.layoutSubviews()
+        
+        self.layoutSubviews()
+        
+        self.view.endEditing(true)
     }
     
     func viewPager(_ viewPager: ViewPagerController!, valueFor option: ViewPagerOption, withDefault value: CGFloat) -> CGFloat {

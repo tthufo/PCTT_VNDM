@@ -62,7 +62,6 @@
 		FC30E0E52394C23B009174E4 /* WMSTileLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC30E0E32394C239009174E4 /* WMSTileLayer.m */; };
 		FC31018E23195B7F009DBF95 /* EM_MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31018B23195B7F009DBF95 /* EM_MenuView.m */; };
 		FC31018F23195B7F009DBF95 /* EM_Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC31018D23195B7F009DBF95 /* EM_Menu.xib */; };
-		FC48B2E6252DC325007A19D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC48B2E5252DC324007A19D8 /* GoogleService-Info.plist */; };
 		FC49139424E2744000F1967A /* PC_Disaster_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC49139224E2744000F1967A /* PC_Disaster_ViewController.swift */; };
 		FC49139524E2744000F1967A /* PC_Disaster_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC49139324E2744000F1967A /* PC_Disaster_ViewController.xib */; };
 		FC49139A24E276DA00F1967A /* PC_Disaster_Tab_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC49139924E276DA00F1967A /* PC_Disaster_Tab_ViewController.swift */; };
@@ -90,6 +89,12 @@
 		FC4C6A4724E9646100BD84D1 /* Reader_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C6A4524E9646100BD84D1 /* Reader_ViewController.swift */; };
 		FC4C6A4824E9646100BD84D1 /* Reader_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4C6A4624E9646100BD84D1 /* Reader_ViewController.xib */; };
 		FC4C6A4B24E964D900BD84D1 /* DownLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4C6A4A24E964D900BD84D1 /* DownLoad.m */; };
+		FC4DE9CB2556DC5500231CA2 /* Contact_Emer_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4DE9C92556DC5500231CA2 /* Contact_Emer_ViewController.swift */; };
+		FC4DE9CC2556DC5500231CA2 /* Contact_Emer_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4DE9CA2556DC5500231CA2 /* Contact_Emer_ViewController.xib */; };
+		FC4DE9D22556F4EA00231CA2 /* Emer_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4DE9D12556F4EA00231CA2 /* Emer_Cell.xib */; };
+		FC4DE9D52557B90300231CA2 /* Instruction_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4DE9D32557B90300231CA2 /* Instruction_ViewController.swift */; };
+		FC4DE9D62557B90300231CA2 /* Instruction_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4DE9D42557B90300231CA2 /* Instruction_ViewController.xib */; };
+		FC4DE9D82557BC4500231CA2 /* Instruction_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC4DE9D72557BC4500231CA2 /* Instruction_Cell.xib */; };
 		FC59DA49237004FA00F8FA35 /* PC_Register_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */; };
 		FC59DA4A237004FA00F8FA35 /* PC_Register_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */; };
 		FC5A3A0A23D852D700F8F108 /* PC_Update_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */; };
@@ -130,10 +135,21 @@
 		FCEDD7E122F9E19500DC4613 /* PC_Notification_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEDD7DF22F9E19500DC4613 /* PC_Notification_ViewController.xib */; };
 		FCEDD7E322F9F00400DC4613 /* PC_Notification_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEDD7E222F9F00400DC4613 /* PC_Notification_Cell.xib */; };
 		FCFCD732233AD94200804047 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFCD730233AD94200804047 /* XMLReader.m */; };
+		FCFD46B7255407BC008517B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCFD46B6255407BC008517B9 /* GoogleService-Info.plist */; };
 		FCFF18D02328ACF1001DF8A2 /* TG_Empty_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFF18CF2328ACF1001DF8A2 /* TG_Empty_Cell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		FC87447A2547293800BF383C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCC73DB42305AF38004E87CA /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,7 +225,6 @@
 		FC31018B23195B7F009DBF95 /* EM_MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EM_MenuView.m; sourceTree = "<group>"; };
 		FC31018C23195B7F009DBF95 /* EM_MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EM_MenuView.h; sourceTree = "<group>"; };
 		FC31018D23195B7F009DBF95 /* EM_Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EM_Menu.xib; sourceTree = "<group>"; };
-		FC48B2E5252DC324007A19D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Users/thanhhaitran/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC49139224E2744000F1967A /* PC_Disaster_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Disaster_ViewController.swift; sourceTree = "<group>"; };
 		FC49139324E2744000F1967A /* PC_Disaster_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Disaster_ViewController.xib; sourceTree = "<group>"; };
 		FC49139924E276DA00F1967A /* PC_Disaster_Tab_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Disaster_Tab_ViewController.swift; sourceTree = "<group>"; };
@@ -238,11 +253,17 @@
 		FC4C6A4624E9646100BD84D1 /* Reader_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Reader_ViewController.xib; sourceTree = "<group>"; };
 		FC4C6A4924E964D900BD84D1 /* DownLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoad.h; sourceTree = "<group>"; };
 		FC4C6A4A24E964D900BD84D1 /* DownLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoad.m; sourceTree = "<group>"; };
+		FC4DE9C92556DC5500231CA2 /* Contact_Emer_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_Emer_ViewController.swift; sourceTree = "<group>"; };
+		FC4DE9CA2556DC5500231CA2 /* Contact_Emer_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Contact_Emer_ViewController.xib; sourceTree = "<group>"; };
+		FC4DE9D12556F4EA00231CA2 /* Emer_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Emer_Cell.xib; sourceTree = "<group>"; };
+		FC4DE9D32557B90300231CA2 /* Instruction_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction_ViewController.swift; sourceTree = "<group>"; };
+		FC4DE9D42557B90300231CA2 /* Instruction_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Instruction_ViewController.xib; sourceTree = "<group>"; };
+		FC4DE9D72557BC4500231CA2 /* Instruction_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Instruction_Cell.xib; sourceTree = "<group>"; };
 		FC59DA47237004FA00F8FA35 /* PC_Register_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Register_ViewController.swift; sourceTree = "<group>"; };
 		FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Register_ViewController.xib; sourceTree = "<group>"; };
 		FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Update_ViewController.swift; sourceTree = "<group>"; };
 		FC5A3A0923D852D700F8F108 /* PC_Update_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Update_ViewController.xib; sourceTree = "<group>"; };
-		FC5D982022F54134006FA3F1 /* Hệ thống giám sát thiên tai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hệ thống giám sát thiên tai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5D982022F54134006FA3F1 /* PCTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5D982322F54134006FA3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC5D982522F54134006FA3F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC5D982822F54134006FA3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -286,6 +307,7 @@
 		FCEDD7E222F9F00400DC4613 /* PC_Notification_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Notification_Cell.xib; sourceTree = "<group>"; };
 		FCFCD730233AD94200804047 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		FCFCD731233AD94200804047 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		FCFD46B6255407BC008517B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCFF18CF2328ACF1001DF8A2 /* TG_Empty_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TG_Empty_Cell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -449,6 +471,12 @@
 				FC9D8DD12520A86A00ED2129 /* PC_Information_ViewController.xib */,
 				FC9D8DD42520C39400ED2129 /* Contact_ViewController.swift */,
 				FC9D8DD52520C39400ED2129 /* Contact_ViewController.xib */,
+				FC4DE9C92556DC5500231CA2 /* Contact_Emer_ViewController.swift */,
+				FC4DE9CA2556DC5500231CA2 /* Contact_Emer_ViewController.xib */,
+				FC4DE9D12556F4EA00231CA2 /* Emer_Cell.xib */,
+				FC4DE9D32557B90300231CA2 /* Instruction_ViewController.swift */,
+				FC4DE9D42557B90300231CA2 /* Instruction_ViewController.xib */,
+				FC4DE9D72557BC4500231CA2 /* Instruction_Cell.xib */,
 			);
 			name = Disaster_Detail;
 			sourceTree = "<group>";
@@ -467,7 +495,7 @@
 		FC5D982122F54134006FA3F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC5D982022F54134006FA3F1 /* Hệ thống giám sát thiên tai.app */,
+				FC5D982022F54134006FA3F1 /* PCTT.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -475,9 +503,9 @@
 		FC5D982222F54134006FA3F1 /* PCTT */ = {
 			isa = PBXGroup;
 			children = (
+				FCFD46B6255407BC008517B9 /* GoogleService-Info.plist */,
 				FC1B9B3722FBCA3100E65F58 /* PCTT.entitlements */,
 				FC1FEA762394F2D700E65443 /* style_json.json */,
-				FC48B2E5252DC324007A19D8 /* GoogleService-Info.plist */,
 				FC49139F24E2854700F1967A /* format.plist */,
 				FC5D983522F554EB006FA3F1 /* CONTROLLER */,
 				FC5D982322F54134006FA3F1 /* AppDelegate.swift */,
@@ -550,6 +578,7 @@
 				FCC73DB42305AF38004E87CA /* Embed App Extensions */,
 				91B3D1A4DE36F766EBD552B4 /* [CP] Embed Pods Frameworks */,
 				DF99F49DB480E2E544D37D4B /* [CP] Copy Pods Resources */,
+				FC87447A2547293800BF383C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -557,7 +586,7 @@
 			);
 			name = PCTT;
 			productName = PCTT;
-			productReference = FC5D982022F54134006FA3F1 /* Hệ thống giám sát thiên tai.app */;
+			productReference = FC5D982022F54134006FA3F1 /* PCTT.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -605,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC5DAA2E23D8A2E800163031 /* OffLine_ViewController.xib in Resources */,
+				FC4DE9D62557B90300231CA2 /* Instruction_ViewController.xib in Resources */,
 				2DB6B1AE2330B4FB0036A26A /* PC_Station_Cell1.xib in Resources */,
 				FC69937622FB4A8200C62D42 /* PC_Station_ViewController.xib in Resources */,
 				FC2EA11C237E4C44004B01AE /* PC_Inner_Info_ViewController.xib in Resources */,
@@ -626,11 +656,13 @@
 				2DB6B1AF2330B4FB0036A26A /* PC_Station_Cell2.xib in Resources */,
 				FC5D982E22F54137006FA3F1 /* LaunchScreen.storyboard in Resources */,
 				FC1AC74223708CC100B11288 /* TG_Intro_ViewController.xib in Resources */,
+				FC4DE9D22556F4EA00231CA2 /* Emer_Cell.xib in Resources */,
 				FC8F4AF2230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib in Resources */,
 				FC4C6A4824E9646100BD84D1 /* Reader_ViewController.xib in Resources */,
 				FCA5F32B2371DAB700274600 /* PC_Info_Cell.xib in Resources */,
 				FC269A1E23786EEC00EEA392 /* TG_Map_Cell.xib in Resources */,
 				FCEDD7E122F9E19500DC4613 /* PC_Notification_ViewController.xib in Resources */,
+				FCFD46B7255407BC008517B9 /* GoogleService-Info.plist in Resources */,
 				FC4913A424E469A800F1967A /* Disaster_Cell.xib in Resources */,
 				FC49139524E2744000F1967A /* PC_Disaster_ViewController.xib in Resources */,
 				FC6197B3238EDF2900155EF1 /* AP_Map_ViewController.xib in Resources */,
@@ -650,8 +682,8 @@
 				FC1AA23B22F879E300C09E02 /* PC_Main_Cell.xib in Resources */,
 				FC4913A224E285FC00F1967A /* Cells.xib in Resources */,
 				FC5D982B22F54137006FA3F1 /* Assets.xcassets in Resources */,
-				FC48B2E6252DC325007A19D8 /* GoogleService-Info.plist in Resources */,
 				FC6197B5238EE83800155EF1 /* Annotation.xib in Resources */,
+				FC4DE9CC2556DC5500231CA2 /* Contact_Emer_ViewController.xib in Resources */,
 				FC49139E24E27D4D00F1967A /* PC_Disaster_Map_ViewController.xib in Resources */,
 				2DB6B1B02330B4FB0036A26A /* PC_Station_Cell3.xib in Resources */,
 				2DB6B1AB2330B4FB0036A26A /* PC_Station_Cell5.xib in Resources */,
@@ -667,6 +699,7 @@
 				FC1B307B22F73F3E002E873F /* PC_ChangePass_ViewController.xib in Resources */,
 				FC8F4AF0230FE9420082F3B2 /* PC_FeedBack_ViewController.xib in Resources */,
 				FC1B307522F71C24002E873F /* PC_Setting_ViewController.xib in Resources */,
+				FC4DE9D82557BC4500231CA2 /* Instruction_Cell.xib in Resources */,
 				FC230EE722FD1A410082B989 /* custom_info_bubble.9.png in Resources */,
 				FC31018F23195B7F009DBF95 /* EM_Menu.xib in Resources */,
 				FC4913AD24E5A98300F1967A /* PC_Doc_ViewController.xib in Resources */,
@@ -745,6 +778,7 @@
 			files = (
 				FCEDD7E022F9E19500DC4613 /* PC_Notification_ViewController.swift in Sources */,
 				FC9D8DD22520A86A00ED2129 /* PC_Information_ViewController.swift in Sources */,
+				FC4DE9D52557B90300231CA2 /* Instruction_ViewController.swift in Sources */,
 				FC1AC74523708DF800B11288 /* NSObject+TabbarExtension.m in Sources */,
 				FC247D23238246480025D417 /* PC_FeedBack_New_ViewController.swift in Sources */,
 				FCFCD732233AD94200804047 /* XMLReader.m in Sources */,
@@ -794,6 +828,7 @@
 				FC49139424E2744000F1967A /* PC_Disaster_ViewController.swift in Sources */,
 				FC1B307A22F73F3D002E873F /* PC_ChangePass_ViewController.swift in Sources */,
 				FC1AC74123708CC100B11288 /* TG_Intro_ViewController.swift in Sources */,
+				FC4DE9CB2556DC5500231CA2 /* Contact_Emer_ViewController.swift in Sources */,
 				FC1AC74823709C9C00B11288 /* PC_Info_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -940,7 +975,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 518A05DE2FA4D23E8FEE427D /* Pods-PCTT.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
@@ -952,6 +986,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PCTT",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PCTT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -962,7 +997,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nex.com.dbtt;
 				PRODUCT_MODULE_NAME = VNDMS;
-				PRODUCT_NAME = "Hệ thống giám sát thiên tai";
+				PRODUCT_NAME = PCTT;
 				PROVISIONING_PROFILE_SPECIFIER = dbtt_dev;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PCTT/PCTT-Bridging-Header.h";
@@ -977,7 +1012,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 47999EB32B29DC28F0C17E82 /* Pods-PCTT.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PCTT/PCTT.entitlements;
@@ -989,6 +1023,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PCTT",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PCTT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -999,7 +1034,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nex.com.dbtt;
 				PRODUCT_MODULE_NAME = VNDMS;
-				PRODUCT_NAME = "Hệ thống giám sát thiên tai";
+				PRODUCT_NAME = PCTT;
 				PROVISIONING_PROFILE_SPECIFIER = dbtt_product;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PCTT/PCTT-Bridging-Header.h";

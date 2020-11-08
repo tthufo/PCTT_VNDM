@@ -10,6 +10,8 @@ import UIKit
 
 import MarqueeLabel
 
+import ZaloSDK
+
 class PC_Info_ViewController: UIViewController {
     
     @IBOutlet var bg: UIImageView!
@@ -39,12 +41,19 @@ class PC_Info_ViewController: UIViewController {
           headerImg.image = UIImage(named: "bg_text_dms")
        }
         
-       dataList = NSMutableArray.init(array: [["title":"Thông tin tài khoản", "image":"user_info"],
+       dataList = !isLD() ? NSMutableArray.init(array: [["title":"Thông tin tài khoản", "image":"user_info"],
                                                ["title":"Đổi mật khẩu", "image":"change_pass"],
 //                                               ["title":"Đóng góp ý tưởng", "image":"contribution"],
                                                ["title":"Cho phép nhận thông báo", "image":"notification"],
                                                ["title":"Đăng xuất", "image":"logout"]
-                                              ])
+       ]) : NSMutableArray.init(array: [["title":"Thông tin tài khoản", "image":"user_info"],
+//                                                      ["title":"Đổi mật khẩu", "image":"change_pass"],
+       //                                               ["title":"Đóng góp ý tưởng", "image":"contribution"],
+                                                      ["title":"Cho phép nhận thông báo", "image":"notification"],
+                                                      ["title":"Đăng xuất", "image":"logout"]
+                                                     ])
+        
+        
          
         tableView.withCell("PC_Info_Cell")
         
@@ -60,7 +69,7 @@ class PC_Info_ViewController: UIViewController {
     }
     
     func isLD() -> Bool {
-        return Information.userInfo?.getValueFromKey("IsLanhDao") == "1"
+        return Information.userInfo?.getValueFromKey("UserType") == "1" || Information.userInfo?.getValueFromKey("UserType") == "3"
     }
     
     func didPressLogout() {
@@ -77,6 +86,12 @@ class PC_Info_ViewController: UIViewController {
 //            }
 //
             Information.removeInfo()
+        
+        GG_PlugIn.shareInstance()?.signOutGoogle()
+
+        FB_Plugin.shareInstance()?.signoutFacebook()
+        
+        ZaloSDK.sharedInstance()?.unauthenticate()
 
             self.navigationController?.popToRootViewController(animated: true)
 //        })
@@ -159,16 +174,20 @@ extension PC_Info_ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        let LD = isLD() ? 1 : 0
+        
 //        if Information.check == nil {
             if indexPath.row == 0 {
                 self.navigationController?.pushViewController(PC_Inner_Info_ViewController.init(), animated: true)
             }
             
+        if !isLD() {
             if indexPath.row == 1 {
                 self.navigationController?.pushViewController(PC_ChangePass_ViewController.init(), animated: true)
             }
+        }
             
-            if indexPath.row == 2 {
+            if indexPath.row == 2 - LD {
                 LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "notification/subcribe"),
                                                                    "header":["Authorization":Information.token == nil ? "" : Information.token!],
                                                                    "method":"GET",
@@ -219,7 +238,7 @@ extension PC_Info_ViewController: UITableViewDataSource, UITableViewDelegate {
 //                sw.isOn = self.getValue("push") == "1"
             }
             
-            if indexPath.row == 3 {
+            if indexPath.row == 3 - LD {
                 self.didPressLogout()
             }
 //        } else {

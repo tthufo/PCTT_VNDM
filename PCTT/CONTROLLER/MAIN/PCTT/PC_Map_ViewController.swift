@@ -285,7 +285,8 @@ class PC_Map_ViewController: UIViewController, UICollectionViewDataSource, UICol
             let map = PC_Contact_ViewController.init()
             self.navigationController?.pushViewController(map, animated: true)
         } else if indexPath.item == 11 {
-            self.showToast("Chức năng đang xây dựng", andPos: 0)
+            self.navigationController?.pushViewController(Instruction_ViewController.init(), animated: true)
+//            self.showToast("Chức năng đang xây dựng", andPos: 0)
         } else {
             let map = PC_Inner_Map_ViewController.init()
             map.category = data.getValueFromKey("category") as NSString?

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Emer_Cell" rowHeight="460" id="Egq-Nx-dJR">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="460"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Egq-Nx-dJR" id="IWH-xN-HRt">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="460"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhắn tin tới BCH Tỉnh đề nghị cứu hộ, cứu nạn thiên tai" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0l-Zd-sZf">
+                        <rect key="frame" x="20" y="16" width="374" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Sdb-cJ-Q6Z"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Vị trí của bạn: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rt-Pk-axA">
+                        <rect key="frame" x="20" y="74" width="374" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Yzf-nY-xah"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số điện thoại:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgg-IZ-zv2">
+                        <rect key="frame" x="20" y="104.5" width="374" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20.5" id="3cJ-Op-YL2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Bạn hãy kiểm tra lại thông tin trước khi gửi đi (Nếu thông tin không hiện thị tự động, hãy nhập vao ô bên dưới)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fka-0j-cA3">
+                        <rect key="frame" x="20" y="135" width="374" height="61"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="hao-Va-wFO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="15" contentMode="scaleToFill" text="Thông tin: Vị trí: Số điện thoại:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="19L-Gi-zHD">
+                        <rect key="frame" x="20" y="206" width="374" height="120"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="cgN-f9-LHr"/>
+                        </constraints>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cS-e0-NMW">
+                        <rect key="frame" x="206.5" y="334" width="1" height="77"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="FRM-mC-Lee"/>
+                            <constraint firstAttribute="height" constant="77" id="oLI-ng-sGl"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" clipsSubviews="YES" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEO-FQ-dEf">
+                        <rect key="frame" x="219" y="350" width="150" height="51"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="51" id="3ML-m7-NkW"/>
+                            <constraint firstAttribute="width" constant="150" id="iP8-X7-auj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <state key="normal" title="Gửi đi">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="26"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" clipsSubviews="YES" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yea-mm-V1W">
+                        <rect key="frame" x="46.5" y="350" width="150" height="51"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="Qan-wF-1fb"/>
+                            <constraint firstAttribute="height" constant="51" id="U6g-6u-sdH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <state key="normal" title="Hủy">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="26"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lực lượng chức năng sẽ sớm liên hệ với bạn." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYy-h3-Z1s">
+                        <rect key="frame" x="20" y="418" width="374" height="21.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="pHg-nZ-8vY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.1019607843" green="0.41960784309999999" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="19L-Gi-zHD" secondAttribute="trailing" constant="20" id="23q-ni-n2n"/>
+                    <constraint firstItem="PYy-h3-Z1s" firstAttribute="top" secondItem="vEO-FQ-dEf" secondAttribute="bottom" constant="17" id="2jG-5y-UXG"/>
+                    <constraint firstItem="19L-Gi-zHD" firstAttribute="leading" secondItem="IWH-xN-HRt" secondAttribute="leading" constant="20" id="5rR-zS-3Qm"/>
+                    <constraint firstAttribute="trailing" secondItem="Fka-0j-cA3" secondAttribute="trailing" constant="20" id="7dy-0U-wmO"/>
+                    <constraint firstItem="vEO-FQ-dEf" firstAttribute="top" secondItem="19L-Gi-zHD" secondAttribute="bottom" constant="24" id="GaL-13-RoE"/>
+                    <constraint firstItem="3rt-Pk-axA" firstAttribute="leading" secondItem="IWH-xN-HRt" secondAttribute="leading" constant="20" id="HqL-wn-eOm"/>
+                    <constraint firstItem="6cS-e0-NMW" firstAttribute="top" secondItem="19L-Gi-zHD" secondAttribute="bottom" constant="8" id="MlM-eM-mJZ"/>
+                    <constraint firstItem="Fka-0j-cA3" firstAttribute="leading" secondItem="IWH-xN-HRt" secondAttribute="leading" constant="20" id="N3W-ob-8yb"/>
+                    <constraint firstItem="6cS-e0-NMW" firstAttribute="centerX" secondItem="IWH-xN-HRt" secondAttribute="centerX" id="Tsz-so-lvc"/>
+                    <constraint firstItem="i0l-Zd-sZf" firstAttribute="leading" secondItem="IWH-xN-HRt" secondAttribute="leading" constant="20" id="Uhv-45-JYr"/>
+                    <constraint firstItem="vEO-FQ-dEf" firstAttribute="leading" secondItem="6cS-e0-NMW" secondAttribute="trailing" constant="11.5" id="WKQ-rB-28e"/>
+                    <constraint firstAttribute="bottom" secondItem="PYy-h3-Z1s" secondAttribute="bottom" constant="20.5" id="XhZ-Jy-m16"/>
+                    <constraint firstItem="6cS-e0-NMW" firstAttribute="leading" secondItem="Yea-mm-V1W" secondAttribute="trailing" constant="10" id="aDK-gj-kLb"/>
+                    <constraint firstAttribute="trailing" secondItem="PYy-h3-Z1s" secondAttribute="trailing" constant="20" id="aUJ-fL-sMx"/>
+                    <constraint firstAttribute="trailing" secondItem="i0l-Zd-sZf" secondAttribute="trailing" constant="20" id="aVe-k8-6n8"/>
+                    <constraint firstItem="Fka-0j-cA3" firstAttribute="top" secondItem="rgg-IZ-zv2" secondAttribute="bottom" constant="10" id="dcB-Cw-Mbq"/>
+                    <constraint firstItem="i0l-Zd-sZf" firstAttribute="top" secondItem="IWH-xN-HRt" secondAttribute="top" constant="16" id="jtR-Ij-nsk"/>
+                    <constraint firstItem="Yea-mm-V1W" firstAttribute="top" secondItem="19L-Gi-zHD" secondAttribute="bottom" constant="24" id="kSH-OJ-UJv"/>
+                    <constraint firstItem="PYy-h3-Z1s" firstAttribute="leading" secondItem="IWH-xN-HRt" secondAttribute="leading" constant="20" id="kty-4t-Yto"/>
+                    <constraint firstAttribute="trailing" secondItem="rgg-IZ-zv2" secondAttribute="trailing" constant="20" id="oVQ-cl-4aZ"/>
+                    <constraint firstAttribute="trailing" secondItem="3rt-Pk-axA" secondAttribute="trailing" constant="20" id="p8b-0T-eb0"/>
+                    <constraint firstItem="19L-Gi-zHD" firstAttribute="top" secondItem="Fka-0j-cA3" secondAttribute="bottom" constant="10" id="tJs-aZ-Srf"/>
+                    <constraint firstItem="rgg-IZ-zv2" firstAttribute="leading" secondItem="IWH-xN-HRt" secondAttribute="leading" constant="20" id="tTf-OL-PeE"/>
+                    <constraint firstItem="3rt-Pk-axA" firstAttribute="top" secondItem="i0l-Zd-sZf" secondAttribute="bottom" constant="8" id="vzh-DE-E1J"/>
+                    <constraint firstItem="rgg-IZ-zv2" firstAttribute="top" secondItem="3rt-Pk-axA" secondAttribute="bottom" constant="10" id="xZF-5q-rtr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="31.884057971014496" y="60.267857142857139"/>
+        </tableViewCell>
+    </objects>
+</document>

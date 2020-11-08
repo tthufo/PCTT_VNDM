@@ -26,6 +26,8 @@ class PC_FeedBack_New_ViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet var titleLabel: UILabel!
 
+    @IBOutlet var headLabel: UILabel!
+
     @IBOutlet var headerImg: UIImageView!
 
     @IBOutlet var logoLeft: UIImageView!
@@ -52,6 +54,16 @@ class PC_FeedBack_New_ViewController: UIViewController, UITextViewDelegate {
         gap.constant = inner ? 0 : 44
         
         back.isHidden = inner
+        
+        if Information.userInfo?.getValueFromKey("UserType") == "3" {
+            gap.constant = 44
+            
+            back.isHidden = false
+            
+            titleLabel.text = "Nhập góp ý"
+            
+            headLabel.text = "Góp ý"
+        }
     }
 
     func toolBar() -> UIToolbar {

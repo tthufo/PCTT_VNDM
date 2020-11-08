@@ -313,8 +313,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
         lock = true
         GG_PlugIn.shareInstance()?.startLogGoogle(completion: { (responseString, object, errorCode, description, error) in
             if object != nil {
-                print((object as! NSDictionary).getValueFromKey("uId"));
-                self.socialLogin(type: "google", token: (object as! NSDictionary).getValueFromKey("uId"));
+                self.socialLogin(type: "google", token: (object as! NSDictionary).getValueFromKey("access_token"));
             }
             self.lock = false
         }, andHost: self)
@@ -325,8 +324,9 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
            lock = true
         FB_Plugin.shareInstance()?.startLoginFacebook(completion: { (responseString, object, errorCode, description, error) in
             if object != nil {
-                print(((object as! NSDictionary)["info"] as! NSDictionary).getValueFromKey("id"));
-                self.socialLogin(type: "facebook", token: ((object as! NSDictionary)["info"] as! NSDictionary).getValueFromKey("id"));
+                self.socialLogin(type: "facebook", token: ((object as! NSDictionary)["info"] as! NSDictionary).getValueFromKey("access_token"));
+                print(object)
+                print(((object as! NSDictionary)["info"] as! NSDictionary).getValueFromKey("access_token"))
             }
             self.lock = false
         })
@@ -337,20 +337,36 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
           lock = true
         ZaloSDK.sharedInstance()?.authenticateZalo(with: ZAZAloSDKAuthenTypeViaZaloAppAndWebView, parentController: self, isShowLoading: true) { (objc) in
             if objc!.isSucess {
-                print(objc!.oauthCode)
-                self.socialLogin(type: "zalo", token: objc!.oauthCode);
+                self.requestZaloAuthen(auth: objc!.oauthCode)
             }
             self.lock = false
         }
      }
     
+    func requestZaloAuthen(auth: String) {
+        let ide = "314411592040398357"
+        let secret = "Na5SNxqLD0Np5Y2QI7EA"
+        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://oauth.zaloapp.com/v3/access_token?app_id=%@&app_secret=%@&code=%@".format(parameters: ide, secret, auth),
+                                                    "method":"GET",
+                                                    "overrideAlert":"1",
+                                                    "overrideLoading":"1",
+                                                    ], withCache: { (cacheString) in
+        }, andCompletion: { (response, errorCode, error, isValid, object) in
+            let result = response?.dictionize() ?? [:]
+                        
+            self.socialLogin(type: "zalo", token: result.getValueFromKey("access_token"));
+        })
+    }
+    
     func socialLogin(type: String, token: String) {
          self.view.endEditing(true)
                 
+            self.add(["type": type, "access_token": token as Any], andKey: "social")
+        
             LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"auth/" + type,
                                                         "accesstoken":token,
                                                         "mobiletoken":FirePush.shareInstance()?.deviceToken() ?? "",
-                                                        "tokentype":1,
+                                                        "tokentype":2,
                                                         "overrideAlert":"1",
                                                         "overrideLoading":"1",
                                                         "postFix":"auth/" + type,
@@ -358,10 +374,17 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
             }, andCompletion: { (response, errorCode, error, isValid, object) in
                 let result = response?.dictionize() ?? [:]
                                         
-                print("====>", result)
-
                 if result.getValueFromKey("status") != "OK" {
                     self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
+                    
+                    Information.removeInfo()
+                    
+                    GG_PlugIn.shareInstance()?.signOutGoogle()
+
+                    FB_Plugin.shareInstance()?.signoutFacebook()
+                    
+                    ZaloSDK.sharedInstance()?.unauthenticate()
+                    
                     return
                 }
                                     
@@ -403,6 +426,17 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func didPressSubmit() {
         self.view.endEditing(true)
+        
+        if self.getObject("social") != nil {
+            
+            let typing = self.getObject("social")["type"]
+            
+            let access_token = self.getObject("social")["access_token"]
+
+            socialLogin(type: typing as! String, token: access_token as! String)
+            
+            return
+        }
         
         LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"login",
                                                     "username":uName.text as Any,

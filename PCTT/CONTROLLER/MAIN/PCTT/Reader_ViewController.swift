@@ -42,9 +42,11 @@ class Reader_ViewController: UIViewController {
         
         cover.imageUrl(url: config.getValueFromKey("avatar"))
         
-        titleLabel.text = config.getValueFromKey("name_file_display")
+        titleLabel.text = config.getValueFromKey("name_file_display") == "" ? config.getValueFromKey("file_name") : config.getValueFromKey("name_file_display")
+        
+        let phai = config.getValueFromKey("name_file") == "" ? config.getValueFromKey("file_name") : config.getValueFromKey("name_file")
                 
-        let typing = config.getValueFromKey("name_file")?.components(separatedBy: ".").last
+        let typing = phai?.components(separatedBy: ".").last
         
         downLoad.type = typing
                 
@@ -60,7 +62,9 @@ class Reader_ViewController: UIViewController {
     
     func viewPDF() {
         showHide(show: false)
-        let typing = config.getValueFromKey("name_file")?.components(separatedBy: ".").last
+        let phai = config.getValueFromKey("name_file") == "" ? config.getValueFromKey("file_name") : config.getValueFromKey("name_file")
+
+        let typing = phai?.components(separatedBy: ".").last
 
         let path = self.pdfFile(fileName: self.config.getValueFromKey("id"), type: typing!)
 
@@ -121,7 +125,9 @@ class Reader_ViewController: UIViewController {
         self.restart.alpha = 0
         self.failLabel.alpha = 0
         self.downLoad.alpha = 1
-        let typing = config.getValueFromKey("name_file")?.components(separatedBy: ".").last
+        let phai = config.getValueFromKey("name_file") == "" ? config.getValueFromKey("file_name") : config.getValueFromKey("name_file")
+
+        let typing = phai?.components(separatedBy: ".").last
         if !self.existingFile(fileName: self.config.getValueFromKey("id"), type: typing!) {
             self.deleteFile(fileName: self.pdfFile(fileName: self.config.getValueFromKey("id"), type: typing!))
         }
@@ -133,7 +139,9 @@ class Reader_ViewController: UIViewController {
        self.navigationController?.popViewController(animated: true)
         if downLoad.percentComplete > 0 && downLoad.percentComplete < 100 {
             downLoad.forceStop()
-            let typing = config.getValueFromKey("name_file")?.components(separatedBy: ".").last
+            let phai = config.getValueFromKey("name_file") == "" ? config.getValueFromKey("file_name") : config.getValueFromKey("name_file")
+
+            let typing = phai?.components(separatedBy: ".").last
             if !self.existingFile(fileName: self.config.getValueFromKey("id"), type: typing!) {
                 self.deleteFile(fileName: self.pdfFile(fileName: self.config.getValueFromKey("id"), type: typing!))
             }

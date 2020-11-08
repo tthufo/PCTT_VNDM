@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Giám Sát Thiên Tai</string>
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -43,7 +43,7 @@
 	<key>FacebookAppID</key>
 	<string>154572565140483</string>
 	<key>FacebookDisplayName</key>
-	<string>bla</string>
+	<string>VNDMS</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fb-messenger-share-api</string>

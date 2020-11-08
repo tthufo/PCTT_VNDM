@@ -22,6 +22,11 @@ class PC_New_Map_ViewController: UIViewController {
 
     @IBOutlet var LDMenu: UIView!
     
+    @IBOutlet var CDMenu: UIView!
+
+    @IBOutlet var KTMenu: UIView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +38,9 @@ class PC_New_Map_ViewController: UIViewController {
            headerImg.image = UIImage(named: "bg_text_dms")
        }
         
-        LDMenu.isHidden = self.isLD() ? false : true
+        typing()
+        
+//        LDMenu.isHidden = self.isLD() ? false : true
         
 //        let refreshControl = UIRefreshControl()
 //        refreshControl.addTarget(self, action: #selector(reloadWebView(_:)), for: .valueChanged)
@@ -44,8 +51,26 @@ class PC_New_Map_ViewController: UIViewController {
         requestDisasterImage()
     }
     
-    func isLD() -> Bool {
-        return Information.userInfo?.getValueFromKey("IsLanhDao") == "1"
+//    func isLD() -> Bool {
+//        return Information.userInfo?.getValueFromKey("IsLanhDao") == "1"
+//    }
+    
+    func typing() {
+        if Information.userInfo?.getValueFromKey("UserType") == "1" {
+            LDMenu.isHidden = false
+            KTMenu.isHidden = true
+            CDMenu.isHidden = true
+        }
+        if Information.userInfo?.getValueFromKey("UserType") == "2" {
+            LDMenu.isHidden = true
+            KTMenu.isHidden = false
+            CDMenu.isHidden = true
+        }
+        if Information.userInfo?.getValueFromKey("UserType") == "3" {
+            LDMenu.isHidden = true
+            KTMenu.isHidden = true
+            CDMenu.isHidden = false
+        }
     }
     
     func current() {
@@ -94,9 +119,26 @@ class PC_New_Map_ViewController: UIViewController {
            self.navigationController?.pushViewController(PC_Contact_ViewController.init(), animated: true)
           }
     
+    @IBAction func didPressContactEmer() {
+     self.navigationController?.pushViewController(Contact_Emer_ViewController.init(), animated: true)
+    }
+    
     @IBAction func didPressInfo() {
            self.navigationController?.pushViewController(PC_Info_ViewController.init(), animated: true)
           }
+    
+    @IBAction func didPressFeedBack() {
+     self.navigationController?.pushViewController(PC_FeedBack_New_ViewController.init(), animated: true)
+    }
+    
+    @IBAction func didPressEventList() {
+     self.navigationController?.pushViewController(PC_List_Event_ViewController.init(), animated: true)
+    }
+    
+    @IBAction func didPressInstruction() {
+     self.navigationController?.pushViewController(Instruction_ViewController.init(), animated: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reloading()
