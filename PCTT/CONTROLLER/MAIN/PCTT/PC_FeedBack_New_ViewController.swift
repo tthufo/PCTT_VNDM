@@ -55,7 +55,9 @@ class PC_FeedBack_New_ViewController: UIViewController, UITextViewDelegate {
         
         back.isHidden = inner
         
-        if Information.userInfo?.getValueFromKey("UserType") == "3" {
+        let key = Information.userInfo?.getValueFromKey("UserType") == "" ? "LoaiTaiKhoan" : "UserType"
+
+        if Information.userInfo?.getValueFromKey(key) == "3" {
             gap.constant = 44
             
             back.isHidden = false

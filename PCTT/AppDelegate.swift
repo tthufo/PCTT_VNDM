@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FB_Plugin.shareInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
 
-        ZaloSDK.sharedInstance()?.initialize(withAppId: "314411592040398357")
+        ZaloSDK.sharedInstance()?.initialize(withAppId: "756108648194603861")
         
         if self.getValue("push") == "0" {
 //            FirePush.shareInstance()?.didUnregisterNotification()

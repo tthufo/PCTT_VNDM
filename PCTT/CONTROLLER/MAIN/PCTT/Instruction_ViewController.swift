@@ -131,7 +131,7 @@ class Instruction_ViewController: UIViewController, UITextViewDelegate {
             self.tableView.reloadData()
             
             if self.dataList.count == 0 {
-                self.showToast("Dữ liệu trống", andPos: 0)
+                self.showToast("Chưa có dữ liệu, mời bạn thử lại", andPos: 0)
             }
             
             print(response)

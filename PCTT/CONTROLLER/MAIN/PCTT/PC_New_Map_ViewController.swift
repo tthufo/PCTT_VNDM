@@ -56,17 +56,19 @@ class PC_New_Map_ViewController: UIViewController {
 //    }
     
     func typing() {
-        if Information.userInfo?.getValueFromKey("UserType") == "1" {
+        let key = Information.userInfo?.getValueFromKey("UserType") == "" ? "LoaiTaiKhoan" : "UserType"
+        
+        if Information.userInfo?.getValueFromKey(key) == "1" {
             LDMenu.isHidden = false
             KTMenu.isHidden = true
             CDMenu.isHidden = true
         }
-        if Information.userInfo?.getValueFromKey("UserType") == "2" {
+        if Information.userInfo?.getValueFromKey(key) == "2" {
             LDMenu.isHidden = true
             KTMenu.isHidden = false
             CDMenu.isHidden = true
         }
-        if Information.userInfo?.getValueFromKey("UserType") == "3" {
+        if Information.userInfo?.getValueFromKey(key) == "3" {
             LDMenu.isHidden = true
             KTMenu.isHidden = true
             CDMenu.isHidden = false

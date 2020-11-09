@@ -25,7 +25,7 @@
 			<string>zalo</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>zalo-314411592040398357</string>
+				<string>zalo-756108648194603861</string>
 			</array>
 		</dict>
 		<dict>
@@ -33,7 +33,7 @@
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb154572565140483</string>
+				<string>fb570188757018788</string>
 				<string>com.googleusercontent.apps.387423726605-v0213k2e0i5h8hqnsan3dhmecjs499mn</string>
 			</array>
 		</dict>
@@ -41,7 +41,7 @@
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
-	<string>154572565140483</string>
+	<string>570188757018788</string>
 	<key>FacebookDisplayName</key>
 	<string>VNDMS</string>
 	<key>LSApplicationQueriesSchemes</key>

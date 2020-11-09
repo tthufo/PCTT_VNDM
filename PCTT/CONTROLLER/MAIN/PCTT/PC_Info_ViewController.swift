@@ -40,8 +40,8 @@ class PC_Info_ViewController: UIViewController {
        if Information.check == "0" {
           headerImg.image = UIImage(named: "bg_text_dms")
        }
-        
-       dataList = !isLD() ? NSMutableArray.init(array: [["title":"Thông tin tài khoản", "image":"user_info"],
+                
+       dataList = !isSocial() ? NSMutableArray.init(array: [["title":"Thông tin tài khoản", "image":"user_info"],
                                                ["title":"Đổi mật khẩu", "image":"change_pass"],
 //                                               ["title":"Đóng góp ý tưởng", "image":"contribution"],
                                                ["title":"Cho phép nhận thông báo", "image":"notification"],
@@ -68,8 +68,22 @@ class PC_Info_ViewController: UIViewController {
         }
     }
     
+    func isSocial() -> Bool {
+        let isSocial = self.getObject("social") != nil
+        return isSocial
+    }
+    
     func isLD() -> Bool {
-        return Information.userInfo?.getValueFromKey("UserType") == "1" || Information.userInfo?.getValueFromKey("UserType") == "3"
+        
+//        int LANH_DAO = 1;
+//        int KY_THUAT_VIEN = 2;
+//        int CONG_DONG = 3;
+                
+        let key = Information.userInfo?.getValueFromKey("UserType") == "" ? "LoaiTaiKhoan" : "UserType"
+        
+        print(Information.userInfo?.getValueFromKey(key))
+        
+        return Information.userInfo?.getValueFromKey(key) == "1" || Information.userInfo?.getValueFromKey(key) == "3"
     }
     
     func didPressLogout() {
@@ -174,14 +188,14 @@ extension PC_Info_ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let LD = isLD() ? 1 : 0
+        let LD = isSocial() ? 1 : 0
         
 //        if Information.check == nil {
             if indexPath.row == 0 {
                 self.navigationController?.pushViewController(PC_Inner_Info_ViewController.init(), animated: true)
             }
             
-        if !isLD() {
+        if !isSocial() {
             if indexPath.row == 1 {
                 self.navigationController?.pushViewController(PC_ChangePass_ViewController.init(), animated: true)
             }

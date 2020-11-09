@@ -344,8 +344,8 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
      }
     
     func requestZaloAuthen(auth: String) {
-        let ide = "314411592040398357"
-        let secret = "Na5SNxqLD0Np5Y2QI7EA"
+        let ide = "756108648194603861"
+        let secret = "tALPwi3T0NRQ7dXLO5Wp"
         LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://oauth.zaloapp.com/v3/access_token?app_id=%@&app_secret=%@&code=%@".format(parameters: ide, secret, auth),
                                                     "method":"GET",
                                                     "overrideAlert":"1",
