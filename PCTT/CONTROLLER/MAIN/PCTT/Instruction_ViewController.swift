@@ -8,7 +8,11 @@
 
 import UIKit
 
+import AVFoundation
+
 class Instruction_ViewController: UIViewController, UITextViewDelegate {
+
+    var audioPlayer:AVAudioPlayer!
 
     @IBOutlet var tableView: UITableView!
 
@@ -17,12 +21,23 @@ class Instruction_ViewController: UIViewController, UITextViewDelegate {
     var dataList: NSMutableArray!
     
     var catId: String = ""
+    
+    var titleLabel: String = ""
 
     @IBOutlet var headLabel: UILabel!
+
+    @IBOutlet var playLabel: UILabel!
 
     @IBOutlet var headerImg: UIImageView!
 
     @IBOutlet var logoLeft: UIImageView!
+    
+    @IBOutlet var height: NSLayoutConstraint!
+    
+    @IBOutlet var playing: UIButton!
+
+    @IBOutlet var playingView: UIView!
+
          
     let refreshControl = UIRefreshControl()
 
@@ -32,15 +47,33 @@ class Instruction_ViewController: UIViewController, UITextViewDelegate {
        
        var isLoadMore: Bool = false
     
+    @IBOutlet var downLoad: DownLoad!
+
     override func viewDidLoad() {
         super.viewDidLoad()
              
+        let url = Bundle.main.url(forResource: "1", withExtension: "mp3")!
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer.delegate = self
+            guard let player = audioPlayer else { return }
+            
+            player.prepareToPlay()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
         refreshControl.tintColor = UIColor.darkGray
         refreshControl.addTarget(self, action: #selector(reloadDoc(_:)), for: .valueChanged)
                
         tableView.addSubview(refreshControl)
 
         dataList = NSMutableArray.init()
+        
+        downLoad.type = "mp3"
+                
+        downLoad.transform = downLoad.transform.scaledBy(x: 1.2, y: 1.9)
         
         if Information.check != "0" {
              logoLeft.image = UIImage(named: "logo_tc")
@@ -56,15 +89,7 @@ class Instruction_ViewController: UIViewController, UITextViewDelegate {
         
         tableView.withCell("Instruction_Cell")
                              
-//        back.isHidden = inner
-        
-//        if Information.userInfo?.getValueFromKey("UserType") == "3" {
-//            back.isHidden = false
-//
-//            titleLabel.text = "Nhập góp ý"
-//
-//            headLabel.text = "Góp ý"
-//        }
+        headLabel.text = titleLabel == "" ? "H.Dẫn ứng phó" : titleLabel
         
         reloadDoc(refreshControl)
     }
@@ -143,6 +168,75 @@ class Instruction_ViewController: UIViewController, UITextViewDelegate {
            self.view.endEditing(true)
            self.navigationController?.popViewController(animated: true)
        }
+    
+    func didDownload() {
+        downLoad.didProgress(["url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3",
+               "name": "1",
+               "infor": [:]
+            ], andCompletion: { (index, download, object) in
+            if index == -1 {
+                self.hideSVHUD()
+            }
+                
+            if index == 0 {
+                self.hideSVHUD()
+                
+                let path = self.pdfFile(fileName: "1", type: "mp3")
+
+                self.playingBoy(file: path)
+                
+                self.hideShow(show: true)
+            }
+        })
+    }
+    
+    func hideShow(show: Bool) {
+        height.constant = show ? 62 : 0
+        for vi in self.playingView.subviews {
+            vi.isHidden = !show
+        }
+    }
+    
+    func playingBoy(file: String) {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: NSURL.init(string: file)! as URL)
+            audioPlayer.addObserver(self, forKeyPath: "rate", options: .new, context: nil)
+            audioPlayer.delegate = self
+            guard let player = audioPlayer else { return }
+              
+              player.prepareToPlay()
+              player.play()
+          } catch let error {
+              print(error.localizedDescription)
+          }
+    }
+    
+    @IBAction func play(_ sender: Any) {
+       if audioPlayer.isPlaying {
+           audioPlayer.pause()
+       }else{
+        audioPlayer.play()
+        }
+        playShow(play: audioPlayer.isPlaying)
+    }
+    
+    @IBAction func deletePlay() {
+        self.hideShow(show: false)
+        if  audioPlayer.isPlaying{
+            audioPlayer.stop()
+        }
+    }
+    
+    func playShow(play: Bool) {
+        playing.setImage(UIImage.init(named: !play ? "play_button" : "stop_button"), for: .normal)
+    }
+    
+    
+     func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutableRawPointer) {
+        if keyPath == "status" {
+            print(audioPlayer.isPlaying)
+        }
+    }
 }
 
 extension Instruction_ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -169,13 +263,15 @@ extension Instruction_ViewController: UITableViewDataSource, UITableViewDelegate
         
         (self.withView(cell, tag: 1) as! UILabel).text = data.getValueFromKey(self.catId == "" ? "name" : "description")
         
-        (self.withView(cell, tag: 2) as! UILabel).text = data.getValueFromKey("str_time_update")
+        (self.withView(cell, tag: 2) as! UILabel).text = "Cập nhật: " + data.getValueFromKey("str_time_update")
         
         (self.withView(cell, tag: 112) as! UIButton).action(forTouch: [:]) { (obj) in
             if self.catId == "" {
                 let instruct = Instruction_ViewController.init()
 
                 instruct.catId = data.getValueFromKey("id")
+                
+                instruct.titleLabel = data.getValueFromKey("name")
                 
                 self.navigationController?.pushViewController(instruct, animated: true)
             } else {
@@ -184,37 +280,59 @@ extension Instruction_ViewController: UITableViewDataSource, UITableViewDelegate
                         menu?.close()
                     }
                 } else if data.getValueFromKey("file_type") == "Document" {
-                    let reader = Reader_ViewController.init()
-                            
-                     let bookInfo = NSMutableDictionary.init(dictionary: data)
+//                    let reader = Reader_ViewController.init()
+//
+//                     let bookInfo = NSMutableDictionary.init(dictionary: data)
+//
+//                     let url = data.getValueFromKey("file_name_store")
+//
+//                     bookInfo["file_url"] = url
+//
+//                     reader.config = bookInfo
+//
+//                     self.navigationController?.pushViewController(reader, animated: true)
+                    self.playLabel.text = data.getValueFromKey("description")
+                    
+                    if !self.existingFile(fileName: "1", type: "mp3") {
+                        self.didDownload()
+                        self.showSVHUD("Đang tải", andOption: 0)
+                    } else {
+                        let path = self.pdfFile(fileName: "1", type: "mp3")
 
-                     let url = data.getValueFromKey("file_name_store")
-
-//                    let url = "http://vndms.dmc.gov.vn/DocumentDirection/downloadFile?id=" + data.getValueFromKey("documentation_id")
-
-                     bookInfo["file_url"] = url
-
-//                     bookInfo["id"] = url
-
-                     reader.config = bookInfo
-
-                     self.navigationController?.pushViewController(reader, animated: true)
+                        self.playingBoy(file: path)
+                        
+                        self.hideShow(show: true)
+                        
+                        self.playShow(play: true)
+                    }
                 }
                 
                 else {
-                    
+                    self.playLabel.text = data.getValueFromKey("description")
+
+                    if !self.existingFile(fileName: "1", type: "mp3") {
+                        self.didDownload()
+                        self.showSVHUD("Đang tải", andOption: 0)
+                    } else {
+                        let path = self.pdfFile(fileName: "1", type: "mp3")
+
+                        self.playingBoy(file: path)
+                        
+                        self.hideShow(show: true)
+
+                        self.playShow(play: true)
+                    }
                 }
             }
         }
 
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let data = dataList![indexPath.row] as! NSDictionary
+//        let data = dataList![indexPath.row] as! NSDictionary
 
 //        let instruct = Instruction_ViewController.init()
 //
@@ -236,6 +354,29 @@ extension Instruction_ViewController: UITableViewDataSource, UITableViewDelegate
                }
            }
        }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if audioPlayer.isPlaying {
+            self.audioPlayer?.stop()
+//            self.audioPlayer = nil
+            self.hideShow(show: false)
+            self.playShow(play: true)
+        }
+    }
 }
 
 
+extension Instruction_ViewController: AVAudioPlayerDelegate {
+
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag {
+            print("Audio player finished playing")
+            self.audioPlayer?.stop()
+            self.audioPlayer = nil
+            self.hideShow(show: false)
+            self.playShow(play: true)
+        }
+    }
+}

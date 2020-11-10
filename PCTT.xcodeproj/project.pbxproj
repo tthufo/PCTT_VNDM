@@ -129,6 +129,7 @@
 		FCB19457231598DA007120AF /* ChatTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB19453231598DA007120AF /* ChatTable.swift */; };
 		FCC247A524E1548F0099605D /* PC_Contact_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC247A324E1548F0099605D /* PC_Contact_ViewController.swift */; };
 		FCC247A624E1548F0099605D /* PC_Contact_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC247A424E1548F0099605D /* PC_Contact_ViewController.xib */; };
+		FCDBB9592559ACCF001A4CE1 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FCDBB9582559ACCF001A4CE1 /* 1.mp3 */; };
 		FCE792922375D4880034684F /* TG_Intro_Question_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE792902375D4880034684F /* TG_Intro_Question_ViewController.swift */; };
 		FCE792932375D4880034684F /* TG_Intro_Question_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE792912375D4880034684F /* TG_Intro_Question_ViewController.xib */; };
 		FCEDD7E022F9E19500DC4613 /* PC_Notification_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDD7DE22F9E19500DC4613 /* PC_Notification_ViewController.swift */; };
@@ -300,6 +301,7 @@
 		FCC4251023890EB500D90839 /* NotificationService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationService.entitlements; sourceTree = "<group>"; };
 		FCC73DBE2305B59F004E87CA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		FCC73DC02305B59F004E87CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCDBB9582559ACCF001A4CE1 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
 		FCE792902375D4880034684F /* TG_Intro_Question_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TG_Intro_Question_ViewController.swift; sourceTree = "<group>"; };
 		FCE792912375D4880034684F /* TG_Intro_Question_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TG_Intro_Question_ViewController.xib; sourceTree = "<group>"; };
 		FCEDD7DE22F9E19500DC4613 /* PC_Notification_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Notification_ViewController.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 				FC1B9B3722FBCA3100E65F58 /* PCTT.entitlements */,
 				FC1FEA762394F2D700E65443 /* style_json.json */,
 				FC49139F24E2854700F1967A /* format.plist */,
+				FCDBB9582559ACCF001A4CE1 /* 1.mp3 */,
 				FC5D983522F554EB006FA3F1 /* CONTROLLER */,
 				FC5D982322F54134006FA3F1 /* AppDelegate.swift */,
 				FC269A1B2378600400EEA392 /* NavViewController.swift */,
@@ -657,6 +660,7 @@
 				FC5D982E22F54137006FA3F1 /* LaunchScreen.storyboard in Resources */,
 				FC1AC74223708CC100B11288 /* TG_Intro_ViewController.xib in Resources */,
 				FC4DE9D22556F4EA00231CA2 /* Emer_Cell.xib in Resources */,
+				FCDBB9592559ACCF001A4CE1 /* 1.mp3 in Resources */,
 				FC8F4AF2230FEE9F0082F3B2 /* PC_FeedBack_Cell.xib in Resources */,
 				FC4C6A4824E9646100BD84D1 /* Reader_ViewController.xib in Resources */,
 				FCA5F32B2371DAB700274600 /* PC_Info_Cell.xib in Resources */,

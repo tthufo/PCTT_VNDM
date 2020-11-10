@@ -80,21 +80,6 @@ class Reader_ViewController: UIViewController {
         
         webView.loadFileURL(URL(fileURLWithPath: path), allowingReadAccessTo: URL(fileURLWithPath: path))
         
-//        if let pdfDocument = PDFDocument(url: URL(fileURLWithPath: path)) {
-//            pdfView.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleLeftMargin]
-//            pdfView.displayDirection = .horizontal
-//            pdfView.displayMode = IS_IPAD ? .twoUpContinuous : .singlePageContinuous
-//            pdfView.displaysPageBreaks = true
-//            pdfView.minScaleFactor = 1.0
-//            pdfView.maxScaleFactor = 4.0
-//            pdfView.autoScales = true
-//            pdfView.document = pdfDocument
-//        } else {
-//            self.failLabel.alpha = 1
-//            self.failLabel.text = "Không mở được file " + typing! + " , mời bạn tải lại."
-//            self.restart.alpha = 1
-//            self.cover.alpha = 1
-//        }
     }
     
     func didDownload() {
