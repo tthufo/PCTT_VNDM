@@ -674,6 +674,87 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-517.5" y="1670.625"/>
         </view>
+        <view contentMode="scaleToFill" id="cjA-Wa-l52">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="324"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GiN-vT-2oX">
+                    <rect key="frame" x="16" y="109" width="307" height="157"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="157" id="sPM-Mh-o37"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYZ-vs-O3P">
+                    <rect key="frame" x="16" y="65" width="307" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="eQW-MC-nd1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-rL-2lr">
+                    <rect key="frame" x="16" y="40" width="307" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="BDa-aU-DsP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEb-Yd-UXg">
+                    <rect key="frame" x="16" y="12" width="307" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="wSH-eA-WLf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOv-FR-gSo">
+                    <rect key="frame" x="16" y="296" width="307" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="j6m-kx-ZjY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM7-N1-hcH">
+                    <rect key="frame" x="16" y="274" width="307" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="dm0-9S-JzL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="uYZ-vs-O3P" secondAttribute="trailing" constant="16" id="0r4-8n-KbK"/>
+                <constraint firstAttribute="trailing" secondItem="lJh-rL-2lr" secondAttribute="trailing" constant="16" id="2n8-Nu-fIo"/>
+                <constraint firstItem="HM7-N1-hcH" firstAttribute="leading" secondItem="cjA-Wa-l52" secondAttribute="leading" constant="16" id="33T-X3-r1T"/>
+                <constraint firstItem="lJh-rL-2lr" firstAttribute="leading" secondItem="cjA-Wa-l52" secondAttribute="leading" constant="16" id="9SO-yb-Fzk"/>
+                <constraint firstItem="lJh-rL-2lr" firstAttribute="top" secondItem="QEb-Yd-UXg" secondAttribute="bottom" constant="7" id="CSo-kD-Xc1"/>
+                <constraint firstItem="LOv-FR-gSo" firstAttribute="leading" secondItem="cjA-Wa-l52" secondAttribute="leading" constant="16" id="ETz-Nb-NaY"/>
+                <constraint firstAttribute="trailing" secondItem="HM7-N1-hcH" secondAttribute="trailing" constant="16" id="FYD-f9-oTm"/>
+                <constraint firstItem="QEb-Yd-UXg" firstAttribute="top" secondItem="cjA-Wa-l52" secondAttribute="top" constant="12" id="IVA-Wu-OXf"/>
+                <constraint firstAttribute="trailing" secondItem="GiN-vT-2oX" secondAttribute="trailing" constant="16" id="MMn-PL-Scv"/>
+                <constraint firstItem="GiN-vT-2oX" firstAttribute="top" secondItem="uYZ-vs-O3P" secondAttribute="bottom" constant="8" id="PEs-6S-xn5"/>
+                <constraint firstItem="GiN-vT-2oX" firstAttribute="leading" secondItem="cjA-Wa-l52" secondAttribute="leading" constant="16" id="Rek-qq-rcI"/>
+                <constraint firstItem="uYZ-vs-O3P" firstAttribute="top" secondItem="lJh-rL-2lr" secondAttribute="bottom" constant="4" id="TuP-ip-YnV"/>
+                <constraint firstItem="uYZ-vs-O3P" firstAttribute="leading" secondItem="cjA-Wa-l52" secondAttribute="leading" constant="16" id="Udl-1W-hkg"/>
+                <constraint firstItem="LOv-FR-gSo" firstAttribute="top" secondItem="HM7-N1-hcH" secondAttribute="bottom" constant="1" id="bqW-ci-Mow"/>
+                <constraint firstItem="QEb-Yd-UXg" firstAttribute="leading" secondItem="cjA-Wa-l52" secondAttribute="leading" constant="16" id="fKh-UP-kaI"/>
+                <constraint firstAttribute="trailing" secondItem="LOv-FR-gSo" secondAttribute="trailing" constant="16" id="fNo-tz-FUP"/>
+                <constraint firstItem="HM7-N1-hcH" firstAttribute="top" secondItem="GiN-vT-2oX" secondAttribute="bottom" constant="8" id="rBW-i1-x7a"/>
+                <constraint firstAttribute="trailing" secondItem="QEb-Yd-UXg" secondAttribute="trailing" constant="16" id="rO4-Qa-Wte"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-681.5625" y="2800"/>
+        </view>
     </objects>
     <resources>
         <image name="bg_edit_user" width="106.5" height="58"/>

@@ -216,10 +216,11 @@
         }
                 
         
+        [self->rendererList removeAllObjects];
+
         for (NSDictionary * dict in result[@"data"]) {
 
             NSData* data = [dict[@"geometry"] dataUsingEncoding:NSUTF8StringEncoding];
-
 
             GMUGeoJSONParser * parser = [[GMUGeoJSONParser alloc] initWithData:data];
 
@@ -235,9 +236,7 @@
                                                      geometries:parser.features];
                
             [renderer render];
-            
-            [self->rendererList removeAllObjects];
-            
+                        
             [self->rendererList addObject:renderer];
         }
     }];
@@ -265,9 +264,6 @@
         }
                         
         self->allPoints[type] = result[@"data"];
-        
-        NSLog(@"-->%@", self->allPoints);
-
         
         [self didLayoutPointNest:YES];
     }];
@@ -308,49 +304,42 @@
 
 - (void)didRequestLocation:(float)lat and:(float)lng name:(NSDictionary *)info {
 
-    NSString * url = [NSString stringWithFormat: @"https://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&appid=4349784a2891cdfb65898215c8c26972", lat, lng];
     
-    [[LTRequest sharedInstance] didRequestInfo:@{@"absoluteLink": url,
-                                                    @"methon": @"GET",
-                                                    @"host":self,
-                                                    @"overrideAlert":@"1",
-                                                    @"overrideLoading":@"1"
-                                                    
-       } withCache:^(NSString *cacheString) {
-           
-       } andCompletion:^(NSString *responseString, NSString *errorCode, NSError *error, BOOL isValidated, NSDictionary *header) {
-                      
-           if (error) {
-               [self showToast:@"Lỗi xảy ra, mời bạn thử lại" andPos:0];
-               
-               return;
-           }
-                      
-           NSDictionary * result = [responseString objectFromJSONString];
-           
+//    NSString * url = [NSString stringWithFormat: @"https://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&appid=4349784a2891cdfb65898215c8c26972", lat, lng];
+//
+//    [[LTRequest sharedInstance] didRequestInfo:@{@"absoluteLink": url,
+//                                                    @"methon": @"GET",
+//                                                    @"host":self,
+//                                                    @"overrideAlert":@"1",
+//                                                    @"overrideLoading":@"1"
+//
+//       } withCache:^(NSString *cacheString) {
+//
+//       } andCompletion:^(NSString *responseString, NSString *errorCode, NSError *error, BOOL isValidated, NSDictionary *header) {
+//
+//           if (error) {
+//               [self showToast:@"Lỗi xảy ra, mời bạn thử lại" andPos:0];
+//
+//               return;
+//           }
+//
+//           NSDictionary * result = [responseString objectFromJSONString];
+//
            if(self->popUpDialog)
            {
               self->popUpDialog = nil;
            }
-          
-           self->popUpDialog = [[EM_MenuView alloc] initWithPop:@{@"delete":@"1",
-                                                                  @"lat": @(lat),
-                                                                  @"lng": @(lng),
-                                                                  @"id": [info getValueFromKey:@"id"],
-                                                                  @"loc_name": [info getValueFromKey:@"loc_name"],
-                                                                  @"temp":result[@"main"][@"temp"],
-                                                                  @"pressure":result[@"main"][@"pressure"],
-                                                                  @"humidity":result[@"main"][@"humidity"],
-                                                                  @"wind":result[@"wind"][@"speed"]
-           }];
-          
+
+           self->popUpDialog = [[EM_MenuView alloc] initWithAlertLocation:info];
+
            [self->popUpDialog showWithCompletion:^(int index, id object, EM_MenuView *menu) {
-              
+
               if (index == 21) {
                   [self didRequestDeletePoint:object];
               }
+
            }];
-       }];
+//       }];
 }
 
 - (void)didRequestRegisterPoint:(NSDictionary *) info {
@@ -447,7 +436,7 @@
        }
    }
     
-    if (zoom) {
+    if (YES) {
         GMSCameraUpdate * update = [GMSCameraUpdate fitBounds:bound withPadding:55];
         [mapView animateWithCameraUpdate:update];
     }
@@ -495,7 +484,7 @@
                         (unsigned long)zoom, (unsigned long)x, (unsigned long)y, @"png"];
         
     
-        NSLog(@"%@", url);
+//        NSLog(@"%@", url);
         
         return [NSURL URLWithString:url];
     };
@@ -561,7 +550,6 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    
     return YES;
 }
 

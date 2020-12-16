@@ -243,6 +243,61 @@
     return commentView;
 }
 
+- (id)initWithAlertLocation:(NSDictionary*)info
+{
+    self = [self init];
+    
+    [self setContainerView:[self didCreatePopViewAlertLocation:info]];
+    
+    [self setUseMotionEffects:true];
+    
+    return self;
+}
+
+- (UIView*)didCreatePopViewAlertLocation:(NSDictionary*)dict
+{
+    UIView *commentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 325)];
+    
+    [commentView setBackgroundColor:[UIColor clearColor]];
+    
+    UIView *contentView = [[NSBundle mainBundle] loadNibNamed:@"EM_Menu" owner:self options:nil][10];
+    
+    contentView.frame = CGRectMake(0, 0, commentView.frame.size.width, commentView.frame.size.height);
+    
+    [contentView setBackgroundColor:[UIColor clearColor]];
+
+    [self setBackgroundColor:[UIColor clearColor]];
+
+    UILabel * title = [self withView:contentView tag:1];
+    
+    title.text = [NSString stringWithFormat:@"Tên sự kiện: %@", [dict getValueFromKey:@"tieu_de"]];
+
+    UILabel * des = [self withView:contentView tag:3];
+    
+    des.text = [NSString stringWithFormat:@"Thời gian: %@", [dict getValueFromKey:@"tieu_de"]];
+
+    UILabel * update = [self withView:contentView tag:2];
+
+    update.text = [NSString stringWithFormat:@"Mô tả: %@", [dict getValueFromKey:@"noi_dung"]];
+
+    
+    UIImageView * ava = [self withView:contentView tag:4];
+
+    
+    UILabel * time = [self withView:contentView tag:5];
+    
+    time.text = [NSString stringWithFormat:@"Cập nhật lần cuối: %@", [dict getValueFromKey:@"thongtin_thientai_id"]];
+
+    UILabel * detail = [self withView:contentView tag:6];
+    
+    detail.text = [NSString stringWithFormat:@"Cập nhật mới: %@", @"tại đây"];
+    
+    
+    [commentView addSubview:contentView];
+    
+    return commentView;
+}
+
 - (id)initWithMenu:(NSDictionary*)info
 {
     self = [self init];

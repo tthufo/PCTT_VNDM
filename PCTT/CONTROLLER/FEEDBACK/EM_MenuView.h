@@ -22,6 +22,8 @@ typedef void (^MenuCompletion)(int index, id object, EM_MenuView * menu);
 
 - (id)initWithPop:(NSDictionary*)info;
 
+- (id)initWithAlertLocation:(NSDictionary*)info;
+
 - (id)initWithLoc:(NSDictionary*)info;
 
 - (id)initWithSettingMenu:(NSDictionary*)info;
