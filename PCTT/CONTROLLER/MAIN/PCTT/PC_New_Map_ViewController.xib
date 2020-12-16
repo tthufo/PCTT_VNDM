@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -57,6 +58,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="t0C-gb-rj6"/>
                     <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="ICy-5U-UZr" firstAttribute="top" secondItem="t0C-gb-rj6" secondAttribute="top" constant="11" id="L1g-1O-sFO"/>
@@ -66,7 +68,6 @@
                         <constraint firstItem="t0C-gb-rj6" firstAttribute="trailing" secondItem="H7e-RJ-Pha" secondAttribute="trailing" constant="15" id="kwW-bR-73m"/>
                         <constraint firstItem="H7e-RJ-Pha" firstAttribute="leading" secondItem="ICy-5U-UZr" secondAttribute="trailing" constant="8" id="oyF-o3-x8u"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="t0C-gb-rj6"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZ6-1g-MP4">
                     <rect key="frame" x="0.0" y="646" width="414" height="90"/>
@@ -115,7 +116,7 @@
                         </label>
                         <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dha-co-t7P">
                             <rect key="frame" x="84.666666666666671" y="10" width="20" height="20"/>
-                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" systemColor="systemPinkColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="1xR-4x-GbP"/>
                                 <constraint firstAttribute="width" constant="20" id="Rcy-0k-a8S"/>
@@ -223,7 +224,7 @@
                         </label>
                         <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-a9-O0t">
                             <rect key="frame" x="72" y="10" width="20" height="20"/>
-                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" systemColor="systemPinkColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="EKI-de-9Y6"/>
                                 <constraint firstAttribute="width" constant="20" id="pNY-dS-g1Z"/>
@@ -287,7 +288,7 @@
                         </label>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJ1-02-dpf">
                             <rect key="frame" x="206" y="0.0" width="2" height="90"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="90" id="U8C-p5-SCp"/>
                                 <constraint firstAttribute="width" constant="2" id="rnX-oE-jhc"/>
@@ -330,7 +331,7 @@
                             </constraints>
                             <state key="normal" backgroundImage="ic_hathientai"/>
                             <connections>
-                                <action selector="didPressEventList" destination="-1" eventType="touchUpInside" id="2kr-NP-bDJ"/>
+                                <action selector="didPressEventList_New" destination="-1" eventType="touchUpInside" id="Flh-fG-Aii"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hình ảnh T.T" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYf-DM-gZF">
@@ -393,7 +394,7 @@
                             </constraints>
                             <state key="normal" image="ic_feedback"/>
                             <connections>
-                                <action selector="didPressFeedBack" destination="-1" eventType="touchUpInside" id="hBe-P6-96P"/>
+                                <action selector="didPressAlertLocation" destination="-1" eventType="touchUpInside" id="Orp-1c-1wN"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Góp ý" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQD-5B-EJo">
@@ -428,6 +429,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="YWZ-Yd-wbG"/>
                     <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="B9q-X8-TSb" firstAttribute="leading" secondItem="FYf-DM-gZF" secondAttribute="trailing" constant="10" id="0z9-ON-yFs"/>
@@ -452,9 +454,9 @@
                         <constraint firstItem="31O-4E-yzs" firstAttribute="leading" secondItem="acL-oM-7Sm" secondAttribute="trailing" constant="26.666666666666657" id="ro4-t1-y3a"/>
                         <constraint firstItem="acL-oM-7Sm" firstAttribute="top" secondItem="YWZ-Yd-wbG" secondAttribute="top" id="u4y-hK-SfG"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="YWZ-Yd-wbG"/>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="4ch-V0-R0Z"/>
             <constraints>
                 <constraint firstItem="jXU-1m-BdX" firstAttribute="trailing" secondItem="4ch-V0-R0Z" secondAttribute="trailing" id="5Bd-LD-WxV"/>
                 <constraint firstItem="oZ6-1g-MP4" firstAttribute="bottom" secondItem="4ch-V0-R0Z" secondAttribute="bottom" id="6hF-aM-Vqw"/>
@@ -476,7 +478,6 @@
                 <constraint firstItem="BWv-gh-rNS" firstAttribute="trailing" secondItem="4ch-V0-R0Z" secondAttribute="trailing" id="j8u-kk-UVt"/>
                 <constraint firstItem="JRa-Wu-uCo" firstAttribute="trailing" secondItem="4ch-V0-R0Z" secondAttribute="trailing" id="zCA-tU-Nng"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="4ch-V0-R0Z"/>
             <point key="canvasLocation" x="137.68115942028987" y="97.010869565217405"/>
         </view>
     </objects>
@@ -491,5 +492,11 @@
         <image name="ic_hoidap" width="100.66666412353516" height="100.66666412353516"/>
         <image name="ic_sukienthientai" width="101" height="101.66666412353516"/>
         <image name="logo" width="75.333335876464844" height="75"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

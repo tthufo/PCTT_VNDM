@@ -363,6 +363,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                 
             self.add(["type": type, "access_token": token as Any], andKey: "social")
         
+        
             LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"auth/" + type,
                                                         "accesstoken":token,
                                                         "mobiletoken":FirePush.shareInstance()?.deviceToken() ?? "",
@@ -387,6 +388,8 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate {
                     
                     return
                 }
+                
+                print(response)
                                     
                 self.add(["name":self.uName.text as Any, "pass":self.pass.text as Any], andKey: "log")
 

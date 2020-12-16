@@ -8,12 +8,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AP_Map_ViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Aler_Location_ViewController">
             <connections>
                 <outlet property="bar" destination="Lv0-xQ-xjp" id="NmI-48-DLE"/>
                 <outlet property="headerImg" destination="LdQ-6g-Rkg" id="ibq-fg-fMi"/>
                 <outlet property="logoLeft" destination="O2c-3t-sQQ" id="c4D-RA-K3W"/>
                 <outlet property="mapView" destination="tSa-wM-tew" id="WKa-ph-axW"/>
+                <outlet property="tableView" destination="MMw-ib-mqJ" id="HPE-wM-sgt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -65,8 +66,8 @@
                                 <action selector="didPressBack:" destination="-1" eventType="touchUpInside" id="9EC-zt-KTS"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đ.Điểm Y.Thích" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAR-pC-fnW">
-                            <rect key="frame" x="92" y="11" width="136" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông tin cộng đồng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAR-pC-fnW">
+                            <rect key="frame" x="67" y="11" width="186.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="87.5" id="GRn-m2-vWh"/>
                                 <constraint firstAttribute="height" constant="21" id="f42-k2-Ndc"/>
@@ -75,15 +76,28 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfQ-hR-yuy">
+                            <rect key="frame" x="276" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="6m7-Qu-YTH"/>
+                                <constraint firstAttribute="width" constant="44" id="JPv-RH-1nQ"/>
+                            </constraints>
+                            <state key="normal" image="menu"/>
+                            <connections>
+                                <action selector="didPressShow:" destination="-1" eventType="touchUpInside" id="w4M-sf-3MP"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="vYO-wO-PRS"/>
                     <color key="backgroundColor" red="0.1019607843" green="0.41960784309999999" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="hAR-pC-fnW" firstAttribute="top" secondItem="vYO-wO-PRS" secondAttribute="top" constant="11" id="3z0-6Z-rov"/>
+                        <constraint firstItem="FfQ-hR-yuy" firstAttribute="top" secondItem="J1u-N3-LHc" secondAttribute="top" id="Dy1-vY-VhN"/>
                         <constraint firstAttribute="height" constant="44" id="Nks-fC-cwm"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="PDG-ue-phU"/>
                         <constraint firstItem="x6h-uo-6ES" firstAttribute="leading" secondItem="vYO-wO-PRS" secondAttribute="leading" constant="8" id="PbW-1q-iD3"/>
                         <constraint firstItem="x6h-uo-6ES" firstAttribute="top" secondItem="vYO-wO-PRS" secondAttribute="top" constant="4" id="b7l-Qb-GSB"/>
+                        <constraint firstItem="FfQ-hR-yuy" firstAttribute="trailing" secondItem="vYO-wO-PRS" secondAttribute="trailing" id="ceW-YV-275"/>
                         <constraint firstItem="hAR-pC-fnW" firstAttribute="centerX" secondItem="J1u-N3-LHc" secondAttribute="centerX" id="q8K-Bw-XMw"/>
                     </constraints>
                 </view>
@@ -105,13 +119,28 @@
                                 <action selector="didPressLocation:" destination="-1" eventType="touchUpInside" id="A6X-sl-0Mt"/>
                             </connections>
                         </button>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MMw-ib-mqJ">
+                            <rect key="frame" x="130" y="0.0" width="190" height="372"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="190" id="UwH-nc-EqC"/>
+                            </constraints>
+                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="XjB-vX-av3"/>
+                                <outlet property="delegate" destination="-1" id="5Dk-iv-m31"/>
+                            </connections>
+                        </tableView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="MMw-ib-mqJ" firstAttribute="top" secondItem="WbS-dm-ZCx" secondAttribute="top" id="4oe-vY-ump"/>
                         <constraint firstAttribute="trailing" secondItem="tSa-wM-tew" secondAttribute="trailing" id="DMT-CI-1iG"/>
+                        <constraint firstAttribute="trailing" secondItem="MMw-ib-mqJ" secondAttribute="trailing" id="L8M-lR-QOx"/>
                         <constraint firstItem="Y73-K7-ogC" firstAttribute="top" secondItem="WbS-dm-ZCx" secondAttribute="top" constant="5" id="NC3-J2-Woz"/>
                         <constraint firstAttribute="bottom" secondItem="tSa-wM-tew" secondAttribute="bottom" id="PCv-bh-Hez"/>
                         <constraint firstAttribute="trailing" secondItem="Y73-K7-ogC" secondAttribute="trailing" constant="5" id="c7w-Pi-osu"/>
+                        <constraint firstAttribute="bottom" secondItem="MMw-ib-mqJ" secondAttribute="bottom" id="mAP-jv-cRM"/>
                         <constraint firstItem="tSa-wM-tew" firstAttribute="top" secondItem="WbS-dm-ZCx" secondAttribute="top" id="qUx-rr-ru2"/>
                         <constraint firstItem="tSa-wM-tew" firstAttribute="leading" secondItem="WbS-dm-ZCx" secondAttribute="leading" id="rY7-jw-PJ1"/>
                     </constraints>
@@ -344,6 +373,7 @@
         <image name="location" width="153.5" height="154.5"/>
         <image name="logo" width="76" height="74.5"/>
         <image name="mag" width="170.5" height="170.5"/>
+        <image name="menu" width="170.5" height="170.5"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

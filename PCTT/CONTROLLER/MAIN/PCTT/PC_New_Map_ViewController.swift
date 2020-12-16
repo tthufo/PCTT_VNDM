@@ -122,29 +122,37 @@ class PC_New_Map_ViewController: UIViewController {
           }
     
     @IBAction func didPressContactEmer() {
-     self.navigationController?.pushViewController(Contact_Emer_ViewController.init(), animated: true)
-    }
+         self.navigationController?.pushViewController(Contact_Emer_ViewController.init(), animated: true)
+        }
     
     @IBAction func didPressInfo() {
            self.navigationController?.pushViewController(PC_Info_ViewController.init(), animated: true)
           }
     
     @IBAction func didPressFeedBack() {
-     self.navigationController?.pushViewController(PC_FeedBack_New_ViewController.init(), animated: true)
-    }
+         self.navigationController?.pushViewController(PC_FeedBack_New_ViewController.init(), animated: true)
+        }
     
     @IBAction func didPressEventList() {
-     self.navigationController?.pushViewController(PC_List_Event_ViewController.init(), animated: true)
-    }
+         self.navigationController?.pushViewController(PC_List_Event_ViewController.init(), animated: true)
+        }
     
     @IBAction func didPressInstruction() {
-     self.navigationController?.pushViewController(Instruction_ViewController.init(), animated: true)
-    }
+         self.navigationController?.pushViewController(Instruction_ViewController.init(), animated: true)
+        }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reloading()
     }
+    
+    @IBAction func didPressEventList_New() {
+         self.navigationController?.pushViewController(Event_List_Community_ViewController.init(), animated: true)
+        }
+    
+    @IBAction func didPressAlertLocation() {
+         self.navigationController?.pushViewController(Aler_Location_ViewController.init(), animated: true)
+        }
     
     func reloading() {
         

@@ -8,6 +8,7 @@
 #import <AVHexColor/AVHexColor.h>
 #import "EM_MenuView.h"
 #import "AP_Map_ViewController.h"
+#import "Aler_Location_ViewController.h"
 #import "XMLReader.h"
 #import "NSObject+TabbarExtension.h"
 #import "Download.h"

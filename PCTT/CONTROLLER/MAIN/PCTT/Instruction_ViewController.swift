@@ -153,6 +153,21 @@ class Instruction_ViewController: UIViewController, UITextViewDelegate {
             
             self.dataList.addObjects(from: data as! [Any])
 
+            let music = [
+                "id": 111,
+                "documentation_id": 15,
+                "file_type": "Music",
+                "file_name": "sfdsfdsf.đfds",
+                "file_name_store": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3",
+                "description": "test mp3",
+                "time_update": "2020-10-16T15:41:06",
+                "str_time_update": "16-10-2020 15:41:06"
+                ] as [String : Any]
+            
+            if self.catId != "" {
+                self.dataList.addObjects(from: [music])
+            }
+            
             self.tableView.reloadData()
             
             if self.dataList.count == 0 {
@@ -169,9 +184,9 @@ class Instruction_ViewController: UIViewController, UITextViewDelegate {
            self.navigationController?.popViewController(animated: true)
        }
     
-    func didDownload() {
-        downLoad.didProgress(["url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3",
-               "name": "1",
+    func didDownload(name: String, url: String) {
+        downLoad.didProgress(["url": url,
+               "name": name,
                "infor": [:]
             ], andCompletion: { (index, download, object) in
             if index == -1 {
@@ -181,7 +196,7 @@ class Instruction_ViewController: UIViewController, UITextViewDelegate {
             if index == 0 {
                 self.hideSVHUD()
                 
-                let path = self.pdfFile(fileName: "1", type: "mp3")
+                let path = self.pdfFile(fileName: name, type: "mp3")
 
                 self.playingBoy(file: path)
                 
@@ -265,6 +280,8 @@ extension Instruction_ViewController: UITableViewDataSource, UITableViewDelegate
         
         (self.withView(cell, tag: 2) as! UILabel).text = "Cập nhật: " + data.getValueFromKey("str_time_update")
         
+        (self.withView(cell, tag: 33) as! UIImageView).image = UIImage.init(named: self.catId == "" ? "drop_arrow_right" : "down")
+
         (self.withView(cell, tag: 112) as! UIButton).action(forTouch: [:]) { (obj) in
             if self.catId == "" {
                 let instruct = Instruction_ViewController.init()
@@ -275,46 +292,33 @@ extension Instruction_ViewController: UITableViewDataSource, UITableViewDelegate
                 
                 self.navigationController?.pushViewController(instruct, animated: true)
             } else {
+                
                 if data.getValueFromKey("file_type") == "Picture" {
                     EM_MenuView.init(previewMenu: ["image": data.getValueFromKey("file_name_store")]).show { (indexing, obj, menu) in
                         menu?.close()
                     }
                 } else if data.getValueFromKey("file_type") == "Document" {
-//                    let reader = Reader_ViewController.init()
-//
-//                     let bookInfo = NSMutableDictionary.init(dictionary: data)
-//
-//                     let url = data.getValueFromKey("file_name_store")
-//
-//                     bookInfo["file_url"] = url
-//
-//                     reader.config = bookInfo
-//
-//                     self.navigationController?.pushViewController(reader, animated: true)
-                    self.playLabel.text = data.getValueFromKey("description")
-                    
-                    if !self.existingFile(fileName: "1", type: "mp3") {
-                        self.didDownload()
-                        self.showSVHUD("Đang tải", andOption: 0)
-                    } else {
-                        let path = self.pdfFile(fileName: "1", type: "mp3")
+                    let reader = Reader_ViewController.init()
 
-                        self.playingBoy(file: path)
-                        
-                        self.hideShow(show: true)
-                        
-                        self.playShow(play: true)
-                    }
+                     let bookInfo = NSMutableDictionary.init(dictionary: data)
+
+                     let url = data.getValueFromKey("file_name_store")
+
+                     bookInfo["file_url"] = url
+
+                     reader.config = bookInfo
+
+                     self.navigationController?.pushViewController(reader, animated: true)
                 }
                 
                 else {
                     self.playLabel.text = data.getValueFromKey("description")
 
-                    if !self.existingFile(fileName: "1", type: "mp3") {
-                        self.didDownload()
+                    if !self.existingFile(fileName: data.getValueFromKey("id"), type: "mp3") {
+                        self.didDownload(name: data.getValueFromKey("id"), url: data.getValueFromKey("file_name_store"))
                         self.showSVHUD("Đang tải", andOption: 0)
                     } else {
-                        let path = self.pdfFile(fileName: "1", type: "mp3")
+                        let path = self.pdfFile(fileName: data.getValueFromKey("id"), type: "mp3")
 
                         self.playingBoy(file: path)
                         

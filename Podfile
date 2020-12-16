@@ -32,5 +32,7 @@ target 'PCTT' do
   pod 'GGPod', '~> 0.1'
 
   pod 'ZaloSDK'
+  
+  pod 'Google-Maps-iOS-Utils'
 
 end

@@ -99,6 +99,13 @@
 		FC59DA4A237004FA00F8FA35 /* PC_Register_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */; };
 		FC5A3A0A23D852D700F8F108 /* PC_Update_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */; };
 		FC5A3A0B23D852D700F8F108 /* PC_Update_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5A3A0923D852D700F8F108 /* PC_Update_ViewController.xib */; };
+		FC5B127E2588681C000FEA47 /* Event_List_Community_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B127C2588681C000FEA47 /* Event_List_Community_ViewController.swift */; };
+		FC5B127F2588681C000FEA47 /* Event_List_Community_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5B127D2588681C000FEA47 /* Event_List_Community_ViewController.xib */; };
+		FC5B128225886956000FEA47 /* Event_Upload_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B128025886956000FEA47 /* Event_Upload_ViewController.swift */; };
+		FC5B128325886956000FEA47 /* Event_Upload_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5B128125886956000FEA47 /* Event_Upload_ViewController.xib */; };
+		FC5B128B25888FDF000FEA47 /* Aler_Location_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5B128925888FDF000FEA47 /* Aler_Location_ViewController.m */; };
+		FC5B128C25888FDF000FEA47 /* Aler_Location_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5B128A25888FDF000FEA47 /* Aler_Location_ViewController.xib */; };
+		FC5B128E25889711000FEA47 /* Optional_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5B128D25889711000FEA47 /* Optional_Cell.xib */; };
 		FC5D982422F54134006FA3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D982322F54134006FA3F1 /* AppDelegate.swift */; };
 		FC5D982622F54134006FA3F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D982522F54134006FA3F1 /* ViewController.swift */; };
 		FC5D982922F54134006FA3F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5D982722F54134006FA3F1 /* Main.storyboard */; };
@@ -264,6 +271,14 @@
 		FC59DA48237004FA00F8FA35 /* PC_Register_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Register_ViewController.xib; sourceTree = "<group>"; };
 		FC5A3A0823D852D700F8F108 /* PC_Update_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PC_Update_ViewController.swift; sourceTree = "<group>"; };
 		FC5A3A0923D852D700F8F108 /* PC_Update_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Update_ViewController.xib; sourceTree = "<group>"; };
+		FC5B127C2588681C000FEA47 /* Event_List_Community_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_List_Community_ViewController.swift; sourceTree = "<group>"; };
+		FC5B127D2588681C000FEA47 /* Event_List_Community_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Event_List_Community_ViewController.xib; sourceTree = "<group>"; };
+		FC5B128025886956000FEA47 /* Event_Upload_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_Upload_ViewController.swift; sourceTree = "<group>"; };
+		FC5B128125886956000FEA47 /* Event_Upload_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Event_Upload_ViewController.xib; sourceTree = "<group>"; };
+		FC5B128825888FDF000FEA47 /* Aler_Location_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Aler_Location_ViewController.h; sourceTree = "<group>"; };
+		FC5B128925888FDF000FEA47 /* Aler_Location_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Aler_Location_ViewController.m; sourceTree = "<group>"; };
+		FC5B128A25888FDF000FEA47 /* Aler_Location_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Aler_Location_ViewController.xib; sourceTree = "<group>"; };
+		FC5B128D25889711000FEA47 /* Optional_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Optional_Cell.xib; sourceTree = "<group>"; };
 		FC5D982022F54134006FA3F1 /* PCTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5D982322F54134006FA3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC5D982522F54134006FA3F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +362,7 @@
 		FC1AC73A23708C8C00B11288 /* PCTT */ = {
 			isa = PBXGroup;
 			children = (
+				FC5B127B258867E9000FEA47 /* COMMUNITY */,
 				FC4C6A3F24E8F24F00BD84D1 /* PC_New_Map_ViewController.swift */,
 				FC4C6A4024E8F24F00BD84D1 /* PC_New_Map_ViewController.xib */,
 				FC1AC73B23708CA900B11288 /* PC_Map_ViewController.swift */,
@@ -481,6 +497,21 @@
 				FC4DE9D72557BC4500231CA2 /* Instruction_Cell.xib */,
 			);
 			name = Disaster_Detail;
+			sourceTree = "<group>";
+		};
+		FC5B127B258867E9000FEA47 /* COMMUNITY */ = {
+			isa = PBXGroup;
+			children = (
+				FC5B127C2588681C000FEA47 /* Event_List_Community_ViewController.swift */,
+				FC5B127D2588681C000FEA47 /* Event_List_Community_ViewController.xib */,
+				FC5B128025886956000FEA47 /* Event_Upload_ViewController.swift */,
+				FC5B128125886956000FEA47 /* Event_Upload_ViewController.xib */,
+				FC5B128825888FDF000FEA47 /* Aler_Location_ViewController.h */,
+				FC5B128925888FDF000FEA47 /* Aler_Location_ViewController.m */,
+				FC5B128A25888FDF000FEA47 /* Aler_Location_ViewController.xib */,
+				FC5B128D25889711000FEA47 /* Optional_Cell.xib */,
+			);
+			name = COMMUNITY;
 			sourceTree = "<group>";
 		};
 		FC5D981722F54134006FA3F1 = {
@@ -671,6 +702,7 @@
 				FC49139524E2744000F1967A /* PC_Disaster_ViewController.xib in Resources */,
 				FC6197B3238EDF2900155EF1 /* AP_Map_ViewController.xib in Resources */,
 				FC4913BF24E64AAA00F1967A /* Layer_Cell.xib in Resources */,
+				FC5B127F2588681C000FEA47 /* Event_List_Community_ViewController.xib in Resources */,
 				FC4C6A4424E93EE600BD84D1 /* Report_Cell.xib in Resources */,
 				FC9D8DD72520C39400ED2129 /* Contact_ViewController.xib in Resources */,
 				FC69937822FB503F00C62D42 /* PC_Station_Cell0.xib in Resources */,
@@ -683,12 +715,14 @@
 				FC1B307722F724C0002E873F /* PC_Setting_Cell.xib in Resources */,
 				FC5D983922F55513006FA3F1 /* PC_Login_ViewController.xib in Resources */,
 				FC1DD77F23787A0200C457C9 /* PC_Inner_Map_ViewController.xib in Resources */,
+				FC5B128E25889711000FEA47 /* Optional_Cell.xib in Resources */,
 				FC1AA23B22F879E300C09E02 /* PC_Main_Cell.xib in Resources */,
 				FC4913A224E285FC00F1967A /* Cells.xib in Resources */,
 				FC5D982B22F54137006FA3F1 /* Assets.xcassets in Resources */,
 				FC6197B5238EE83800155EF1 /* Annotation.xib in Resources */,
 				FC4DE9CC2556DC5500231CA2 /* Contact_Emer_ViewController.xib in Resources */,
 				FC49139E24E27D4D00F1967A /* PC_Disaster_Map_ViewController.xib in Resources */,
+				FC5B128325886956000FEA47 /* Event_Upload_ViewController.xib in Resources */,
 				2DB6B1B02330B4FB0036A26A /* PC_Station_Cell3.xib in Resources */,
 				2DB6B1AB2330B4FB0036A26A /* PC_Station_Cell5.xib in Resources */,
 				FC1A516622FE8EE200298B28 /* PC_ForeCast_Cell.xib in Resources */,
@@ -700,6 +734,7 @@
 				FC4913B124E6249200F1967A /* PC_Project_ViewController.xib in Resources */,
 				FC235ADF2383167B0093A108 /* PC_Event_Cell.xib in Resources */,
 				FCEDD7E322F9F00400DC4613 /* PC_Notification_Cell.xib in Resources */,
+				FC5B128C25888FDF000FEA47 /* Aler_Location_ViewController.xib in Resources */,
 				FC1B307B22F73F3E002E873F /* PC_ChangePass_ViewController.xib in Resources */,
 				FC8F4AF0230FE9420082F3B2 /* PC_FeedBack_ViewController.xib in Resources */,
 				FC1B307522F71C24002E873F /* PC_Setting_ViewController.xib in Resources */,
@@ -807,12 +842,14 @@
 				FC31018E23195B7F009DBF95 /* EM_MenuView.m in Sources */,
 				FC4913A724E5A37D00F1967A /* PC_Disaster_Detail_Tab_ViewController.swift in Sources */,
 				FC9D8DD62520C39400ED2129 /* Contact_ViewController.swift in Sources */,
+				FC5B128B25888FDF000FEA47 /* Aler_Location_ViewController.m in Sources */,
 				FC1AC73923708C6100B11288 /* TG_Root_ViewController.swift in Sources */,
 				FC4913B424E624B900F1967A /* PC_Layer_ViewController.swift in Sources */,
 				FC4913B824E624DB00F1967A /* PC_Report_ViewController.swift in Sources */,
 				FC4C6A4124E8F24F00BD84D1 /* PC_New_Map_ViewController.swift in Sources */,
 				FC193A9E22FCB5EF00CDF719 /* PC_ForCast_ViewController.swift in Sources */,
 				FC4913AC24E5A98300F1967A /* PC_Doc_ViewController.swift in Sources */,
+				FC5B127E2588681C000FEA47 /* Event_List_Community_ViewController.swift in Sources */,
 				FCB19455231598DA007120AF /* ChatAccessory.swift in Sources */,
 				FC235AD62382CABD0093A108 /* PC_List_Event_ViewController.swift in Sources */,
 				FC5D982422F54134006FA3F1 /* AppDelegate.swift in Sources */,
@@ -827,6 +864,7 @@
 				FC1B306922F6AF13002E873F /* PC_Forgot_ViewController.swift in Sources */,
 				FC8F4AEF230FE9420082F3B2 /* PC_FeedBack_ViewController.swift in Sources */,
 				FC4913B024E6249200F1967A /* PC_Project_ViewController.swift in Sources */,
+				FC5B128225886956000FEA47 /* Event_Upload_ViewController.swift in Sources */,
 				FC5A3A0A23D852D700F8F108 /* PC_Update_ViewController.swift in Sources */,
 				FC1B307022F6EEF6002E873F /* PC_Main_ViewController.swift in Sources */,
 				FC49139424E2744000F1967A /* PC_Disaster_ViewController.swift in Sources */,
@@ -998,7 +1036,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = nex.com.dbtt;
 				PRODUCT_MODULE_NAME = VNDMS;
 				PRODUCT_NAME = PCTT;
@@ -1035,7 +1073,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = nex.com.dbtt;
 				PRODUCT_MODULE_NAME = VNDMS;
 				PRODUCT_NAME = PCTT;

@@ -120,7 +120,7 @@
                             </connections>
                         </button>
                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIa-KQ-wvo">
-                            <rect key="frame" x="64" y="0.0" width="290" height="0.0"/>
+                            <rect key="frame" x="64" y="0.0" width="286" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -138,7 +138,7 @@
                                 <constraint firstAttribute="height" constant="48" id="evA-94-7N6"/>
                                 <constraint firstAttribute="width" constant="44" id="fnd-du-HCv"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                             <state key="normal" title="X">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -146,6 +146,14 @@
                                 <action selector="deletePlay" destination="-1" eventType="touchUpInside" id="kLY-hK-4RC"/>
                             </connections>
                         </button>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqX-5M-dZm">
+                            <rect key="frame" x="358" y="-22.5" width="1" height="45"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="N0F-WQ-bbB"/>
+                                <constraint firstAttribute="width" constant="1" id="jPk-eH-G1g"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -155,12 +163,14 @@
                         <constraint firstAttribute="height" id="GIO-2z-TUe"/>
                         <constraint firstAttribute="bottom" secondItem="IIa-KQ-wvo" secondAttribute="bottom" id="Hv1-oM-emW"/>
                         <constraint firstItem="IIa-KQ-wvo" firstAttribute="leading" secondItem="4v2-vR-M2w" secondAttribute="trailing" constant="8" id="QaC-CH-ipo"/>
-                        <constraint firstItem="eTN-R6-HHX" firstAttribute="leading" secondItem="IIa-KQ-wvo" secondAttribute="trailing" constant="8" id="Udj-My-kC0"/>
+                        <constraint firstItem="eTN-R6-HHX" firstAttribute="leading" secondItem="IIa-KQ-wvo" secondAttribute="trailing" constant="12" id="Udj-My-kC0"/>
                         <constraint firstItem="4v2-vR-M2w" firstAttribute="centerY" secondItem="5gs-pK-yZT" secondAttribute="centerY" id="VYN-bq-Xvw"/>
+                        <constraint firstItem="MqX-5M-dZm" firstAttribute="leading" secondItem="IIa-KQ-wvo" secondAttribute="trailing" constant="8" id="YKp-DR-W3s"/>
                         <constraint firstAttribute="trailing" secondItem="eTN-R6-HHX" secondAttribute="trailing" constant="8" id="ai2-ud-MVV"/>
                         <constraint firstItem="IIa-KQ-wvo" firstAttribute="top" secondItem="5gs-pK-yZT" secondAttribute="top" id="jfd-2f-f01"/>
                         <constraint firstItem="FVO-EY-s2v" firstAttribute="top" secondItem="5gs-pK-yZT" secondAttribute="top" id="sZt-WZ-Nyj"/>
                         <constraint firstAttribute="trailing" secondItem="FVO-EY-s2v" secondAttribute="trailing" id="uZe-O5-xyR"/>
+                        <constraint firstItem="MqX-5M-dZm" firstAttribute="centerY" secondItem="5gs-pK-yZT" secondAttribute="centerY" id="wrT-oU-Y7o"/>
                     </constraints>
                 </view>
             </subviews>
