@@ -334,8 +334,26 @@
 
            [self->popUpDialog showWithCompletion:^(int index, id object, EM_MenuView *menu) {
 
-              if (index == 21) {
-                  [self didRequestDeletePoint:object];
+              if (index == 1) {
+//                  [menu close];
+//
+//                  [self didRequestLocation:lat and:lng name:info];
+                  
+                  [menu close];
+
+                  Event_Upload_ViewController * upload = [Event_Upload_ViewController new];
+                  
+                  upload.info = info;
+                  
+                  [self.navigationController pushViewController:upload animated:YES];
+              } else {
+//                  [menu close];
+//
+//                  Event_Upload_ViewController * upload = [Event_Upload_ViewController new];
+//                  
+//                  upload.info = info;
+//                  
+//                  [self.navigationController pushViewController:upload animated:YES];
               }
 
            }];

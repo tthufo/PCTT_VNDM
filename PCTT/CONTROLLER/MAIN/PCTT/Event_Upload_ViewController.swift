@@ -34,6 +34,10 @@ class Event_Upload_ViewController: UIViewController, UITextFieldDelegate, UIText
 
     @IBOutlet var back: UIButton!
     
+    @objc var info: NSDictionary!
+    
+    var latLong: NSMutableDictionary!
+    
     var dataList: NSMutableArray!
     
     var options: NSMutableDictionary = ["0": "0", "1": "0", "2": "0", "3": "0", "4": "0", "5": "0"]
@@ -54,11 +58,14 @@ class Event_Upload_ViewController: UIViewController, UITextFieldDelegate, UIText
           if Information.check == "0" {
               headerImg.image = UIImage(named: "bg_text_dms")
           }
+            
+        latLong = NSMutableDictionary.init()
 
         textView.inputAccessoryView = self.toolBar()
 
         textField.addTarget(self, action: #selector(textIsChanging), for: .editingChanged)
 
+            
         self.view.action(forTouch: [:]) { (objc) in
             self.view.endEditing(true)
         }
@@ -67,7 +74,11 @@ class Event_Upload_ViewController: UIViewController, UITextFieldDelegate, UIText
                       
         tableViewFiles.withCell("PC_File_Cell")
             
-        optionCell()
+        initOptionCell()
+            
+        if info != nil {
+            self.requestEvent()
+        }
     }
     
     func optionCell() {
@@ -76,7 +87,7 @@ class Event_Upload_ViewController: UIViewController, UITextFieldDelegate, UIText
                 v.action(forTouch: [:]) { (objc) in
                     let taging = String(v.tag - 1000)
                     self.options[taging] = self.options[taging] as! String == "0" ? "1" : "0"
-                    (self.withView(v, tag: 1) as! UIButton).setImage(UIImage.init(named: self.options[taging] as! String == "1" ? "check_ac" : "check_in"), for: .normal)
+                    (self.withView(v, tag: 1) as! UIButton).setImage(UIImage.init(named: self.options[taging] as! String == "1" ? "check_g_ac" : "check_g_in"), for: .normal)
                 }
             }
         }
@@ -96,6 +107,60 @@ class Event_Upload_ViewController: UIViewController, UITextFieldDelegate, UIText
        
        @objc func disMiss() {
            self.view.endEditing(true)
+       }
+    
+    func requestEvent() {
+        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "thongtin-thientai/" + self.info.getValueFromKey("thongtin_thientai_id")),
+                                                  "header":["Authorization":Information.token == nil ? "" : Information.token!],
+                                                  "method":"GET",
+                                                  "overrideAlert":"1",
+                                                  "overrideLoading":"1",
+                                                  "host":self], withCache: { (cacheString) in
+      }, andCompletion: { (response, errorCode, error, isValid, object) in
+          let result = response?.dictionize() ?? [:]
+                      
+          if result.getValueFromKey("status") != "OK" {
+              self.showToast(response?.dictionize().getValueFromKey("data") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("data"), andPos: 0)
+              return
+          }
+                
+        let data = result["data"] as! NSDictionary
+        
+        self.textField.text = data.getValueFromKey("tieu_de")
+          
+        self.textView.text = data.getValueFromKey("noi_dung")
+        
+        self.latLong["lat"] = data.getValueFromKey("lat")
+        
+        self.latLong["lon"] = data.getValueFromKey("lon")
+
+        let type_id: [String] = (data.getValueFromKey("phanloai_id")?.components(separatedBy: ","))!
+        
+        
+        for id in type_id {
+            for var opt in self.options {
+                if opt.key as! String == id {
+                    self.options[id] = "1"
+                }
+            }
+        }
+        
+        self.initOptionCell()
+        
+      })
+    }
+    
+    func initOptionCell() {
+           for v in cell.contentView.subviews {
+               if v.tag >= 1000 && v.tag <= 1005 {
+                let taging = String(v.tag - 1000)
+                (self.withView(v, tag: 1) as! UIButton).setImage(UIImage.init(named: self.options[taging] as! String == "1" ? "check_g_ac" : "check_g_in"), for: .normal)
+                   v.action(forTouch: [:]) { (objc) in
+                       self.options[taging] = self.options[taging] as! String == "0" ? "1" : "0"
+                       (self.withView(v, tag: 1) as! UIButton).setImage(UIImage.init(named: self.options[taging] as! String == "1" ? "check_g_ac" : "check_g_in"), for: .normal)
+                   }
+               }
+           }
        }
     
     @IBAction func didPressSave() {
@@ -125,12 +190,26 @@ class Event_Upload_ViewController: UIViewController, UITextFieldDelegate, UIText
            
            lng = location.getValueFromKey("lng")
        }
-       
+        
+        if info != nil {
+            lat = self.latLong.getValueFromKey("lat")
+            lng = self.latLong.getValueFromKey("lon")
+        }
+        
+        let type_id = NSMutableArray.init()
+        
+        for opt in self.options {
+            if opt.value as! String == "1" {
+                type_id.add(opt.key)
+            }
+        }
+                       
        let autoId = self.getValue("autoId")
                
        Information.addOffline(request: ["id": autoId, "field": array, "data":[
-           "event_name": textField.text as Any,
-           "event_description": textView.text as Any,
+           "tieu_de": textField.text as Any,
+           "noi_dung": textView.text as Any,
+           "phanloai_id": type_id.componentsJoined(by: ","),
            "lat": lat,
            "lon": lng]])
        
@@ -169,19 +248,32 @@ class Event_Upload_ViewController: UIViewController, UITextFieldDelegate, UIText
             lng = location.getValueFromKey("lng")
         }
         
-        LTRequest.sharedInstance()?.didRequestMultiPart(["CMD_CODE":"event",
+        if info != nil {
+            lat = self.latLong.getValueFromKey("lat")
+            lng = self.latLong.getValueFromKey("lon")
+        }
+        
+        let type_id = NSMutableArray.init()
+               
+           for opt in self.options {
+               if opt.value as! String == "1" {
+                   type_id.add(opt.key)
+               }
+           }
+        
+        LTRequest.sharedInstance()?.didRequestMultiPart(["CMD_CODE":"thongtin-thientai",
                                                     "header":["Authorization":Information.token == nil ? "" : Information.token!],
                                                     "data":[
-                                                        "event_name": textField.text as Any,
-                                                        "event_description": textView.text as Any,
+                                                        "tieu_de": textField.text as Any,
+                                                        "noi_dung": textView.text as Any,
+                                                        "phanloai_id": type_id.componentsJoined(by: ","),
                                                         "lat": lat,
                                                         "lon": lng,
-                                                        "pid": [],
                                                     ],
                                                     "field": dataList.count != 0 ? array : [],
                                                     "overrideAlert":"1",
                                                     "overrideLoading":"1",
-                                                    "postFix":"event",
+                                                    "postFix":"thongtin-thientai",
                                                     "host":self], withCache: { (cacheString) in
         }, andCompletion: { (response, errorCode, error, isValid, object) in
             let result = response?.dictionize() ?? [:]

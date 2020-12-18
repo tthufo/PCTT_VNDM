@@ -60,7 +60,7 @@ class Event_List_Community_ViewController: UIViewController {
     }
     
     func requestEvent() {
-      LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "event"),
+      LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"".urlGet(postFix: "thongtin-thientai"),
                                                   "header":["Authorization":Information.token == nil ? "" : Information.token!],
                                                   "method":"GET",
                                                   "overrideAlert":"1",
@@ -126,11 +126,11 @@ extension Event_List_Community_ViewController: UITableViewDataSource, UITableVie
         
         let title = self.withView(cell, tag: 1) as! UILabel
         
-        title.text = data["event_name"] as? String
+        title.text = data["tieu_de"] as? String
         
         let des = self.withView(cell, tag: 2) as! UILabel
         
-        des.text = data["event_description"] as? String
+        des.text = data["noi_dung"] as? String
         
         return cell
     }

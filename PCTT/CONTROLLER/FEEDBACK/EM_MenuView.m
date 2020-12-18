@@ -292,6 +292,13 @@
     
     detail.text = [NSString stringWithFormat:@"Cập nhật mới: %@", @"tại đây"];
     
+    [detail actionForTouch:@{} and:^(NSDictionary *touchInfo) {
+        self.menuCompletion(1, nil, self);
+    }];
+    
+    [contentView actionForTouch:@{} and:^(NSDictionary *touchInfo) {
+        self.menuCompletion(2, nil, self);
+    }];
     
     [commentView addSubview:contentView];
     
